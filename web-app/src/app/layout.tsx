@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
 import { Coiny, Quicksand, Open_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -32,6 +33,7 @@ const RootLayout = ({ children }: { children: ReactNode; }) => {
         <main>
           {children}
         </main>
+        <Footer />
       </body>
     </html>
   );

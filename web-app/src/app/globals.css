@@ -17,13 +17,13 @@
   --blue-50: hsl(194, 61%, 88%);
   --blue-100: hsl(195, 62%, 83%);
   --blue-200: hsl(195, 63%, 79%);
-  --blue-300: hsl(195, 62%, 75%);
+  --blue-300: rgb(152, 211, 231);
   --blue-400: hsl(199, 46%, 67%);
   --blue-500: hsl(202, 36%, 59%);
   --blue-600: hsl(205, 29%, 51%);
   --blue-700: hsl(209, 32%, 44%);
   --blue-800: hsl(212, 37%, 37%);
-  --blue-900: hsl(215, 41%, 31%);
+  --blue-900: rgb(47, 74, 111);
   --blue-950: hsl(219, 61%, 15%);
 
   --yellow-50: hsl(48, 100%, 96%);
@@ -100,72 +100,76 @@ main {
   min-height: 90svh;
 }
 
-h1,
-h2,
-h3 {
+h1 {
   font-family: var(--font-title);
   text-transform: uppercase;
-  font-size: 2.45rem;
+  font-size: 2.35rem;
   letter-spacing: -0.075rem;
   line-height: 97%;
   margin: 2.5rem auto 1rem auto;
-  color: var(--coal-black);
+  color: var(--zinc-900);
 }
 
-h2 {
-  font-size: 2.35rem;
-}
-
-h3 {
-  font-size: 2.25rem;
-}
-
+h2,
+h3,
 h4,
 h5,
 h6 {
   font-family: var(--font-heading);
-  font-weight: 500;
-  font-size: 1.6rem;
-  letter-spacing: -0.05rem;
+  font-weight: 600;
+  font-size: 2.25rem;
+  letter-spacing: -0.075rem;
   margin: 1rem auto 0.5rem auto;
-  color: var(--coal-black);
+  color: var(--zinc-900);
+}
+
+h3 {
+  font-size: 1.55rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.4rem;
+  font-weight: 500;
 }
 
 h5 {
-  font-size: 1.35rem;
+  font-size: 1.25rem;
+  font-weight: 500;
 }
 
 h6 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
 
 p {
   font-family: var(--font-body);
   font-size: 1rem;
   margin: 0 auto;
-  color: var(--coal-black);
+  color: var(--zinc-900);
 }
 
 @media (min-width: 48rem) {
 
   h1 {
-    font-size: 4.25rem;
+    font-size: 3.55rem;
   }
 
   h2 {
-    font-size: 3.75rem;
+    font-size: 2.5rem;
   }
 
   h3 {
-    font-size: 3.25rem;
+    font-size: 1.7rem;
   }
 
   h4 {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
   }
 
   h5 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   h6 {

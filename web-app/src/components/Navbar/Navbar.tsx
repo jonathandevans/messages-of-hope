@@ -3,8 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Navbar.module.css";
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
-import Button from "../Button/Button";
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
@@ -17,11 +16,11 @@ enum Dropdown {
 const MobileNavigation = ({ closeNav } : { closeNav : () => void }) => {
   return (
     <nav className={styles.mobileNav}>
-      <Link href="/" onClick={closeNav}>Home <ChevronRight className={styles.icon} /></Link>
-      <Link href="/about" onClick={closeNav}>About <ChevronRight className={styles.icon} /></Link>
-      <Link href="/projects" onClick={closeNav}>Projects <ChevronRight className={styles.icon} /></Link>
-      <Link href="/write-a-message" onClick={closeNav}>Write a Message <ChevronRight className={styles.icon} /></Link>
-      <Link href="/support-us" onClick={closeNav}>Support Us <ChevronRight className={styles.icon} /></Link>
+      <Link href="/" onClick={closeNav}>Home <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></Link>
+      <Link href="/about" onClick={closeNav}>About <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></Link>
+      <Link href="/projects" onClick={closeNav}>Projects <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></Link>
+      <Link href="/write-a-message" onClick={closeNav}>Write a Message <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></Link>
+      <Link href="/support-us" onClick={closeNav}>Support Us <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></Link>
 
       <a className={styles.social} href="https://www.instagram.com/messagesof.hope/" target="_blank"><FontAwesomeIcon icon={faInstagram} className={styles.socialIcon}/> Check out our Instagram</a>
     </nav>
@@ -150,20 +149,20 @@ const Navbar = () => {
             <Link href="/">Home</Link>
             <div className={styles.dropdownContainer}>
               <button onClick={onAboutClick} className={styles.aboutButton}>
-                About <ChevronRight className={styles.icon} />
+                About <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/>
               </button>
               { dropdown !== Dropdown.About ? null : (
                 <div className={styles.dropdown}>
                   <Link href="/about">
-                    <h6>About Messages of Hope <ChevronRight className={styles.icon} /></h6>
+                    <h6>About Messages of Hope <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></h6>
                     <p>What is Messages of Hope? What does Messages of Hope do?</p>
                   </Link>
                   <Link href="/our-team">
-                    <h6>Our Team <ChevronRight className={styles.icon} /></h6>
+                    <h6>Our Team <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></h6>
                     <p>Who are the Messages of Hope team and how can I get involved?</p>
                   </Link>
                   <Link href="/our-creator">
-                    <h6>Our Creator <ChevronRight className={styles.icon} /></h6>
+                    <h6>Our Creator <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></h6>
                     <p>Who created Messages of Hope and why is it important?</p>
                   </Link>
               </div>
@@ -171,20 +170,20 @@ const Navbar = () => {
             </div>
             <div className={styles.dropdownContainer}>
             <button onClick={onProjectClick} className={styles.projectsButton}>
-              Projects <ChevronRight className={styles.icon} />
+              Projects <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/>
             </button>
             { dropdown !== Dropdown.Projects ? null : (
               <div className={styles.dropdown}>
                 <Link href="/projects/connections-2024">
-                  <h6>Connections 2024 <ChevronRight className={styles.icon} /></h6>
+                  <h6>Connections 2024 <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></h6>
                   <p>Connections is a short film created by Messages of Hope that explores how we can find hope by connecting with others.</p>
                 </Link>
                 <Link href="/projects/bags-of-hope">
-                  <h6>Bags of Hope <ChevronRight className={styles.icon} /></h6>
+                  <h6>Bags of Hope <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></h6>
                   <p>Bags of Hope is a project to give items to patients arriving on psychiatric wards.</p>
                 </Link>
                 <Link href="/projects">
-                  <h6>View All Projects <ChevronRight className={styles.icon} /></h6>
+                  <h6>View All Projects <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></h6>
                   <p>View all of our projects and see how you can get involved.</p>
                 </Link>
               </div>
@@ -196,16 +195,22 @@ const Navbar = () => {
         </div>
 
         <div className={styles.right}>
-          <a className={styles.social} href="https://www.instagram.com/messagesof.hope/" target="_blank"><FontAwesomeIcon icon={faInstagram} className={styles.socialIcon}/> Instagram</a>
+          <a className={styles.social} href="https://www.instagram.com/messagesof.hope/" target="_blank"><FontAwesomeIcon aria-hidden="true" icon={faInstagram} className={styles.socialIcon}/> Instagram</a>
 
-          <button className={`${styles.hamburger} ${showMobileNav ? styles.open : ""}`} onClick={() => setShowMobileNav(!showMobileNav)}>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
+          <button aria-label="Navigation menu" className={`${styles.hamburger} ${showMobileNav ? styles.open : ""}`} onClick={() => setShowMobileNav(!showMobileNav)}>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
           </button>
-          { showMobileNav ? <div aria-hidden="true" className={styles.grad} /> : null}
-          { showMobileNav ? <MobileNavigation closeNav={ () => setShowMobileNav(false) }/> : null }
+          { 
+            showMobileNav ? 
+            <>
+              <div aria-hidden="true" className={styles.grad} />
+              <MobileNavigation closeNav={ () => setShowMobileNav(false) }/>
+            </>
+            : null
+          }
         </div>
   
       </div>
