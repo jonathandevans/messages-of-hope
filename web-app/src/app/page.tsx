@@ -1,11 +1,11 @@
-import Banner from "@/components/Banner/Banner";
-import TextPanel from "@/components/TextPanel/TextPanel";
-import Button from "@/components/Button/Button";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { Banner } from "@/components/panel/banner/banner";
+import { TextPanel } from "@/components/panel/text-panel/text-panel";
+import { CardPanel } from "@/components/panel/card-panel/card-panel";
+import { ContactForm } from "@/components/panel/contact-form/contact-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "@/components/button/button";
 import styles from "./page.module.css";
-import CardPanel from "@/components/CardPanel/CardPanel";
-import ContactForm from "@/components/ContactForm/ContactForm";
 
 const Page = () => {
   return (
@@ -14,8 +14,8 @@ const Page = () => {
         <div className={styles.bannerContent}>
           <h3>Collecting your messages of hope and spreading them far and wide.</h3>
           <div className={styles.bannerButtons}>
-            <Button href="/write-a-message">Write a Message</Button>
-            <Button href="/projects/connections-2024" variant={{colour: "yellow"}}>Our Latest Project</Button>
+            <Button href="/write-a-message" variant={{ size: "lg", colour: "blue" }}>Write a Message</Button>
+            <Button href="/projects/connections-2024" variant={{ size: "lg", colour: "yellow"}}>Our Latest Project</Button>
           </div>
         </div>
       </Banner>

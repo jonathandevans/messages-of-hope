@@ -1,6 +1,6 @@
 import { HTMLAttributes } from "react";
 import Image from "next/image";
-import styles from "./TextPanel.module.css";
+import styles from "./text-panel.module.css";
 
 interface TextPanelProps extends HTMLAttributes<HTMLDivElement> {
   imageSrc : string;
@@ -35,7 +35,7 @@ const Deco = ({ pos } : { pos : string; }) => {
   );
 };
 
-const TextPanel = ({ imageSrc, imageAlt, title, variant, children, className } : TextPanelProps) => {
+export const TextPanel = ({ imageSrc, imageAlt, title, variant, children, className } : TextPanelProps) => {
   return (
     <section className={`${className} ${styles.panel}`}>
       <div className={styles.contentContainer}>
@@ -53,4 +53,3 @@ const TextPanel = ({ imageSrc, imageAlt, title, variant, children, className } :
     </section>
   );
 };
-export default TextPanel;

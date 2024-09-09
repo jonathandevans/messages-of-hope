@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef, useState, Fragment } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import styles from "./ContactForm.module.css";
+import { Button } from "@/components/button/button";
+import styles from "./contact-form.module.css";
 
 const Popup = ({ closePopup, title, message, buttonText } : { closePopup : () => void; title : string; message : string; buttonText : string; }) => {
   return (
@@ -18,7 +17,7 @@ const Popup = ({ closePopup, title, message, buttonText } : { closePopup : () =>
   );
 };
 
-const ContactForm = ({ title, text } : { title : string; text : string; }) => {
+export const ContactForm = ({ title, text } : { title : string; text : string; }) => {
   const [status, setStatus] = useState(null);
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
@@ -63,12 +62,12 @@ const ContactForm = ({ title, text } : { title : string; text : string; }) => {
           <Popup title="Oops!" buttonText="Close" message="An error occurred while sending your message. Please try again later." closePopup={closePopup} />
         ) : null
       }
-      <section className={styles.contact_panel}>
-        <div className={styles.inner_container}>
-          <h3>{title}</h3>
+      <section className={styles.panel}>
+        <div className={styles.inner}>
+          <h2>{title}</h2>
           <p>{text}</p>
-          <form className={styles.contact_form} onSubmit={sendEmail}>
-            <div className={styles.contact_form_content}>
+          <form className={styles.form} onSubmit={sendEmail}>
+            <div className={styles.formContent}>
               <div className={styles.inputs}>
                 <input ref={nameRef} name="name" type="text" placeholder="Name*" required autoComplete="on"/>
                 <input ref={emailRef} name="email" type="email" placeholder="Email*" required autoComplete="on"/>
@@ -77,14 +76,10 @@ const ContactForm = ({ title, text } : { title : string; text : string; }) => {
               </div>
               <textarea ref={messageRef} name="message" placeholder="Message..." required rows={10} />
             </div>
-            <button className={styles.contact_button} type="submit">
-              Send Message
-              <FontAwesomeIcon icon={faArrowRight} className={styles.icon}/>
-            </button>
+            <Button style={{ marginTop: "1rem" }} type="submit" variant={{ name: "bordered", colour: "transparent", dark: true }}>Send Message</Button>
           </form>
         </div>
       </section>
     </Fragment>
   );
 };
-export default ContactForm;

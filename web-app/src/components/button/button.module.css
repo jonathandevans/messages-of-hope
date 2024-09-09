@@ -1,0 +1,304 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: fit-content;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 24px;
+  transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+.button.sm {
+  min-height: 2.3rem;
+  padding: 0.45rem 1rem;
+  font-size: 0.9rem;
+}
+
+.button.icon.sm .arrow {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-left: 0.65rem;
+}
+
+.button.md {
+  min-height: 2.6rem;
+  padding: 0.55rem 1.2rem;
+  font-size: 1rem;
+}
+
+.button.icon.md .arrow {
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-left: 0.75rem;
+}
+
+.button.lg {
+  min-height: 2.8rem;
+  padding: 0.55rem 1.3rem;
+  font-size: 1.1rem;
+}
+
+.button.icon.lg .arrow {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.85rem;
+}
+
+.button.xl {
+  min-height: 3rem;
+  padding: 0.55rem 1.35rem;
+  font-size: 1.2rem;
+}
+
+.button.icon.xl .arrow {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin-left: 0.95rem;
+}
+
+.button .arrow {
+  display: none;
+}
+
+.button.icon {
+  justify-content: space-between;
+}
+
+.button.icon .arrow {
+  display: block;
+  overflow: visible;
+  box-sizing: content-box;
+  overflow-clip-margin: content-box;
+}
+
+.button.standard {
+  border: none;
+}
+
+.button.standard:hover,
+.button.standard:focus,
+.button.standard:active {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+}
+
+.button.standard.zinc {
+  background: var(--zinc-200);
+  color: var(--zinc-900);
+}
+
+.button.standard.blue {
+  background: var(--blue-300);
+  color: var(--zinc-900);
+}
+
+.button.standard.yellow {
+  background: var(--yellow-400);
+  color: var(--zinc-900);
+}
+
+.button.standard.darkBlue {
+  background: var(--blue-900);
+  color: var(--zinc-100);
+}
+
+.button.standard.green {
+  background: var(--green-400);
+  color: var(--zinc-900);
+}
+
+.button.standard.red {
+  background: var(--red-400);
+  color: var(--zinc-900);
+}
+
+.button.standard.transparent {
+  background: none;
+  color: var(--zinc-900);
+}
+
+.button.standard.transparent.dark {
+  color: var(--zinc-100);
+}
+
+.button.bordered {
+  border: 2px solid var(--zinc-900);
+}
+
+.button.bordered:hover,
+.button.bordered:focus,
+.button.bordered:active {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  -moz-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+}
+
+.button.bordered.zinc {
+  background: var(--zinc-200);
+  color: var(--zinc-900);
+}
+
+.button.bordered.blue {
+  background: var(--blue-300);
+  color: var(--zinc-900);
+}
+
+.button.standard.yellow {
+  background: var(--yellow-400);
+  color: var(--zinc-900);
+}
+
+.button.bordered.darkBlue {
+  background: var(--blue-900);
+  color: var(--zinc-100);
+  border-color: var(--zinc-100);
+}
+
+.button.bordered.green {
+  background: var(--green-400);
+  color: var(--zinc-900);
+}
+
+.button.bordered.red {
+  background: var(--red-400);
+  color: var(--zinc-900);
+}
+
+.button.bordered.transparent {
+  background: none;
+  color: var(--zinc-900);
+}
+
+.button.bordered.transparent.dark {
+  color: var(--zinc-100);
+  border-color: var(--zinc-100);
+}
+
+.button.outline {
+  background: none;
+  color: var(--zinc-900);
+  border: 2px solid var(--zinc-900);
+}
+
+.button.outline.dark {
+  color: var(--zinc-100);
+  border-color: var(--zinc-100);
+}
+
+.button.outline.zinc:hover,
+.button.outline.zinc:focus,
+.button.outline.zinc:active,
+.button.outline.transparent:hover,
+.button.outline.transparent:focus,
+.button.outline.transparent:active {
+  color: var(--zinc-500);
+  border-color: var(--zinc-500);
+}
+
+.button.outline.blue:hover,
+.button.outline.blue:focus,
+.button.outline.blue:active {
+  color: var(--blue-300);
+  border-color: var(--blue-300);
+}
+
+.button.outline.yellow:hover,
+.button.outline.yellow:focus,
+.button.outline.yellow:active {
+  color: var(--yellow-400);
+  border-color: var(--yellow-400);
+}
+
+.button.outline.darkBlue:hover,
+.button.outline.darkBlue:focus,
+.button.outline.darkBlue:active {
+  color: var(--blue-900);
+  border-color: var(--blue-900);
+}
+
+.button.outline.green:hover,
+.button.outline.green:focus,
+.button.outline.green:active {
+  color: var(--green-400);
+  border-color: var(--green-400);
+}
+
+.button.outline.red:hover,
+.button.outline.red:focus,
+.button.outline.red:active {
+  color: var(--red-400);
+  border-color: var(--red-400);
+}
+
+.button.fill {
+  background: none;
+  color: var(--zinc-900);
+  border: 2px solid var(--zinc-900);
+}
+
+.button.fill.dark {
+  color: var(--zinc-100);
+  border-color: var(--zinc-100);
+}
+
+.button.fill.zinc:hover,
+.button.fill.zinc:focus,
+.button.fill.zinc:active,
+.button.fill.transparent:hover,
+.button.fill.transparent:focus,
+.button.fill.transparent:active {
+  background: var(--zinc-300);
+  color: var(--zinc-900);
+  border-color: var(--zinc-300);
+}
+
+.button.fill.blue:hover,
+.button.fill.blue:focus,
+.button.fill.blue:active {
+  background: var(--blue-300);
+  color: var(--zinc-900);
+  border-color: var(--blue-300);
+}
+
+.button.fill.yellow:hover,
+.button.fill.yellow:focus,
+.button.fill.yellow:active {
+  background: var(--yellow-400);
+  color: var(--zinc-900);
+  border-color: var(--yellow-400);
+}
+
+.button.fill.darkBlue:hover,
+.button.fill.darkBlue:focus,
+.button.fill.darkBlue:active {
+  background: var(--blue-900);
+  color: var(--zinc-100);
+  border-color: var(--blue-900);
+}
+
+.button.fill.green:hover,
+.button.fill.green:focus,
+.button.fill.green:active {
+  background: var(--green-400);
+  color: var(--zinc-900);
+  border-color: var(--green-400);
+}
+
+.button.fill.red:hover,
+.button.fill.red:focus,
+.button.fill.red:active {
+  background: var(--red-400);
+  color: var(--zinc-900);
+  border-color: var(--red-400);
+}

@@ -1,0 +1,99 @@
+
+.panel {
+  width: 100%;
+  background: var(--blue-900);
+  margin: 2.5rem auto 2.5rem auto;
+  padding: 1.5rem 0 1rem 0;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  max-width: 80rem;
+  margin: auto;
+}
+
+.panel h2,
+.panel p {
+  color: var(--zinc-100);
+}
+
+.panel h2 {
+  margin-left: 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 1rem auto;
+}
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  margin: 0 auto 0.5rem auto;
+  padding: 0.5rem;
+  border: 1px solid var(--sky-blue);
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  border: 3px solid var(--deep-ocean-blue);
+  outline: none;
+}
+
+.form textarea {
+  margin-bottom: 0;
+}
+
+.form input:active,
+.form input:focus,
+.form textarea:focus,
+.form textarea:active {
+  border: 3px solid var(--sunshine-yellow);
+}
+
+@media (min-width: 48rem) {
+  
+  .formContent {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .formContent textarea {
+    width: 58%;
+    margin-bottom: 0;
+  }
+
+  .inputs {
+    width: 40%;
+    justify-content: space-between;
+  }
+
+  .inputs input {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+}

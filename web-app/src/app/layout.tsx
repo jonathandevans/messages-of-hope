@@ -1,9 +1,14 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar/Navbar";
-import Footer from "@/components/Footer/Footer";
+import { Navbar } from "@/components/navbar/navbar";
+import { Footer } from "@/components/footer/footer";
 import { Coiny, Quicksand, Open_Sans } from "next/font/google";
 import "./globals.css";
+
+// Font Awesome Config
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+config.autoAddCss = false
 
 const coiny = Coiny({
   subsets: ["latin"],

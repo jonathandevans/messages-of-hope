@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import styles from "./Navbar.module.css";
+import styles from "./navbar.module.css";
 import Link from "next/link";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -27,7 +27,7 @@ const MobileNavigation = ({ closeNav } : { closeNav : () => void }) => {
   );
 };
 
-const Navbar = () => {
+export const Navbar = () => {
   const [dropdown, setDropdown] = useState<Dropdown>(Dropdown.None);
   const [showMobileNav, setShowMobileNav] = useState<boolean>(false);
   const headerRef = useRef<HTMLDivElement | null>(null);
@@ -217,4 +217,3 @@ const Navbar = () => {
     </header>
   );
 };
-export default Navbar;
