@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   min-width: fit-content;
+  width: fit-content;
   font-family: var(--font-heading);
   font-weight: 600;
   text-decoration: none;

@@ -24,7 +24,7 @@
 
 @media (min-width: 48rem) {
   .panel {
-    grid-template-columns: 6fr 3fr;
+    grid-template-columns: 6fr 4fr;
     gap: 2.5rem;
     grid-template-rows: 1fr;
   }

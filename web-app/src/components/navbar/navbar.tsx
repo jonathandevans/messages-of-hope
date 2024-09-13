@@ -6,6 +6,7 @@ import Link from "next/link";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { Button } from "../button/button";
 
 enum Dropdown {
   None,
@@ -21,8 +22,6 @@ const MobileNavigation = ({ closeNav } : { closeNav : () => void }) => {
       <Link href="/projects" onClick={closeNav}>Projects <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></Link>
       <Link href="/write-a-message" onClick={closeNav}>Write a Message <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></Link>
       <Link href="/support-us" onClick={closeNav}>Support Us <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></Link>
-
-      <a className={styles.social} href="https://www.instagram.com/messagesof.hope/" target="_blank"><FontAwesomeIcon icon={faInstagram} className={styles.socialIcon}/> Check out our Instagram</a>
     </nav>
   );
 };
@@ -195,7 +194,10 @@ export const Navbar = () => {
         </div>
 
         <div className={styles.right}>
-          <a className={styles.social} href="https://www.instagram.com/messagesof.hope/" target="_blank"><FontAwesomeIcon aria-hidden="true" icon={faInstagram} className={styles.socialIcon}/> Instagram</a>
+          <Link href="https://www.instagram.com/messagesof.hope/" className={styles.social} target="_blank">
+            <FontAwesomeIcon icon={faInstagram} className={styles.socialIcon} />
+            Instagram
+          </Link>
 
           <button aria-label="Navigation menu" className={`${styles.hamburger} ${showMobileNav ? styles.open : ""}`} onClick={() => setShowMobileNav(!showMobileNav)}>
             <span aria-hidden="true"></span>

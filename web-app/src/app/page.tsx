@@ -3,9 +3,13 @@ import { TextPanel } from "@/components/panel/text-panel/text-panel";
 import { CardPanel } from "@/components/panel/card-panel/card-panel";
 import { ContactForm } from "@/components/panel/contact-form/contact-form";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "@/components/button/button";
 import styles from "./page.module.css";
+import { MessageSlideshow } from "@/components/panel/message-slideshow/message-slideshow";
+import Link from "next/link";
+import { LinkGrid } from "@/components/panel/link-grid/link-grid";
+
 
 const Page = () => {
   return (
@@ -72,7 +76,42 @@ const Page = () => {
           },
         ]} />
 
-        <ContactForm title="Contact Us" text="Messages of Hope welcomes collaborations with other businesses, organisations, charities, projects, schools and communities. If you're interested in hosting a Messages of Hope project or would like to collaborate with us in any capacity we would love to hear from you." />
+      <ContactForm title="Contact Us" text="Messages of Hope welcomes collaborations with other businesses, organisations, charities, projects, schools and communities. If you're interested in hosting a Messages of Hope project or would like to collaborate with us in any capacity we would love to hear from you." />
+
+      <LinkGrid 
+        title="Projects" 
+        name="Connections 2024" 
+        text={["Connections 2024 is a poignant short film created by Messages of Hope and Speakers Collective for Great Mental Health Day 2024. Connections delves into the transformative power of connection amidst mental health struggles. Through capturing the heartfelt messages penned by Londoners, the film illuminates the profound sense of empathy and solidarity within our communities. Each message serves as a beacon of hope, affirming that even in the darkest moments, there are individuals who genuinely care.", "Our aspiration with Connections 2024 is to ignite a ripple effect of compassion and support, encouraging viewers to extend a hand of empathy to those in need and remind them that they are never alone in their journey towards healing."]} 
+        image="Speech at Connections 2024.jpg" 
+        href="/projects/connections-2024"
+        additionalLinksTitle="Other Projects"
+        additionalLinks={[
+          {
+            title: "Bags of Hope",
+            href: "/projects/bags-of-hope",
+            image: "Speech at Connections 2024.jpg"
+          },
+          {
+            title: "Messages of Hope 2023",
+            href: "/projects/messages-of-hope-2023",
+            image: "Speech at Connections 2024.jpg"
+          },
+          {
+            title: "Colouring Pages",
+            href: "/projects/colouring-pages",
+            image: "Speech at Connections 2024.jpg"
+          },
+          {
+            title: "Messages of Hope 2020",
+            href: "/projects/messages-of-hope-2020",
+            image: "Speech at Connections 2024.jpg"
+          },
+        ]}
+        forwardLinkLabel="All Projects"
+        forwardLinkHref="/projects"
+      />
+
+      <MessageSlideshow />
     </>
   );
 };

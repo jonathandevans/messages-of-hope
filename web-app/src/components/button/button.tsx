@@ -6,6 +6,7 @@ interface ButtonProps extends HTMLAttributes<HTMLDivElement> {
   href? : string;
   type? : "button" | "submit" | "reset";
   onClick? : () => void;
+  target? : "_blank" | "_self" | "_parent" | "_top";
   variant? : {
     name? : "standard" | "bordered" | "outline" | "fill";
     size? : "sm" | "md" | "lg" | "xl";
@@ -23,7 +24,7 @@ const Arrow = () => {
   );
 };
 
-export const Button = ({ style : _style, className : _className, children, onClick, variant, href, type } : ButtonProps) => {
+export const Button = ({ style : _style, className : _className, children, onClick, variant, href, type, target } : ButtonProps) => {
   const { name = "standard", size = "md", colour = "zinc", icon = true, dark = false } = variant || {};
 
   let className = `${styles.button} ${_className ? _className : ""}`;
@@ -36,7 +37,7 @@ export const Button = ({ style : _style, className : _className, children, onCli
 
   if (href) {
     return (
-      <Link style={_style} className={className} href={href}>
+      <Link style={_style} className={className} href={href} target={target || "_self"}>
         {children}
         <Arrow />
       </Link>
