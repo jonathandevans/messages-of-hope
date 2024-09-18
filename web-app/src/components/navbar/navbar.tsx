@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./navbar.module.css";
 import Link from "next/link";
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { Button } from "../button/button";
@@ -22,6 +22,11 @@ const MobileNavigation = ({ closeNav } : { closeNav : () => void }) => {
       <Link href="/projects" onClick={closeNav}>Projects <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></Link>
       <Link href="/write-a-message" onClick={closeNav}>Write a Message <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></Link>
       <Link href="/support-us" onClick={closeNav}>Support Us <FontAwesomeIcon aria-hidden="true" icon={faChevronRight} className={styles.icon}/></Link>
+      
+      <Link href="https://www.instagram.com/messagesof.hope/" className={styles.social} target="_blank">
+        <FontAwesomeIcon icon={faInstagram} className={styles.socialIcon} />
+        Instagram
+      </Link>
     </nav>
   );
 };
@@ -142,7 +147,7 @@ export const Navbar = () => {
       <div className={styles.innerHeader}>
 
         <div className={styles.left}>
-          <img src="/Messages of Hope.png" alt="Messages of Hope logo" className={styles.logo} />
+          <img fetchPriority="high" src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726428188/Messages%20of%20Hope%20Logo.png" alt="Messages of Hope logo" className={styles.logo} />
 
           <nav className={styles.nav}>
             <Link href="/">Home</Link>

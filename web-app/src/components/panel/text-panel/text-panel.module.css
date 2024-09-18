@@ -6,8 +6,9 @@
   align-items: center;
 }
 
-.panel h2 {
+.title {
   width: 100%;
+  margin: 0 auto 0.5rem auto;
 }
 
 .contentContainer {
@@ -22,94 +23,162 @@
   position: relative;
 }
 
-@media (min-width: 48rem) {
-  .panel {
+.image {
+  width: 100%;
+  object-fit: cover;
+  height: 28rem;
+}
+
+.panel.blue .image {
+  border: solid var(--blue-300) 10px;
+}
+.panel.yellow .image {
+  border: solid var(--yellow-400) 10px;
+}
+
+.panel.topLeft .image {
+  border-radius: 0px 25px 25px 25px;
+}
+.panel.topRight .image {
+  border-radius: 25px 0px 25px 25px;
+}
+.panel.bottomRight .image {
+  border-radius: 25px 25px 0px 25px;
+}
+.panel.bottomLeft .image {
+  border-radius: 25px 25px 25px 0px;
+}
+
+@media (min-width: 54rem) {
+  .panel.left {
     grid-template-columns: 6fr 4fr;
-    gap: 2.5rem;
-    grid-template-rows: 1fr;
+    gap: 5%;
+  }
+
+  .panel.right {
+    grid-template-columns: 4fr 6fr;
+    gap: 5%;
+  }
+
+  .panel.left .contentContainer {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .panel.left .imageContainer {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .panel.right .imageContainer {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .panel.right .contentContainer {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .imageContainer {
     display: block;
   }
-
-  .imageContainer img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 25px 25px 0 25px;
-    height: 28rem;
-    border: solid var(--yellow-400) 10px;
-  }
 }
 
-@media (min-width: 64rem) {
-  .panel {
-    grid-template-columns: 6fr 4fr;
-    gap: 2.5rem;
-    grid-template-rows: 1fr;
-  }
-
-  .imageContainer {
-    display: block;
-  }
-
-  .imageContainer img {
-    width: 100%;
-    object-fit: cover;
-    border-radius: 25px 25px 0 25px;
-    height: 28rem;
-    border: solid var(--yellow-400) 10px;
-  }
-}
-
-
-.deco1, .deco2, .deco3 {
+.svg {
+  width: 30%;
+  min-width: 7rem;
   transition: all 0.5s;
+  transform-origin: center;
+}
+
+.col1 {
+  fill: var(--blue-900);
+}
+
+.col2 {
+  fill: var(--yellow-400);
+}
+
+.col3 {
+  fill: var(--blue-300);
+}
+
+.svg g > * {
   stroke-width: 0px;
-}
-.deco1 {
-  fill: #3c5d82;
-}
-.deco2 {
-  fill: #f5b327;
-}
-.deco3 {
-  fill: #98d3e7;
+  transition: all 0.5s;
 }
 
-.svg .deco1,
-.svg .deco2,
-.svg .deco3 {
-  transform: scale(0.9);
+.svg:hover {
+  scale: 0.925;
 }
 
-.svg:hover .deco1,
-.svg:hover .deco2,
-.svg:hover .deco3{
-  transform: scale(0.85);
-}
-.svg:hover .ani {
-  transform: scale(0.85) translate(0, -3px);
-}
-
-.topRight {
+.svg.topLeft {
   position: absolute;
-  transform: translate(30%, -20%) rotate(-90deg);
-  -webkit-transform: translate(30%, -20%) rotate(-90deg);
-  -moz-transform: translate(30%, -20%) rotate(-90deg);
-  -ms-transform: translate(30%, -20%) rotate(-90deg);
-  width: 35%;
-  right: 0;
-  top: 0;
+  rotate: 15deg;
+  left: -12%;
+  top: -6%;
+}
+.svg.topLeft:hover .animate1 {
+  transform: translate(-3px, -3px);
+}
+.svg.topLeft:hover .animate2 {
+  scale: 0.95;
+  transform: translate(-4px, 8px);
+}
+.svg.topLeft:hover .animate3 {
+  scale: 0.9;
+  transform: translate(5px, 5px);
 }
 
-.bottomLeft {
+.svg.topRight {
   position: absolute;
-  transform: translate(-40%, 20%);
-  -webkit-transform: translate(-40%, 20%);
-  -moz-transform: translate(-40%, 20%);
-  -ms-transform: translate(-40%, 20%);
-  width: 35%;
-  bottom: 0;
-  left: 0;
+  rotate: -35deg;
+  right: -10%;
+  top: -5%;
+}
+.svg.topRight:hover .animate1 {
+  transform: translate(-3px, -3px);
+}
+.svg.topRight:hover .animate2 {
+  scale: 0.9;
+  transform: translate(4px, 3px);
+}
+.svg.topRight:hover .animate3 {
+  scale: 0.95;
+  transform: translate(5px, 5px);
+}
+
+.svg.bottomLeft {
+  position: absolute;
+  rotate: 195deg;
+  left: -10%;
+  bottom: -5%;
+}
+.svg.bottomLeft:hover .animate1 {
+  transform: translate(-3px, -3px);
+}
+.svg.bottomLeft:hover .animate2 {
+  scale: 0.95;
+  transform: translate(-4px, 8px);
+}
+.svg.bottomLeft:hover .animate3 {
+  scale: 0.9;
+  transform: translate(5px, 5px);
+}
+
+.svg.bottomRight {
+  position: absolute;
+  rotate: 90deg;
+  right: -10%;
+  bottom: -3%;
+}
+.svg.bottomRight:hover .animate1 {
+  transform: translate(-3px, -3px);
+}
+.svg.bottomRight:hover .animate2 {
+  scale: 0.9;
+  transform: translate(4px, 3px);
+}
+.svg.bottomRight:hover .animate3 {
+  scale: 0.95;
+  transform: translate(5px, 5px);
 }

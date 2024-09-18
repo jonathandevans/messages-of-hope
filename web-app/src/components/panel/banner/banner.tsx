@@ -8,7 +8,7 @@ interface BannerProps extends HTMLAttributes<HTMLDivElement> {
 };
 
 export const Banner = ({ title, image, short, children, className:_className } : BannerProps) => {
-  const backgroundImage = `linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.45) 100%), url('${process.env.NEXT_PUBLIC_SERVER_URL}/${image}')`;
+  const backgroundImage = `linear-gradient(90deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.45) 100%), url('${image}')`;
   const className = `${styles.banner} ${short ? styles.short : ""} ${_className}`;
 
   return (

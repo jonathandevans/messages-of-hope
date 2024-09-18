@@ -1,0 +1,15 @@
+.aboutPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.aboutPanel p {
+  margin: 0 auto;
+}
+
+.aboutPanel .button {
+  align-self: flex-end;
+}

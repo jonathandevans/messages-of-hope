@@ -37,15 +37,15 @@ export const Footer = () => {
         </div>
 
         <div className={styles.buttons}>
-          <Button href="/write-a-message" variant={{ size: "lg", colour: "blue" }}>Write a Message</Button>
-          <Button href="/projects/connections-2024" variant={{ size: "lg", colour: "yellow"}}>Our Latest Project</Button>
+          <Button href="/write-a-message" variant={{ size: "md", colour: "blue" }}>Write a Message</Button>
+          <Button href="/projects/connections-2024" variant={{ size: "md", colour: "yellow"}}>Our Latest Project</Button>
         </div>
       </div>
 
       <div className={styles.panel2}>
         <div className={styles.inner}>
           <div className={styles.links}>
-            <img src="Messages of Hope.png" />
+            <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726428188/Messages%20of%20Hope%20Logo.png" alt="Messages of Hope Logo" />
             <div>
               <p>All rights reserved © 2024 Messages of Hope. We are a registered community interest company.</p>
               <Link href="/privacy-policy">privacy policy</Link>

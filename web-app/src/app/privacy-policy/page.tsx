@@ -1,5 +1,5 @@
 import { Banner } from "@/components/panel/banner/banner";
-import { WidthWrapper } from "@/components/panel/width-wrapper/width-wrapper";
+import { MaxWidthWrapper } from "@/components/panel/max-width-wrapper/max-width-wrapper";
 
 import styles from "./page.module.css";
 
@@ -8,7 +8,7 @@ const Page = () => {
     <>
       <Banner title="Privacy Policy" image="" short={true} />
 
-      <WidthWrapper>
+      <MaxWidthWrapper>
         <p className={styles.date}><b>Last updated December 21, 2023</b></p>
 
         <section className={styles.section}>
@@ -180,7 +180,7 @@ const Page = () => {
           <p>Based on the applicable laws of your country, you may have the right to request access to the personal information we collect from you, change that information, or delete it. To request to review, update, or delete your personal information, please fill out and submit a <a href="https://app.termly.io/notify/87d9d273-60b7-4557-a014-2604f397621c">data subject access request</a>.</p>
           <p>This privacy policy was created using Termly&apos;s <a href="https://termly.io/products/privacy-policy-generator/">Privacy Policy Generator</a>.</p>
         </section>
-      </WidthWrapper>
+      </MaxWidthWrapper>
     </>
   );
 };

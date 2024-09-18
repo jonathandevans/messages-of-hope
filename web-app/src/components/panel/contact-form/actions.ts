@@ -1,27 +1,26 @@
 "use server";
 
-import { db } from "@/db";
+import { checkContactForm } from "@/lib/validator";
+import { Resend } from "resend";
 
-const nameRegex = /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/;
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-export const sendMessage = async (name : string, email : string, organisation : string, subject : string, message : string) => {
-  if (!name.match(nameRegex) && !email.match(emailRegex) && subject.length <= 1 && message.length <= 5)
-    return { error: "Invalid data" };
+export const sendEmail = async (formContent : {name : string, email : string, organisation : string, subject : string, message : string}) => {
+  const valid = checkContactForm(formContent);
+  if (valid.error) return { error: valid.error };
 
   try {
-    await db.contactForm.create({
-      data: {
-        name,
-        email,
-        organisation: organisation == "" ? null : organisation,
-        subject,
-        message
-      },
+    await resend.emails.send({
+      from: "<NO-REPLY> no-reply@messagesofhope.co.uk",
+      to: "contact@messagesofhope.co.uk",
+      replyTo: formContent.email,
+      subject: formContent.organisation ? `${formContent.organisation}: ${formContent.subject}` : formContent.subject,
+      text: `${formContent.message}\n\n${formContent.name}`
     });
-  } catch {
-    return { error: "We couldn't send the message right now" };
+  } catch (err) {
+    console.log(err);
+    return { error: "Oops...We couldn't send the message right now. Please try again later." };
   }
 
-  return { success: "Message sent successfully" };
+  return { success: "Message sent successfully." };
 };

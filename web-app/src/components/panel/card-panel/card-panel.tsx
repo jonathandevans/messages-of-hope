@@ -1,6 +1,7 @@
 import { HTMLAttributes } from "react";
 import { Button } from "@/components/button/button";
 import styles from "./card-panel.module.css";
+import { MaxWidthWrapper } from "../max-width-wrapper/max-width-wrapper";
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
   title : string;
@@ -30,11 +31,11 @@ const Card = ({ title, imageSrc, imageAlt, text, href } : CardProps) => {
 
 export const CardPanel = ({ title, cards } : CardPanelProps) => {
   return (
-    <section className={styles.panel}>
+    <MaxWidthWrapper className={styles.panel}>
       <h2>{title}</h2>
       <div className={styles.content}>
         { cards.map((card, i) => (<Card key={i} {...card}/>)) }
       </div>
-    </section>
+    </MaxWidthWrapper>
   );
 };

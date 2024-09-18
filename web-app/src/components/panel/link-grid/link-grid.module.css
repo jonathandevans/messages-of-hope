@@ -31,6 +31,7 @@
 
 .hero h3 {
   width: 100%;
+  margin-bottom: 0;
 }
 
 .hero div {
@@ -42,6 +43,7 @@
 }
 
 .hero .learnMore {
+  margin-top: 0.4rem;
   align-self: flex-end;
 }
 
@@ -88,6 +90,13 @@
   position: relative;
   width: 100%;
   max-width: 22rem;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active,
+.link:focus {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .text {
@@ -119,10 +128,12 @@
     grid-template-columns: auto auto;
     width: 100%;
     justify-content: stretch;
+    align-content: center;
   }
 
   .links > *:nth-child(n) {
     display: block;
+    margin: auto;
   }
 }
 

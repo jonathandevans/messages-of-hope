@@ -3,12 +3,14 @@ import styles from "./link-grid.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "@/components/button/button";
+import { MaxWidthWrapper } from "../max-width-wrapper/max-width-wrapper";
 
 interface LinkGridProps {
-  title : string;
+  title? : string;
   name : string;
   text : string[];
   image : string;
+  imageAlt : string;
   href : string;
   additionalLinksTitle : string;
   additionalLinks : { title : string, href : string, image : string }[];
@@ -16,12 +18,12 @@ interface LinkGridProps {
   forwardLinkHref? : string;
 };
 
-export const LinkGrid = ({ title, name, text, image, href, additionalLinksTitle, additionalLinks, forwardLinkLabel, forwardLinkHref } : LinkGridProps) => {
+export const LinkGrid = ({ title, name, text, image, imageAlt, href, additionalLinksTitle, additionalLinks, forwardLinkLabel, forwardLinkHref } : LinkGridProps) => {
   return (
-    <section className={styles.panel}>
-      <h2>{title}</h2>
+    <MaxWidthWrapper className={styles.panel}>
+      {title && <h2>{title}</h2>}
       <div className={styles.hero}>
-        <img src={image} />
+        <img src={image} alt={imageAlt} />
         <div>
           <h3>{name}</h3>
           {text.map((_text, index) => (
@@ -41,7 +43,7 @@ export const LinkGrid = ({ title, name, text, image, href, additionalLinksTitle,
           {additionalLinks.map((_link, index) => (
             <Link className={styles.link} key={index} href={_link.href} style={{ 
               background: `linear-gradient(0deg, rgba(152,211,231,0.3) 0%, rgba(152,211,231,0.15) 55%, rgba(152,211,231,0) 100%),
-                          url('${process.env.NEXT_PUBLIC_SERVER_URL}/${_link.image}') center/cover no-repeat, 
+                          url('${_link.image}') center/cover no-repeat, 
                           var(--zinc-100)`
             }}>
               <span className={styles.text}>
@@ -52,6 +54,6 @@ export const LinkGrid = ({ title, name, text, image, href, additionalLinksTitle,
           ))}
         </div>
       </div>
-    </section>
+    </MaxWidthWrapper>
   );
 };

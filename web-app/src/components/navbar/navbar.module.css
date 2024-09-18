@@ -157,7 +157,7 @@
 }
 
 .dropdown p {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   margin: 0;
   cursor: pointer;
   color: var(--zinc-500);
@@ -297,10 +297,10 @@
   flex-direction: column;
   height: 100lvh;
   width: 100%;
-  background: var(--zinc-100);
+  background: var(--yellow-100);
   justify-content: baseline;
   align-items: center;
-  padding: calc(3.9rem + 10%) 5% 0 5%;
+  padding: 5.5rem 5% 0 5%;
   gap: 1rem;
   overflow-y: scroll;
 }
@@ -308,26 +308,33 @@
 .mobileNav a {
   font-family: var(--font-heading);
   text-decoration: none;
-  font-size: calc(0.9rem + 1.05svw);
+  font-size: 1rem;
   color: var(--zinc-900);
   font-weight: 500;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
-  padding-bottom: 0.5rem;
-  border-bottom: var(--blue-300) 2px solid;
 }
 
 .mobileNav .icon {
   width: calc(1rem);
-  transform: scale(0.75);
+  transform: scale(0.65) translateY(1px);
+  padding-left: 0.2rem;
 }
 
 .mobileNav .social {
   width: fit-content;
-  padding: 0.25rem 0.75rem;
+  padding: 0.25rem 1rem 0.25rem 0.75rem;
   margin-bottom: 3rem;
+  /* border: 1px solid var(--zinc-900); */
+  background: var(--blue-300);
+  font-size: 0.9rem;
+}
+
+.mobileNav .social .socialIcon {
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .grad {
@@ -337,7 +344,7 @@
   width: 100%;
   height: 3.9rem;
   z-index: 10;
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, var(--zinc-100) 40%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, var(--yellow-100) 40%);
 }
 
 .social {
