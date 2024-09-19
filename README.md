@@ -14,9 +14,13 @@ The frontend of the application is built using the Next.js framework. The fronte
 
 ### Panel Components:
 
+- [Banner](/docs/components/banner.md)
+- [CardPanel](/docs/components/card-panel.md)
+
 ### Content Components:
 
-- [Navigation Bar](/docs/components/navbar.md)
+- [Button](/docs/components/button.md)
+- [Navbar](/docs/components/navbar.md)
 - [Footer](/docs/components/footer.md)
 
 ## Third Party Resources
