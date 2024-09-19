@@ -1,5 +1,7 @@
 # Messages of Hope
 
+!["Messages of Hope Website"](/docs/images/home_page.png)
+
 Messages of Hope is a Community Interest Company dedicated to supporting individuals struggling with their mental health by encouraging people to write uplifting messages. These messages are transformed into stickers and Instagram posts, spreading positivity across the UK.
 
 We actively engage with the community, inviting strangers to write messages of hope. Whether through collaborative art projects, video initiatives, or our Bags of Hope, our mission is to inspire and uplift those facing mental health challenges. By collecting and sharing these messages, we aim to create a supportive network, showing that even small acts of kindness can make a significant impact.
