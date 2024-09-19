@@ -10,7 +10,13 @@ This is the official web application for Messages of Hope, a Community Interest 
 
 ## Frontend Development
 
-The frontend of the application is built using the Next.js framework. The frontend uses the app router to navigate between pages and components. The frontend is styled using CSS modules. The application is built using a number of components. These components are located in the _components/_ directory. The components come with their own variations and styles that can be utilised through the `variants` prop.
+The frontend of the application is built using the Next.js framework. The frontend uses the app router to navigate between pages and components. The frontend is styled using CSS modules. The application is built using a number of components. These components are located in the _components/_ directory. The components come with their own variations and styles that can be utilised through the `variants` prop. There are two main types of components: layout components which we call panels and content components.
+
+### Panel Components:
+
+### Content Components:
+
+- [Navigation Bar](/docs/components/navbar.md)
 
 ## Third Party Resources
 
