@@ -6,17 +6,17 @@ export const getMessages = async () => {
   try {
     const mess = await db.message.findMany({
       select: {
-        message: true
+        message: true,
       },
       where: {
-        public: true
+        public: true,
       },
-      take: 10
+      take: 10,
     });
-    const _mess:string[] = [];
-    mess.forEach(item => _mess.push(item.message));
+    const _mess: string[] = [];
+    mess.forEach((item) => _mess.push(item.message));
     return { _mess };
   } catch (err) {
-    return { error: "Failed to fetch messages" }
+    return { error: "Failed to fetch messages" };
   }
 };

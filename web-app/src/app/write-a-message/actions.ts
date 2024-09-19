@@ -3,7 +3,10 @@
 import { db } from "@/db";
 import { checkMessageSubmission } from "@/lib/validator";
 
-export const submitMessage = async (messageContents : { message: string, handle: string }) => {
+export const submitMessage = async (messageContents: {
+  message: string;
+  handle: string;
+}) => {
   const valid = checkMessageSubmission(messageContents);
   if (valid.error) return { error: valid.error };
 
@@ -18,11 +21,11 @@ export const submitMessage = async (messageContents : { message: string, handle:
       data: {
         message: messageContents.message,
         instagramHandle: _handle,
-      }
+      },
     });
   } catch (err) {
     console.log(err);
-    return { error: "Oops...Something went wrong. Please try again later." }
+    return { error: "Oops...Something went wrong. Please try again later." };
   }
 
   return { success: "Message submitted." };

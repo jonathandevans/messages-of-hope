@@ -22,13 +22,18 @@ const LINKS = [
   "/colouring/Colouring Page 7.png",
   "/colouring/Colouring Page 1.png",
   "/colouring/Colouring Page 3.png",
-]
+];
 
 export const ImageGrid = () => {
   return (
     <MaxWidthWrapper className={styles.panel}>
       {LINKS.map((link, index) => (
-        <a href={link} className={styles.container} download key={`link__${index}`}>
+        <a
+          href={link}
+          className={styles.container}
+          download
+          key={`link__${index}`}
+        >
           <img src={link} />
         </a>
       ))}

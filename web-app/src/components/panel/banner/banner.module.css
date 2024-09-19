@@ -1,4 +1,3 @@
-
 .banner {
   position: relative;
   height: 70svh;
@@ -55,7 +54,6 @@
 }
 
 @media (min-width: 64rem) {
-
   .banner {
     min-height: 25rem;
     height: 50svh;
@@ -75,7 +73,8 @@
   @media (orientation: landscape) {
     .banner {
       height: 60svh;
-      background: var(--blue-800) right 100% bottom 70% / cover no-repeat border-box;
+      background: var(--blue-800) right 100% bottom 70% / cover no-repeat
+        border-box;
     }
 
     .banner.short {
