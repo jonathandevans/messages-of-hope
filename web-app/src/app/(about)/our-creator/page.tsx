@@ -3,11 +3,15 @@ import styles from "./page.module.css";
 import { MaxWidthWrapper } from "@/components/panel/max-width-wrapper/max-width-wrapper";
 import { MessageSlideshow } from "@/components/panel/message-slideshow/message-slideshow";
 import { Button } from "@/components/button/button";
+import { Metadata } from "next";
+import { generateMetadata } from "@/lib/utils";
+
+export const metadata : Metadata = generateMetadata({ title: "Our Creator", description: "Messages of Hope, founded by Bethan Evans, supports mental health through community engagement and creativity. After overcoming her own struggles with Borderline Personality Disorder, Bethan launched initiatives like Bags of Hope to provide essentials for psychiatric patients."});
 
 const Page = () => {
   return (
     <>
-      <Banner title="Our Creator" image="https://res.cloudinary.com/dmto5tfe5/image/upload/c_crop,w_6000,h_2400/v1726430037/Bethan%20Evans%20-%20Connections%202024.jpg" short={true} />
+      <Banner title="Our Creator" image="https://res.cloudinary.com/dmto5tfe5/image/upload/c_crop,w_6000,h_2400/v1726698820/Bethan_Evans_-_Connections_2024_1_ocefdr.jpg" short={true} />
 
       <MaxWidthWrapper className={styles.panel}>
         <p>Bethan Evans is the Creator and Director of Messages of Hope.</p>

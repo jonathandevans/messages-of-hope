@@ -3,11 +3,15 @@ import styles from "./page.module.css";
 import { ContactForm } from "@/components/panel/contact-form/contact-form";
 import { MaxWidthWrapper } from "@/components/panel/max-width-wrapper/max-width-wrapper";
 import { Button } from "@/components/button/button";
+import { Metadata } from "next";
+import { generateMetadata } from "@/lib/utils";
+
+export const metadata : Metadata = generateMetadata({ title: "Support Us", description: "Messages of Hope is a Community Interest Company that relies on donations to continue our work. Find out how you can support us and help us spread hope." }); 
 
 const Page = () => {
   return (
     <>
-      <Banner title="Support Us" image="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726418543/Speech%20at%20Connections%202024.jpg" short={true} />
+      <Banner title="Support Us" image="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726693988/Speech_at_Connections_2024_2_kwm5ya.jpg" short={true} />
 
       <MaxWidthWrapper className={styles.panel}>
         <div className={styles.item}>

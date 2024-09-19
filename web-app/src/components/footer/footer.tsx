@@ -45,7 +45,7 @@ export const Footer = () => {
       <div className={styles.panel2}>
         <div className={styles.inner}>
           <div className={styles.links}>
-            <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726428188/Messages%20of%20Hope%20Logo.png" alt="Messages of Hope Logo" />
+            <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726697658/Messages_of_Hope_Logo_1_pv4sth.png" alt="Messages of Hope Logo" />
             <div>
               <p>All rights reserved © 2024 Messages of Hope. We are a registered community interest company.</p>
               <Link href="/privacy-policy">privacy policy</Link>

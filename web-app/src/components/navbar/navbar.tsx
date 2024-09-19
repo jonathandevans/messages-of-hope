@@ -147,7 +147,7 @@ export const Navbar = () => {
       <div className={styles.innerHeader}>
 
         <div className={styles.left}>
-          <img fetchPriority="high" src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726428188/Messages%20of%20Hope%20Logo.png" alt="Messages of Hope logo" className={styles.logo} />
+          <img fetchPriority="high" src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726697658/Messages_of_Hope_Logo_1_pv4sth.png" alt="Messages of Hope logo" className={styles.logo} />
 
           <nav className={styles.nav}>
             <Link href="/">Home</Link>

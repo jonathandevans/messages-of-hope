@@ -8,8 +8,8 @@ export const submitMessage = async (messageContents : { message: string, handle:
   if (valid.error) return { error: valid.error };
 
   let _handle = null;
-  if (messageContents.handle != "") {
-    _handle = messageContents.handle;
+  if (messageContents.handle.trim() != "") {
+    _handle = messageContents.handle.trim();
     if (_handle.startsWith("@")) _handle = _handle.substring(1);
   }
 

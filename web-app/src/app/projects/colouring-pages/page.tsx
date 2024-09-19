@@ -3,11 +3,15 @@ import { Banner } from "@/components/panel/banner/banner";
 import { MaxWidthWrapper } from "@/components/panel/max-width-wrapper/max-width-wrapper";
 import styles from "./page.module.css";
 import { ImageGrid } from "./image-grid";
+import { generateMetadata } from "@/lib/utils";
+import { Metadata } from "next";
+
+export const metadata : Metadata = generateMetadata({ title: "Colouring Pages", description: "Messages of Hope provides free colouring pages to help spread hope and positivity. Download and print our colouring pages to share your creativity with us." }); 
 
 const Page = () => {
   return (
     <>
-      <Banner title="Colouring Pages" image="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726418543/Speech%20at%20Connections%202024.jpg" short={true} />
+      <Banner title="Colouring Pages" image="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726693988/Speech_at_Connections_2024_2_kwm5ya.jpg" short={true} />
 
       <MaxWidthWrapper className={styles.panel}>
         <p>Messages of Hope is proud to announce the release of our very own colouring book. This colouring book is a beautiful compilation of some of the message of hope submissions we have received via our website and social media pages. Since the origin of Messages of Hope we have received over 1500 messages of hope from strangers who are looking to give hope and provide support to other struggling individuals.</p>

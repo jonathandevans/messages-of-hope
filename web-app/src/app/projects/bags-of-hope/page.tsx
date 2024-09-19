@@ -6,13 +6,17 @@ import { TextPanel } from "@/components/panel/text-panel/text-panel";
 import { faBagShopping, faHospital, faSocks } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "./page.module.css";
+import { generateMetadata } from "@/lib/utils";
+import { Metadata } from "next";
+
+export const metadata : Metadata = generateMetadata({ title: "Bags of Hope", description: "Bags of Hope is a project to give items to patients arriving on psychiatric wards. Our goal is to ensure that nobody arrives to psychiatric wards with only the clothes on their back. Patients should be there for treatment and help, and hospital admissions shouldn't feel like a prison sentence." }); 
 
 const Page = () => {
   return (
     <>
-      <Banner title="Bags of Hope" image="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726426086/Smile%20-%20Connections%202024.jpg" short={true} />
+      <Banner title="Bags of Hope" image="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726694192/Smile_-_Connections_2024_1_1_puq98r.jpg" short={true} />
 
-      <TextPanel imageSrc="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726435879/AA6lgpnyoV_qbqlvo.jpg" imageAlt="Bethan delivering bags to psychiatric wards" title="What is Bags of Hope?" contentClassName={styles.textContent}>
+      <TextPanel imageSrc="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726700468/AA6lgpnyoV_qbqlvo_1_dhvmbh.jpg" imageAlt="Bethan delivering bags to psychiatric wards" title="What is Bags of Hope?" contentClassName={styles.textContent}>
         <p>Bags of Hope is a project to give items to patients arriving on psychiatric wards. Our goal is to ensure that nobody arrives to psychiatric wards with only the clothes on their back. Patients should be there for treatment and help, and hospital admissions shouldn't feel like a prison sentence.</p>
         <p>These Bags of Hope provide essential items such as body wash, wipes, socks, and underwear, offering comfort and dignity to patients during a challenging time. Donated items are sorted into different bags, each providing a range of essentials as well as activites, snacks.</p>
         <p>The bags are delivered to local psychiatric wards in and around the Vale of Glamorgan.</p>
@@ -39,7 +43,7 @@ const Page = () => {
         </MaxWidthWrapper>
       </section>
 
-      <TextPanel imageSrc="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726427738/Bags%20of%20Hope.jpg" imageAlt="Bethan standing behind bags that are ready to be delivered to wards" title="How Can I Help?" variant={{ textPosition: "right", colour: "blue" }} contentClassName={styles.textContent}>
+      <TextPanel imageSrc="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726694833/Bags_of_Hope_1_kxut4v.jpg" imageAlt="Bethan standing behind bags that are ready to be delivered to wards" title="How Can I Help?" variant={{ textPosition: "right", colour: "blue" }} contentClassName={styles.textContent}>
         <p>There are several impactful ways you can support Bags of Hope in its mission to provide essential items for patients arriving on psychiatric wards. You can donate items directly using our Amazon wishlist, ensuring that much-needed supplies reach those in need. Financial contributions are also greatly appreciated and can be made through our JustGiving page or directly to us; even a small donation of £2 can make a significant difference.</p>
         <Button href="/support-us" variant={{ colour: "blue" }}>Support Us</Button>
         <p>If you're unable to donate, simply sharing our Instagram stories helps immensely in raising awareness and garnering broader support for our cause. Every act of kindness, big or small, contributes to making a meaningful impact on the lives of those struggling with their mental health.</p>

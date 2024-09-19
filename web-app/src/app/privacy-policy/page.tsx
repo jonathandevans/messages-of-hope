@@ -2,6 +2,10 @@ import { Banner } from "@/components/panel/banner/banner";
 import { MaxWidthWrapper } from "@/components/panel/max-width-wrapper/max-width-wrapper";
 
 import styles from "./page.module.css";
+import { Metadata } from "next";
+import { generateMetadata } from "@/lib/utils";
+
+export const metadata : Metadata = generateMetadata({ title: "Privacy Policy", description: "Messages of Hope privacy policy." }); 
 
 const Page = () => {
   return (

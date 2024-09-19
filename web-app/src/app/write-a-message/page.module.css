@@ -59,3 +59,54 @@
 .button {
   align-self: flex-end;
 }
+
+.error {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 3px solid var(--red-300);
+  border-radius: 5px;
+  background: var(--red-500);
+}
+
+.error p {
+  color: var(--zinc-100);
+  font-size: 0.9rem;
+}
+
+.error .icon {
+  margin-right: 0.3rem;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100lvw;
+  height: 100lvh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+}
+
+.popup {
+  position: fixed;
+  z-index: 101;
+  top: 40%;
+  left: 50%;
+  width: 90%;
+  max-width: 40rem;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background: var(--zinc-100);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border: var(--blue-300) 8px solid;
+  border-radius: 15px;
+}
+
+.popup h3 {
+  margin: 0;
+}

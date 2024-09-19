@@ -136,6 +136,7 @@
   max-width: 35rem;
   transform: translate(-50%, -50%);
   background: var(--zinc-100);
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;

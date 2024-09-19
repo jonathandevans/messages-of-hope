@@ -1,12 +1,15 @@
 import { Banner } from "@/components/panel/banner/banner";
 import { MaxWidthWrapper } from "@/components/panel/max-width-wrapper/max-width-wrapper";
 import styles from "./page.module.css";
-import Image from "next/image";
+import { Metadata } from "next";
+import { generateMetadata } from "@/lib/utils";
+
+export const metadata : Metadata = generateMetadata({ title: "Connections 2024", description: "Connections 2024 is a poignant short film created by Messages of Hope, delving into the transformative power of connection amidst mental health struggles. Through capturing the heartfelt messages penned by Londoners, the film illuminates the profound sense of empathy and solidarity within our communities." }); 
 
 const Page = () => {
   return (
     <>
-      <Banner title="Connections 2024" image="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726435265/eT3lf4bF2M_tl9glu.jpg" short={true} />
+      <Banner title="Connections 2024" image="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726699597/eT3lf4bF2M_tl9glu_1_hmnuzy.jpg" short={true} />
 
       <MaxWidthWrapper className={styles.panel}>
         <article>
@@ -52,15 +55,15 @@ const Page = () => {
       </MaxWidthWrapper> */}
 
       <MaxWidthWrapper className={styles.images}>
-        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726434871/bl4m2UPETa_slguyb.jpg" alt="Mother and daughter holding a whiteboard with a message of hope written in Spanish" width={400} height={400} />
-        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726435029/5CnpFGoOdE_k3kxev.jpg" alt="Speaker Box Street Party holding a whiteboard with a message of hope" width={400} height={400} />
-        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726435152/uNbak2l7po_n9ziod.jpg" alt="A dog at the filming of Connections 2024" width={400} height={400} />
-        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726435314/H7cLgJSMml_cicq0s.jpg" alt="Man holding a whiteboard with the message 'Keep going, everything will be okay'" width={400} height={400} />
-        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726435405/CdTHi5Z0WZ_ergfh4.jpg" alt="Bethan holding a whiteboard with the message 'One day someone is going to need to hear your story'" width={400} height={400} />
-        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726435538/2KlsLHgJsO_c95ke2.jpg" alt="Father and daughter drawing on a whiteboard during the Connections 2024 filming" width={400} height={400} />
-        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726435614/IkyP20lYFw_dxu1sg.jpg" alt="A family holding a whiteboard with 'hope' written on it" width={400} height={400} />
-        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726435679/PtSSYegxG0_kqt4qv.jpg" alt="The filming of Connections 2024" width={400} height={400} />
-        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726435738/90m1s9J70V_jauwnv.jpg" alt="Young people writing messages of hope during the Connections 2024 filming" width={400} height={400} />
+        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726699241/bl4m2UPETa_slguyb_1_it3hay.jpg" alt="Mother and daughter holding a whiteboard with a message of hope written in Spanish" width={400} height={400} />
+        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726699376/5CnpFGoOdE_k3kxev_1_gkehfp.jpg" alt="Speaker Box Street Party holding a whiteboard with a message of hope" width={400} height={400} />
+        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726747749/uNbak2l7po_vnmrmu.jpg" alt="A dog at the filming of Connections 2024" width={400} height={400} />
+        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726699779/H7cLgJSMml_cicq0s_1_zoxj05.jpg" alt="Man holding a whiteboard with the message 'Keep going, everything will be okay'" width={400} height={400} />
+        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726699932/CdTHi5Z0WZ_ergfh4_1_tdo0vy.jpg" alt="Bethan holding a whiteboard with the message 'One day someone is going to need to hear your story'" width={400} height={400} />
+        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726700052/2KlsLHgJsO_c95ke2_1_n1fash.jpg" alt="Father and daughter drawing on a whiteboard during the Connections 2024 filming" width={400} height={400} />
+        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726700188/IkyP20lYFw_dxu1sg_1_h0fe5o.jpg" alt="A family holding a whiteboard with 'hope' written on it" width={400} height={400} />
+        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726700297/PtSSYegxG0_kqt4qv_1_kc0aqo.jpg" alt="The filming of Connections 2024" width={400} height={400} />
+        <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726700399/90m1s9J70V_jauwnv_1_owhrtt.jpg" alt="Young people writing messages of hope during the Connections 2024 filming" width={400} height={400} />
       </MaxWidthWrapper>
     </>
   );
