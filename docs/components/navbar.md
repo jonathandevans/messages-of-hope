@@ -8,10 +8,6 @@ The navbar component is used to display the title of the page and the navigation
 
 The navbar component does not take any props.
 
-## Image
+## Example
 
 ![Navigation Bar Options](/docs/images/navbar.png)
-
-
-
-

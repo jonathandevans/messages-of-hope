@@ -17,6 +17,7 @@ The frontend of the application is built using the Next.js framework. The fronte
 ### Content Components:
 
 - [Navigation Bar](/docs/components/navbar.md)
+- [Footer](/docs/components/footer.md)
 
 ## Third Party Resources
 
