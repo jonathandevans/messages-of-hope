@@ -10,9 +10,9 @@ This is the official web application for Messages of Hope, a Community Interest 
 
 ## Design
 
-The application is designed using a mobile-first approach. The application is designed to be responsive and accessible. The initial design of the application was created using Figma. 
+The application is designed using a mobile-first approach. The application is designed to be responsive and accessible. The initial design of the application was created using Figma. This design was then expanded upon to create the final application.
 
-Find the design [here](https://www.figma.com/).
+Find the design [here](https://www.figma.com/design/EPLZyXpwPixaVd2QdufwvT/Base?node-id=0-1&t=WjjGneCl9vh9mWeZ-1).
 
 ## Frontend Development
 
