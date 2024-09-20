@@ -90,7 +90,7 @@
   max-width: 12rem;
 }
 
-.links div { 
+.links div {
   display: flex;
   flex-direction: column;
   gap: 0.25rem;

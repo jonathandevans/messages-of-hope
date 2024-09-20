@@ -1,26 +1,39 @@
 import Link from "next/link";
-import styles from "./link-grid.module.css";
+import { MaxWidthWrapper } from "../max-width-wrapper/max-width-wrapper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Button } from "@/components/button/button";
-import { MaxWidthWrapper } from "../max-width-wrapper/max-width-wrapper";
+import styles from "./link-grid.module.css";
 
 interface LinkGridProps {
-  title? : string;
-  name : string;
-  text : string[];
-  image : string;
-  imageAlt : string;
-  href : string;
-  additionalLinksTitle : string;
-  additionalLinks : { title : string, href : string, image : string }[];
-  forwardLinkLabel? : string;
-  forwardLinkHref? : string;
-};
+  title?: string;
+  name: string;
+  text: string[];
+  image: string;
+  imageAlt: string;
+  href: string;
+  additionalLinksTitle: string;
+  additionalLinks: { title: string; href: string; image: string }[];
+  forwardLinkLabel?: string;
+  forwardLinkHref?: string;
+  style?: {};
+}
 
-export const LinkGrid = ({ title, name, text, image, imageAlt, href, additionalLinksTitle, additionalLinks, forwardLinkLabel, forwardLinkHref } : LinkGridProps) => {
+export const LinkGrid = ({
+  title,
+  name,
+  text,
+  image,
+  imageAlt,
+  href,
+  additionalLinksTitle,
+  additionalLinks,
+  forwardLinkLabel,
+  forwardLinkHref,
+  style = {}
+}: LinkGridProps) => {
   return (
-    <MaxWidthWrapper className={styles.panel}>
+    <MaxWidthWrapper className={styles.panel} style={style}>
       {title && <h2>{title}</h2>}
       <div className={styles.hero}>
         <img src={image} alt={imageAlt} />
@@ -29,23 +42,42 @@ export const LinkGrid = ({ title, name, text, image, imageAlt, href, additionalL
           {text.map((_text, index) => (
             <p key={index}>{_text}</p>
           ))}
-          <Button href={href} variant={{ name: "fill", size: "sm", colour: "yellow" }} className={styles.learnMore}>Learn More</Button>
+          <Button
+            href={href}
+            variant={{ name: "fill", size: "sm", colour: "yellow" }}
+            className={styles.learnMore}
+          >
+            Learn More
+          </Button>
         </div>
       </div>
 
       <div className={styles.additionalLinks}>
         <div className={styles.linksHeader}>
           <h3>{additionalLinksTitle}</h3>
-          {forwardLinkLabel && forwardLinkHref &&  <Button href={forwardLinkHref} variant={{ name: "fill", size: "sm", colour: "blue" }} className={styles.forward}>{forwardLinkLabel}</Button>}
+          {forwardLinkLabel && forwardLinkHref && (
+            <Button
+              href={forwardLinkHref}
+              variant={{ name: "fill", size: "sm", colour: "blue" }}
+              className={styles.forward}
+            >
+              {forwardLinkLabel}
+            </Button>
+          )}
         </div>
-        
+
         <div className={styles.links}>
           {additionalLinks.map((_link, index) => (
-            <Link className={styles.link} key={index} href={_link.href} style={{ 
-              background: `linear-gradient(0deg, rgba(152,211,231,0.3) 0%, rgba(152,211,231,0.15) 55%, rgba(152,211,231,0) 100%),
+            <Link
+              className={styles.link}
+              key={index}
+              href={_link.href}
+              style={{
+                background: `linear-gradient(0deg, rgba(152,211,231,0.3) 0%, rgba(152,211,231,0.15) 55%, rgba(152,211,231,0) 100%),
                           url('${_link.image}') center/cover no-repeat, 
-                          var(--zinc-100)`
-            }}>
+                          var(--zinc-100)`,
+              }}
+            >
               <span className={styles.text}>
                 <span>{_link.title}</span>
                 <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
