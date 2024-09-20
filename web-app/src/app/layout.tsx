@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
 import { Coiny, Quicksand, Open_Sans } from "next/font/google";
-import { Navbar } from "@/components/navbar/navbar";
-import { Footer } from "@/components/footer/footer";
+import { Navbar } from "@/components/panel/navbar/navbar";
+import { Footer } from "@/components/panel/footer/footer";
 import "./globals.css";
 
 // Font Awesome Config

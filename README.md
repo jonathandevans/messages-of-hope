@@ -8,20 +8,31 @@ We actively engage with the community, inviting strangers to write messages of h
 
 This is the official web application for Messages of Hope, a Community Interest Company dedicated to supporting mental health and well-being. The application is designed to allow users to submit messages of hope to support others in need. The application is built using the Next.js framework and is hosted on Vercel.
 
+## Design
+
+The application is designed using a mobile-first approach. The application is designed to be responsive and accessible. The initial design of the application was created using Figma. 
+
+Find the design [here](https://www.figma.com/).
+
 ## Frontend Development
 
 The frontend of the application is built using the Next.js framework. The frontend uses the app router to navigate between pages and components. The frontend is styled using CSS modules. The application is built using a number of components. These components are located in the _components/_ directory. The components come with their own variations and styles that can be utilised through the `variants` prop. There are two main types of components: layout components which we call panels and content components.
 
 ### Panel Components:
 
+- [Navbar](/docs/components/navbar.md)
+- [Footer](/docs/components/footer.md)
 - [Banner](/docs/components/banner.md)
 - [CardPanel](/docs/components/card-panel.md)
+- [ContactForm](/docs/components/contact-form.md)
+- [LinkGrid](/docs/components/link-grid.md)
+- [MaxWidthWrapper](/docs/components/max-width-wrapper.md)
+- [MessageSlideshow](/docs/components/message-slideshow.md)
+- [TextPanel](/docs/components/text-panel.md)
 
 ### Content Components:
 
 - [Button](/docs/components/button.md)
-- [Navbar](/docs/components/navbar.md)
-- [Footer](/docs/components/footer.md)
 
 ## Third Party Resources
 
