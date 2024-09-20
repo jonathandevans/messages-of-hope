@@ -16,6 +16,7 @@ interface LinkGridProps {
   additionalLinks: { title: string; href: string; image: string }[];
   forwardLinkLabel?: string;
   forwardLinkHref?: string;
+  style?: {};
 }
 
 export const LinkGrid = ({
@@ -29,9 +30,10 @@ export const LinkGrid = ({
   additionalLinks,
   forwardLinkLabel,
   forwardLinkHref,
+  style = {}
 }: LinkGridProps) => {
   return (
-    <MaxWidthWrapper className={styles.panel}>
+    <MaxWidthWrapper className={styles.panel} style={style}>
       {title && <h2>{title}</h2>}
       <div className={styles.hero}>
         <img src={image} alt={imageAlt} />

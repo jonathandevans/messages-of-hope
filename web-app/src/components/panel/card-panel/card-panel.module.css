@@ -7,7 +7,6 @@
 
 .card {
   width: 100%;
-  min-width: 280px;
   box-shadow: 0 10px 12px rgba(47, 74, 111, 0.2);
   border-radius: 25px;
   display: flex;
@@ -92,6 +91,7 @@
   }
 
   .card img {
+    min-width: 30%;
     width: 30%;
     height: 100%;
     object-fit: cover;

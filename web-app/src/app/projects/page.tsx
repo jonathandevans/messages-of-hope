@@ -20,6 +20,7 @@ const Page = () => {
       />
 
       <LinkGrid
+        style={{ marginTop: "3rem" }}
         name="Connections 2024"
         text={[
           "Connections 2024 is a poignant short film created by Messages of Hope and Speakers Collective for Great Mental Health Day 2024. Connections delves into the transformative power of connection amidst mental health struggles. Through capturing the heartfelt messages penned by Londoners, the film illuminates the profound sense of empathy and solidarity within our communities. Each message serves as a beacon of hope, affirming that even in the darkest moments, there are individuals who genuinely care.",
