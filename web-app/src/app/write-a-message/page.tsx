@@ -31,7 +31,7 @@ const Page = () => {
         </p>
         <p>
           If you'd like us to tag you on social media when your message of hope
-          is posted, leave your Instagram handle below. Please not, this is
+          is posted, leave your Instagram handle below. Please note, this is
           optional and if you'd like your message of hope to remain anonymous
           just leave it blank. Thank you for your help in spreading hope.
         </p>
