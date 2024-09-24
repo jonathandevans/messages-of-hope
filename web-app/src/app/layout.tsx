@@ -31,6 +31,10 @@ const RootLayout = ({ children }: { children: ReactNode; }) => {
   return (
     <html lang="en">
       <body className={`${coiny.variable} ${quicksand.variable} ${openSans.variable}`}>
+        <div itemScope itemType="https://schema.org/WebSite">
+          <link itemProp="url" href="https://www.messagesofhope.co.uk" />
+          <meta itemProp="name" content="Messages of Hope"/>
+        </div>
         <Navbar />
         <main>
           {children}

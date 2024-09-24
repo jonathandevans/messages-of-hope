@@ -10,22 +10,12 @@ export const generateMetadata = ({
   description?: string;
 } = {}): Metadata => {
   const _title = absolute ? absolute : title ? `${title} - Messages of Hope` : "Messages of Hope"
-  const icons = {
-    icon: '/favicon.ico',
-    shortcut: '/icon.png',
-    apple: '/apple-icon.png',
-    other: {
-      rel: 'apple-touch-icon-precomposed',
-      url: '/apple-icon.png',
-    },
-  }
 
   return {
     title: _title,
     description,
     keywords: ["Mental Health", "Mental Illness", "BPD", "MOH", "Messages of Hope", "Hope"],
 
-    icons,
     openGraph: {
       title,
       description,
