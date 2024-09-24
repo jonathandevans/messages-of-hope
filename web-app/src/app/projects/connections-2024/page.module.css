@@ -85,20 +85,3 @@
     grid-template-columns: auto auto auto;
   }
 }
-
-/* @media (min-width: 48rem) {
-  .panel {
-    display: grid;
-    grid-template-columns: auto auto;
-    justify-content: stretch;
-    align-content: stretch;
-    align-items: stretch;
-  }
-
-  .panel article:nth-of-type(3) {
-    background: var(--yellow-400);
-  }
-  .panel article:nth-of-type(4) {
-    background: var(--blue-300);
-  }
-} */

@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import styles from "./text-panel.module.css";
 import { MaxWidthWrapper } from "../max-width-wrapper/max-width-wrapper";
+import styles from "./text-panel.module.css";
 
 interface DecoProps {
   position: "topLeft" | "topRight" | "bottomLeft" | "bottomRight";
@@ -68,20 +68,25 @@ export const TextPanel = ({
   title,
   variant,
   children,
-  className : _className,
+  className: _className,
   contentClassName = "",
 }: TextPanelProps) => {
-  const { colour = "yellow", textPosition = "left", corner, deco : _deco } = variant || {};
+  const {
+    colour = "yellow",
+    textPosition = "left",
+    corner,
+    deco: _deco,
+  } = variant || {};
   let className = `${styles.panel} ${_className} ${styles[colour]} ${styles[textPosition]}`;
 
   let deco: ("topLeft" | "topRight" | "bottomLeft" | "bottomRight")[] = [];
   if (textPosition == "left") {
-    if (!_deco) deco = [ "topLeft", "bottomRight" ];
+    if (!_deco) deco = ["topLeft", "bottomRight"];
     else deco = _deco;
     className += ` ${corner ? styles[corner] : styles.bottomLeft}`;
   }
   if (textPosition == "right") {
-    if (!_deco) deco = [ "topRight", "bottomLeft" ];
+    if (!_deco) deco = ["topRight", "bottomLeft"];
     else deco = _deco;
     className += ` ${corner ? styles[corner] : styles.bottomRight}`;
   }
@@ -90,9 +95,7 @@ export const TextPanel = ({
     <MaxWidthWrapper className={className}>
       <div className={styles.contentContainer}>
         {title ? <h2 className={styles.title}>{title}</h2> : null}
-        <div className={contentClassName}>
-          {children}
-        </div>
+        <div className={contentClassName}>{children}</div>
       </div>
 
       <div className={styles.imageContainer}>

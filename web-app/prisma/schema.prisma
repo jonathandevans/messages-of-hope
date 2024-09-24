@@ -8,6 +8,31 @@ datasource db {
   directUrl = env("DIRECT_DATABASE_URL")
 }
 
+
+enum Source {
+  website
+  event
+  instagram
+  other
+}
+
+enum Category {
+  togetherness
+  personal_stories
+  reaching_out
+  practical_advice
+  affirmations
+  recovery
+  suicide_prevention
+  uncategorised
+}
+
+enum UserRole {
+  user
+  admin
+}
+
+
 model Message {
   id              String    @id @default(dbgenerated("gen_random_uuid()"))
   message         String
@@ -19,6 +44,8 @@ model Message {
   updatedBy       String?
   public          Boolean   @default(false)
   used            Boolean   @default(false)
+
+  // Relation
   updatedByUser   User?     @relation(fields: [updatedBy], references: [id])
 }
 
@@ -50,30 +77,12 @@ model Account {
   session_state     String?
   createdAt         DateTime @default(now())
   updatedAt         DateTime @updatedAt
+
+  // Relation
   user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
+  // Constraints
   @@id([provider, providerAccountId])
 }
 
-enum Source {
-  website
-  event
-  instagram
-  other
-}
 
-enum Category {
-  togetherness
-  personal_stories
-  reaching_out
-  practical_advice
-  affirmations
-  recovery
-  suicide_prevention
-  uncategorised
-}
-
-enum UserRole {
-  user
-  admin
-}
