@@ -108,6 +108,31 @@ const Page = () => {
         </p>
       </TextPanel>
 
+      <section className={styles.donations} id="list">
+        <MaxWidthWrapper>
+          <h2>Dontation Suggestions</h2>
+          <p>
+            We appreciate all donations, but here are some suggestions for items
+            that are always in need. Please ensure all items are new and
+            unopened. Thank you for your support!
+          </p>
+
+          <div className={styles.recs}>
+            <ul>
+              <li><div /> <span>Shampoo, conditioner, body wash, hand soap</span></li>
+              <li><div /> <span>Tooth brush and tooth paste</span></li>
+              <li><div /> <span>Underwear, socks, sports bra</span></li>
+              <li><div /> <span>Hair brush, bobbles, comb, silk bonnet</span></li>
+              <li><div /> <span>Notebook, colouring book, puzzle book</span></li>
+              <li><div /> <span>Fidget toys, playing cards, games</span></li>
+              <li><div /> <span>Vaseline, moisturiser, flannel, hand cream</span></li>
+              <li><div /> <span>Chocolate, crisps, biscuits</span></li>
+              <li><div /> <span>Phone charger, charging port</span></li>
+            </ul>
+          </div>
+        </MaxWidthWrapper>
+      </section>
+
       <MessageSlideshow />
     </>
   );

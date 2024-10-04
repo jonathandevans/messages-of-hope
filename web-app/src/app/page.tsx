@@ -9,9 +9,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import styles from "./page.module.css";
 
+import { FeelingBlue } from "@/components/feeling-blue/feeling-blue";
+
 const Page = () => {
   return (
     <>
+      <FeelingBlue />
+
       <Banner image="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726693988/Speech_at_Connections_2024_2_kwm5ya.jpg">
         <div className={styles.bannerContent}>
           <h3>

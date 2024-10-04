@@ -224,8 +224,8 @@
 .button.outline.darkBlue:hover,
 .button.outline.darkBlue:focus,
 .button.outline.darkBlue:active {
-  color: var(--blue-900);
-  border-color: var(--blue-900);
+  color: var(--blue-700);
+  border-color: var(--blue-700);
 }
 
 .button.outline.green:hover,
