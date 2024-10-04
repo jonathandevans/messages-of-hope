@@ -14,6 +14,7 @@ interface LinkGridProps {
   href: string;
   additionalLinksTitle: string;
   additionalLinks: { title: string; href: string; image: string }[];
+  all?: boolean;
   forwardLinkLabel?: string;
   forwardLinkHref?: string;
   style?: {};
@@ -28,6 +29,7 @@ export const LinkGrid = ({
   href,
   additionalLinksTitle,
   additionalLinks,
+  all = false,
   forwardLinkLabel,
   forwardLinkHref,
   style = {}
@@ -66,7 +68,7 @@ export const LinkGrid = ({
           )}
         </div>
 
-        <div className={styles.links}>
+        <div className={`${styles.links} ${all ? styles.all : ""}`}>
           {additionalLinks.map((_link, index) => (
             <Link
               className={styles.link}

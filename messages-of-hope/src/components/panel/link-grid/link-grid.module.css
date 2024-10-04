@@ -183,3 +183,7 @@
     grid-template-columns: auto auto auto auto;
   }
 }
+
+.links.all > *:nth-child(n) {
+  display: block !important;
+}

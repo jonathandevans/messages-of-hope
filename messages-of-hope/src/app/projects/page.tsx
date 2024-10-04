@@ -22,6 +22,7 @@ const Page = () => {
       <LinkGrid
         style={{ marginTop: "3rem" }}
         name="Connections 2024"
+        all={true}
         text={[
           "Connections 2024 is a poignant short film created by Messages of Hope and Speakers Collective for Great Mental Health Day 2024. Connections delves into the transformative power of connection amidst mental health struggles. Through capturing the heartfelt messages penned by Londoners, the film illuminates the profound sense of empathy and solidarity within our communities. Each message serves as a beacon of hope, affirming that even in the darkest moments, there are individuals who genuinely care.",
           "Our aspiration with Connections 2024 is to ignite a ripple effect of compassion and support, encouraging viewers to extend a hand of empathy to those in need and remind them that they are never alone in their journey towards healing.",
@@ -29,7 +30,7 @@ const Page = () => {
         image="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726694766/Connections_2024_1_v2pakd.jpg"
         imageAlt="The filming of Connections 2024"
         href="/projects/connections-2024"
-        additionalLinksTitle="Other Projects"
+        additionalLinksTitle="All Projects"
         additionalLinks={[
           {
             title: "Bags of Hope",

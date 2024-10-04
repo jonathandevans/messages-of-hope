@@ -1,6 +1,6 @@
 {
   "name": "messages-of-hope",
-  "version": "4.1.0",
+  "version": "4.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev",
