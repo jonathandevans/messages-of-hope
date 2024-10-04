@@ -46,6 +46,7 @@ const Arrow = () => {
 export const Button = ({
   style: _style,
   className: _className,
+  id: _id,
   children,
   onClick,
   variant,
@@ -75,6 +76,7 @@ export const Button = ({
         className={className}
         href={href}
         target={target || "_self"}
+        id={_id ? _id : ""}
       >
         {children}
         <Arrow />
@@ -88,6 +90,7 @@ export const Button = ({
       className={className}
       onClick={onClick}
       type={type || "button"}
+      id={_id ? _id : ""}
     >
       {children}
       <Arrow />

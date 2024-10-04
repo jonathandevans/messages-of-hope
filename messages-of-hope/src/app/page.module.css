@@ -242,3 +242,65 @@
     border-radius: 12px;
   }
 }
+
+.donationDrive {
+  background: var(--blue-300);
+  border: 1px transparent solid;
+  border-bottom: 16px solid var(--blue-800);
+}
+
+.donationDrive .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.donationDrive .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+  max-width: 50rem;
+}
+
+.donationDrive .text p {
+  width: 100%;
+}
+
+.donationDrive .text p a {
+  color: var(--zinc-900);
+  font-weight: 600;
+}
+
+.donationDrive h2 {
+  margin: 0;
+  margin-bottom: 0.25rem;
+}
+
+.donationDrive .image {
+  width: 100%;
+  height: 100%;
+  max-width: 10rem;
+  margin: auto;
+}
+
+.donationDrive .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 48rem) {
+  .donationDrive .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .donationDrive .image {
+    max-width: 15rem;
+  }
+}

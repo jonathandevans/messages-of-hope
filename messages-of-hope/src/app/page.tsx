@@ -9,9 +9,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
 import styles from "./page.module.css";
 
+import { FeelingBlue } from "@/components/feeling-blue/feeling-blue";
+import { MaxWidthWrapper } from "@/components/panel/max-width-wrapper/max-width-wrapper";
+import Link from "next/link";
+
 const Page = () => {
   return (
     <>
+      <FeelingBlue />
+
       <Banner image="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726693988/Speech_at_Connections_2024_2_kwm5ya.jpg">
         <div className={styles.bannerContent}>
           <h3>
@@ -33,6 +39,20 @@ const Page = () => {
           </div>
         </div>
       </Banner>
+
+      <section className={styles.donationDrive}>
+        <MaxWidthWrapper className={styles.container}>
+          <div className={styles.text}>
+            <h2>Urdang Supports Bags of Hope!</h2>
+            <p>From Wednesday 2nd October we're asking staff and students to donate one item to <Link href="/projects/bags-of-hope">Bags of Hope</Link>. This is a project that provides bags filled with items for patients to have when they arrive on psychiatric wards. All of the items we are able to collect between the 3rd and 11th October will be donated to Newham Centre for Mental Health.</p>
+            <p>Whether you donate 1 item or several, we are so grateful for your support. Check out our <Link href="/projects/bags-of-hope#list">list of items</Link> for suggestions!</p>
+            <p>We are also looking for volunteers to help us pack up the items on Friday 11th October in Finsbury Town Hall. </p>
+          </div>
+          <div className={styles.image}>
+            <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1728051168/urdang_fxhmhl.svg" alt="Urdang logo" />
+          </div>
+        </MaxWidthWrapper>
+      </section>
 
       <TextPanel
         className={styles.aboutPanel}
