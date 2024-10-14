@@ -16,7 +16,7 @@ import Link from "next/link";
 const Page = () => {
   return (
     <>
-      <FeelingBlue />
+      {/* <FeelingBlue /> */}
 
       <Banner image="https://res.cloudinary.com/dmto5tfe5/image/upload/v1726693988/Speech_at_Connections_2024_2_kwm5ya.jpg">
         <div className={styles.bannerContent}>
@@ -40,7 +40,7 @@ const Page = () => {
         </div>
       </Banner>
 
-      <section className={styles.donationDrive}>
+      {/* <section className={styles.donationDrive}>
         <MaxWidthWrapper className={styles.container}>
           <div className={styles.text}>
             <h2>Urdang Supports Bags of Hope!</h2>
@@ -52,7 +52,7 @@ const Page = () => {
             <img src="https://res.cloudinary.com/dmto5tfe5/image/upload/v1728051168/urdang_fxhmhl.svg" alt="Urdang logo" />
           </div>
         </MaxWidthWrapper>
-      </section>
+      </section> */}
 
       <TextPanel
         className={styles.aboutPanel}
