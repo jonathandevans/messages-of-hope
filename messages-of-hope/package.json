@@ -1,34 +1,27 @@
 {
   "name": "messages-of-hope",
-  "version": "4.1.1",
+  "version": "5.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "postinstall": "prisma generate"
+    "lint": "next lint"
   },
   "dependencies": {
-    "@fortawesome/free-brands-svg-icons": "^6.6.0",
-    "@fortawesome/free-regular-svg-icons": "^6.6.0",
-    "@fortawesome/free-solid-svg-icons": "^6.6.0",
-    "@fortawesome/react-fontawesome": "^0.2.2",
-    "@prisma/client": "^5.19.1",
-    "@tanstack/react-query": "^5.56.2",
-    "lucide-react": "^0.428.0",
-    "next": "^14.2.12",
-    "prisma": "^5.19.1",
-    "react": "^18",
-    "react-dom": "^18",
-    "resend": "^4.0.0"
+    "lucide-react": "^0.486.0",
+    "next": "15.2.4",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "resend": "^4.2.0"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.5",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.4",
     "typescript": "^5"
   }
 }
