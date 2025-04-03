@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "@/components/contact-form/contact-form";
+import MessagesPanel from "@/components/messages-panel/messages-panel";
 
 const Home = () => {
   return (
@@ -192,6 +193,8 @@ const Home = () => {
       </section>
 
       <ContactForm />
+
+      <MessagesPanel />
     </>
   );
 };

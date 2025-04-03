@@ -48,25 +48,46 @@ const ContactForm = ({
   return (
     <>
       <section className={styles.panel}>
-        <div className={styles.inner}>
-          <h2>{title}</h2>
-          <p>{description}</p>
-          <form className={styles.form} onSubmit={onSubmit}>
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Name*"
-                  required
-                  autoComplete="on"
-                />
-            <button
-              style={{ marginTop: "1rem" }}
-              type="submit"
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
+        <h2>{title}</h2>
+        <p>{description}</p>
+        <form className={styles.form} onSubmit={onSubmit}>
+          <div className={styles.content}>
+            <div>
+              <input
+                name="name"
+                type="text"
+                placeholder="Name*"
+                required
+                autoComplete="on"
+              />
+              <input
+                name="email"
+                type="email"
+                placeholder="Email*"
+                required
+                autoComplete="on"
+              />
+              <input
+                name="organisation"
+                type="text"
+                placeholder="Business/Organisation"
+              />
+              <input
+                name="subject"
+                type="text"
+                placeholder="Subject*"
+                required
+              />
+            </div>
+            <textarea
+              name="message"
+              placeholder="Message..."
+              required
+              rows={10}
+            />
+          </div>
+          <button type="submit">Send Message</button>
+        </form>
       </section>
     </>
   );

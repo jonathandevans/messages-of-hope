@@ -102,7 +102,7 @@ h1 {
   font-size: 3rem;
   line-height: 98%;
   margin: 2.5rem auto 1rem auto;
-  color: var(--zinc-800);
+  color: hsl(var(--zinc-800));
 }
 
 h2,
@@ -113,12 +113,12 @@ h6 {
   font-family: var(--font-heading);
   letter-spacing: -0.075rem;
   margin: 1rem auto 0.5rem auto;
-  color: var(--zinc-800);
+  color: hsl(var(--zinc-800));
 }
 
 p {
   font-family: var(--font-body);
   font-size: 1rem;
   margin: 0 auto;
-  color: var(--zinc-800);
+  color: hsl(var(--zinc-800));
 }

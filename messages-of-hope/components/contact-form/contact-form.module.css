@@ -1,0 +1,106 @@
+.panel {
+  background: hsl(var(--blue-800));
+  padding: 3rem 0;
+  margin: 3rem 0;
+}
+
+.panel h2 {
+  margin: 0 auto 0.7rem auto;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  width: 90%;
+  color: hsl(var(--zinc-100));
+}
+
+.panel p {
+  width: 90%;
+  color: hsl(var(--zinc-100));
+  max-width: 79rem;
+}
+
+.panel form {
+  margin: 1rem auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 90%;
+  max-width: 79rem;
+}
+
+.panel form .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.panel form .content div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.panel form .content input,
+.panel form .content textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid hsl(var(--blue-300));
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  border: 3px solid hsl(var(--blue-800));
+  outline: none;
+}
+
+.panel form .content input:focus,
+.panel form .content input:active,
+.panel form .content textarea:focus,
+.panel form .content textarea:active {
+  border-color: hsl(var(--blue-300));
+}
+
+.panel form button {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  color: hsl(var(--zinc-900));
+  background: hsl(var(--blue-300));
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.panel form button:hover,
+.panel form button:focus,
+.panel form button:active {
+  background: hsla(var(--blue-300), 0.7);
+}
+
+@media (min-width: 64rem) {
+  .panel p,
+  .panel form {
+    width: 95%;
+  }
+
+  .panel form .content {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 1rem;
+    align-items: stretch;
+  }
+
+  .panel form .content div {
+    justify-content: space-between;
+  }
+}

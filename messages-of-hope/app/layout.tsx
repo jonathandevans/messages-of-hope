@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
+import Header from "@/components/header/header";
 import { Coiny, Quicksand, Open_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -32,7 +33,9 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
           <link itemProp="url" href="https://www.messagesofhope.co.uk" />
           <meta itemProp="name" content="Messages of Hope" />
         </div>
+        <Header />
         <main>{children}</main>
+        
       </body>
     </html>
   );
