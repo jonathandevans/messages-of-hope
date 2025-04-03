@@ -6,6 +6,7 @@ import "./globals.css";
 
 // Metadata setup
 import { generateMetadata } from "@/lib/utils";
+import Footer from "@/components/footer/footer";
 export const metadata: Metadata = generateMetadata();
 
 // Fonts
@@ -35,7 +36,7 @@ const RootLayout = ({ children }: { children: ReactNode }) => {
         </div>
         <Header />
         <main>{children}</main>
-        
+        <Footer />
       </body>
     </html>
   );

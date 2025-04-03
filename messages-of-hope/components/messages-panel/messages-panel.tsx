@@ -59,6 +59,55 @@ const MessagePanel = () => {
 
   return (
     <section className={styles.panel}>
+      <svg
+        className={styles.art1}
+        width="469"
+        height="437"
+        viewBox="0 0 469 437"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M-44.05 294.808C-399.464 846.236 486.769 -103.846 364.319 584.736"
+          stroke="#DB7706"
+          strokeWidth="9"
+        />
+        <path
+          d="M-12.3055 -116.268C-12.3055 -116.268 141.421 131.399 55.5 229.421C-51 350.921 187.195 520.732 187.195 520.732"
+          stroke="#DB7706"
+          strokeWidth="8"
+        />
+        <path
+          d="M-45.5 38.9213C-45.5 38.9213 -6 423.921 108 320.922C242.302 199.579 239.657 460.923 298.5 524.921"
+          stroke="#F59F0A"
+          strokeWidth="7"
+        />
+      </svg>
+      <svg
+        className={styles.art2}
+        width="472"
+        height="437"
+        viewBox="0 0 472 437"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M277.176 -104.5C277.176 -104.5 316.676 280.5 430.676 177.501C564.978 56.1584 562.334 317.502 621.176 381.5"
+          stroke="#F59F0A"
+          stroke-width="7"
+        />
+        <path
+          d="M58.3036 -13.6538C214 308.5 374.5 -76.4999 499.5 308.5"
+          stroke="#DB7706"
+          stroke-width="9"
+        />
+        <path
+          d="M161.176 -91.4996C161.176 -91.4996 19.5001 445 285 163C535.93 -103.525 446.334 330.502 505.176 394.5"
+          stroke="#F59F0A"
+          stroke-width="7"
+        />
+      </svg>
+
       <div className={styles.inner}>
         {messages.map((message, index) => {
           return (

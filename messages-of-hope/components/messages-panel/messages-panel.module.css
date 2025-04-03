@@ -62,3 +62,28 @@
     width: 95%;
   }
 }
+
+.art1 {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  left: -18rem;
+  z-index: 10;
+}
+
+.art2 {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  right: -20rem;
+  z-index: 10;
+}
+
+@media (min-width: 64rem) {
+  .art1 {
+    left: -7rem;
+  }
+  .art2 {
+    right: -15rem;
+  }
+}

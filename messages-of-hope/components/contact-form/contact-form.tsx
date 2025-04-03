@@ -48,6 +48,17 @@ const ContactForm = ({
   return (
     <>
       <section className={styles.panel}>
+        <div className={styles.ring1}>
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className={styles.ring2}>
+          <span />
+          <span />
+          <span />
+        </div>
+
         <h2>{title}</h2>
         <p>{description}</p>
         <form className={styles.form} onSubmit={onSubmit}>

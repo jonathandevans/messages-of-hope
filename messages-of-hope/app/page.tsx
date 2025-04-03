@@ -9,6 +9,45 @@ import MessagesPanel from "@/components/messages-panel/messages-panel";
 const Home = () => {
   return (
     <>
+      <svg className={styles.rightLines}
+        width="509"
+        height="3472"
+        viewBox="0 0 509 3472"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M534.116 -370.136C534.116 -370.136 281.033 -405.069 433.832 158.595C586.631 722.259 144.932 765.454 144.932 765.454"
+          stroke="#F59F0A"
+          stroke-width="3"
+        />
+        <path
+          d="M631.308 3445.18C631.308 3445.18 878.666 3411.36 499.281 2481.13C119.896 1550.89 507.44 1309.37 507.44 1309.37"
+          stroke="#F59F0A"
+          stroke-width="3"
+        />
+        <path
+          d="M370.612 -230.358C370.612 -230.358 739.521 -21.7239 495.548 273.623C251.576 568.97 292.823 903.085 292.823 903.085"
+          stroke="#2F4A6F"
+          stroke-width="3"
+        />
+        <path
+          d="M722.282 3138.88C722.282 3138.88 294.849 2911.84 393.802 2302.76C492.755 1693.67 313.195 1123.75 313.195 1123.75"
+          stroke="#2F4A6F"
+          stroke-width="3"
+        />
+        <path
+          d="M394.07 -272.907C540.73 151.386 466.244 502.87 187.543 878.765"
+          stroke="#98D3E7"
+          stroke-width="4"
+        />
+        <path
+          d="M718.766 3222.24C404.114 2533.89 323.532 1890.09 420.244 1126.83"
+          stroke="#98D3E7"
+          stroke-width="4"
+        />
+      </svg>
+
       <section className={styles.banner}>
         <div className={styles.hero}>
           <span className={styles.art1} />
@@ -47,6 +86,17 @@ const Home = () => {
       </section>
 
       <section className={styles.getInvolved}>
+        <div className={styles.ring1}>
+          <span />
+          <span />
+          <span />
+        </div>
+        <div className={styles.ring2}>
+          <span />
+          <span />
+          <span />
+        </div>
+
         <h2>How can you help us change lives?</h2>
         <div className={styles.links}>
           <span className={styles.art1} />
