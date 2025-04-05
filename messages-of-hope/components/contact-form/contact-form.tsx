@@ -7,11 +7,13 @@ import { Check, CircleX } from "lucide-react";
 interface ContactFormProps extends HTMLAttributes<HTMLDivElement> {
   title?: string;
   description?: string;
+  colour?: "blue" | "darkBlue";
 }
 
 const ContactForm = ({
   title = "Contact Us",
   description = "Messages of Hope welcomes collaborations with other businesses, organisations, charities, projects, schools and communities. If you're interested in hosting a Messages of Hope project or would like to collaborate with us in any capacity we would love to hear from you.",
+  colour = "darkBlue",
 }: ContactFormProps) => {
   const [success, setSuccess] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
@@ -53,7 +55,7 @@ const ContactForm = ({
 
   return (
     <>
-      <section className={styles.panel}>
+      <section className={`${styles.panel} ${styles[colour]}`}>
         <div className={styles.ring1}>
           <span />
           <span />

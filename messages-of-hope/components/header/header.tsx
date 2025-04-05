@@ -15,7 +15,7 @@ const MobileNavigation = ({ close }: { close: () => void }) => {
       </button>
 
       <div className={styles.innerNav}>
-        <Link href="/" className={styles.mobileLogo}>
+        <Link href="/" className={styles.mobileLogo} onClick={close}>
           <Image
             src="https://res.cloudinary.com/dl6zbzu06/image/upload/v1743695574/Messages_of_Hope_Logo_1_pv4sth_o3k9jq.png"
             alt="Messages of Hope Logo"
@@ -23,11 +23,11 @@ const MobileNavigation = ({ close }: { close: () => void }) => {
             height={2152}
           />
         </Link>
-        <Link href="/our-work">About</Link>
-        <Link href="/campaigns">Campaigns</Link>
-        <Link href="/events">Events</Link>
-        <Link href="/write-a-message">Write a Message</Link>
-        <Link href="/get-involved">Get Involved</Link>
+        <Link href="/our-work" onClick={close}>About</Link>
+        <Link href="/campaigns" onClick={close}>Campaigns</Link>
+        <Link href="/events" onClick={close}>Events</Link>
+        <Link href="/write-a-message" onClick={close}>Write a Message</Link>
+        <Link href="/get-involved" onClick={close}>Get Involved</Link>
       </div>
     </nav>
   );

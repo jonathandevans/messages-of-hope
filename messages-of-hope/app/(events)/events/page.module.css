@@ -1,0 +1,22 @@
+.banner {
+  background: hsl(var(--blue-300));
+  margin: 0 auto 3rem auto;
+  padding: 3rem 0;
+}
+
+.banner .inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 79rem;
+  gap: 1rem;
+  margin: 0 auto;
+}
+
+.banner h1 {
+  margin: 0;
+  width: 100%;
+  margin-bottom: 1rem;
+}
