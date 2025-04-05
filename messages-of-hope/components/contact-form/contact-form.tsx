@@ -2,6 +2,7 @@
 
 import { HTMLAttributes, useState } from "react";
 import styles from "./contact-form.module.css";
+import { Check, CircleX } from "lucide-react";
 
 interface ContactFormProps extends HTMLAttributes<HTMLDivElement> {
   title?: string;
@@ -27,6 +28,11 @@ const ContactForm = ({
     const formElements = form.elements;
     const formContent = {
       name: (formElements.namedItem("name") as HTMLInputElement).value,
+      email: (formElements.namedItem("email") as HTMLInputElement).value,
+      organisation: (formElements.namedItem("organisation") as HTMLInputElement)
+        .value,
+      subject: (formElements.namedItem("subject") as HTMLInputElement).value,
+      message: (formElements.namedItem("message") as HTMLTextAreaElement).value,
     };
 
     const response = await fetch("/api/send-email", {
@@ -97,6 +103,21 @@ const ContactForm = ({
               rows={10}
             />
           </div>
+
+          {error && (
+            <p className={styles.error}>
+              <CircleX />
+              {error}
+            </p>
+          )}
+          {success && (
+            <p className={styles.success}>
+              <Check />
+              Thank you for your message! We will get back to you as soon as
+              possible.
+            </p>
+          )}
+
           <button type="submit">Send Message</button>
         </form>
       </section>

@@ -12,8 +12,8 @@ export const generateMetadata = ({
   const _title = absolute
     ? absolute
     : title
-    ? `${title} - Messages of Hope`
-    : "Messages of Hope";
+      ? `${title} - Messages of Hope`
+      : "Messages of Hope";
 
   return {
     title: _title,

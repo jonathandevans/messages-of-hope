@@ -15,7 +15,7 @@
   color: hsl(var(--zinc-100));
 }
 
-.panel p {
+.panel > p {
   width: 90%;
   color: hsl(var(--zinc-100));
   max-width: 79rem;
@@ -131,7 +131,7 @@
 }
 
 @media (min-width: 64rem) {
-  .panel p,
+  .panel > p,
   .panel form {
     width: 95%;
   }
@@ -183,4 +183,48 @@
     left: 2rem;
     z-index: 1;
   }
+}
+
+.success {
+  background: hsla(var(--green-600), 0.5);
+  border: 2px solid hsl(var(--green-800));
+  color: hsl(var(--zinc-100));
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+}
+
+.success > * {
+  vertical-align: middle;
+}
+
+.success svg {
+  margin-right: 0.5rem;
+  position: relative;
+  top: -1px;
+}
+
+.error {
+  background: hsla(var(--red-600), 0.5);
+  border: 2px solid hsl(var(--red-800));
+  color: hsl(var(--zinc-100));
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+  width: 100%;
+}
+
+.error > * {
+  vertical-align: middle;
+}
+
+.error svg {
+  margin-right: 0.5rem;
+  position: relative;
+  top: -1px;
 }

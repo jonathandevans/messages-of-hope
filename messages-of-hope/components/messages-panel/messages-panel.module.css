@@ -4,7 +4,8 @@
   position: relative;
   margin-bottom: 2;
   margin: 2.5rem auto 2.5rem auto;
-  height: 20rem;
+  height: 32rem;
+  overflow: hidden;
 }
 
 .inner {
@@ -53,7 +54,7 @@
 
 @media (orientation: landscape) {
   .panel {
-    height: 18.5rem;
+    height: 23rem;
   }
 }
 
@@ -74,7 +75,7 @@
 .art2 {
   position: absolute;
   height: 100%;
-  top: 0;
+  top: -3rem;
   right: -20rem;
   z-index: 10;
 }

@@ -505,6 +505,10 @@
   width: 100%;
 }
 
+.ourStory .content div p {
+  width: 100%;
+}
+
 .ourStory .content div .button {
   align-self: flex-end;
 }

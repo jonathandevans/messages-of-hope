@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, HTMLAttributes } from "react";
 import styles from "./messages-panel.module.css";
 
 const staticMessages = [
@@ -9,7 +9,9 @@ const staticMessages = [
   "Even on your darkest days, there is always hope. You are your unique self, there is no one in the world like you, or ever will be. One day, someone will need you, let them have that chance.",
 ];
 
-const MessagePanel = () => {
+interface MessagePanelProps extends HTMLAttributes<HTMLDivElement> {}
+
+const MessagePanel = ({ className: _className } : MessagePanelProps) => {
   const [messages, setMessages] = useState(staticMessages);
   const currentMessage = useRef(0);
 
@@ -58,7 +60,7 @@ const MessagePanel = () => {
   }, [messages]);
 
   return (
-    <section className={styles.panel}>
+    <section className={`${_className ? _className : ""}  ${styles.panel}`}>
       <svg
         className={styles.art1}
         width="469"
@@ -94,17 +96,17 @@ const MessagePanel = () => {
         <path
           d="M277.176 -104.5C277.176 -104.5 316.676 280.5 430.676 177.501C564.978 56.1584 562.334 317.502 621.176 381.5"
           stroke="#F59F0A"
-          stroke-width="7"
+          strokeWidth="7"
         />
         <path
           d="M58.3036 -13.6538C214 308.5 374.5 -76.4999 499.5 308.5"
           stroke="#DB7706"
-          stroke-width="9"
+          strokeWidth="9"
         />
         <path
           d="M161.176 -91.4996C161.176 -91.4996 19.5001 445 285 163C535.93 -103.525 446.334 330.502 505.176 394.5"
           stroke="#F59F0A"
-          stroke-width="7"
+          strokeWidth="7"
         />
       </svg>
 

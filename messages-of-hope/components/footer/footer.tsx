@@ -44,6 +44,9 @@ const Footer = () => {
               <li>
                 <Link href="/line-of-hope">Line of Hope</Link>
               </li>
+              <li>
+                <Link href="/messages-of-hope">Messages of Hope</Link>
+              </li>
             </ul>
             <ul>
               <li>
@@ -83,7 +86,7 @@ const Footer = () => {
               All rights reserved © 2023-25 Messages of Hope. We are a
               registered community interest company in England and Wales.
             </p>
-            <Link href="privacy policy" target="_blank">
+            <Link href="/privacy-policy" target="_blank">
               privacy policy
             </Link>
           </div>

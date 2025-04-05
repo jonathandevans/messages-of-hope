@@ -16,10 +16,10 @@ export const checkContactForm = ({
 
   if (!name.match(nameRegex)) return { error: "Invalid name" };
   if (!email.match(emailRegex)) return { error: "Invalid email" };
-  if (subject.length <= 1) return { error: "Missing subject" };
-  if (message.length <= 5) return { error: "Invalid message" };
+  if (subject.length <= 2) return { error: "Subject too short" };
+  if (message.length <= 5) return { error: "Message too short" };
 
-  return { success: "Passed" };
+  return { success: true };
 };
 
 export const checkMessageSubmission = ({
@@ -29,7 +29,7 @@ export const checkMessageSubmission = ({
   message: string;
   handle: string;
 }) => {
-  if (message.length <= 5) return { error: "Invalid message" };
+  if (message.length <= 5) return { error: "Message too short" };
 
-  return { success: "Passed" };
+  return { success: true };
 };
