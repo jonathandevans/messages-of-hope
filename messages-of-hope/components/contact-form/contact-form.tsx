@@ -12,7 +12,7 @@ interface ContactFormProps extends HTMLAttributes<HTMLDivElement> {
 
 const ContactForm = ({
   title = "Contact Us",
-  description = "Messages of Hope welcomes collaborations with other businesses, organisations, charities, projects, schools and communities. If you're interested in hosting a Messages of Hope project or would like to collaborate with us in any capacity we would love to hear from you.",
+  description = "Messages of Hope welcomes collaborations with other businesses, organisations, charities, projects, schools and communities. If you're interested in hosting a Messages of Hope event or would like to collaborate with us in any capacity we would love to hear from you.",
   colour = "darkBlue",
 }: ContactFormProps) => {
   const [success, setSuccess] = useState<boolean>(false);

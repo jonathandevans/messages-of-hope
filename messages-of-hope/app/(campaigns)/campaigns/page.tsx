@@ -6,7 +6,8 @@ import MessagePanel from "@/components/messages-panel/messages-panel";
 
 export const metadata: Metadata = generateMetadata({
   title: "Campaigns",
-  description: "",
+  description:
+    "The campaigns Messages of Hope organise are a form of long term projects that has been created to support our goals as a CIC. These campaigns are used as a part of events, for example at MOH Socials we will do Bags of Hope bag packing, or create a new Line of Hope. The pop-up art events that we do all go to support the original Messages of Hope campaign.",
 });
 
 const Campaigns = () => {
@@ -16,13 +17,14 @@ const Campaigns = () => {
         <div className={styles.inner}>
           <h1>Campaigns</h1>
           <p>
-            Messages of Hope is a Community Interest Company encouraging people
-            to write hopeful messages for those struggling with mental health.
-            We organise a range of projects each year, each designed to connect
-            communities through creativity and collective empathy. Our
-            initiatives include collaborative art pieces, video projects for
-            mental health awareness days, and public displays of messages of
-            hope.
+            The campaigns Messages of Hope organise are a form of long term
+            projects that has been created to support our goals as a CIC. These
+            campaigns are used as a part of events, for example at MOH Socials
+            we will do Bags of Hope bag packing, or create a new Line of Hope.
+            The pop-up art events that we do all go to support the original
+            Messages of Hope campaign. All of these campaigns focus on using
+            creativity to bring people together, which is at the very heart of
+            what Messages of Hope does.
           </p>
         </div>
       </section>

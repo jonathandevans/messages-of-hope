@@ -78,26 +78,26 @@
 }
 
 .content a.bags {
-  background: 
-    linear-gradient(hsl(var(--zinc-900),0.5), hsl(var(--zinc-900),0.8)), 
-    url("https://res.cloudinary.com/dl6zbzu06/image/upload/v1743879330/IMG_1592_vz5ka0.jpg") 
-    left 50% top 90% / cover no-repeat border-box, 
+  background:
+    linear-gradient(hsl(var(--zinc-900), 0.3), hsl(var(--zinc-900), 0.7)),
+    url("https://res.cloudinary.com/dl6zbzu06/image/upload/v1743879330/IMG_1592_vz5ka0.jpg")
+      left 50% top 90% / cover no-repeat border-box,
     hsl(var(--blue-800));
 }
 
 .content a.lines {
-  background: 
-    linear-gradient(hsl(var(--zinc-900),0.5), hsl(var(--zinc-900),0.8)), 
-    url("https://res.cloudinary.com/dl6zbzu06/image/upload/v1743880333/IMG_2410_aq7vsx.jpg") 
-    left 50% top 50% / cover no-repeat border-box, 
+  background:
+    linear-gradient(hsl(var(--zinc-900), 0.3), hsl(var(--zinc-900), 0.7)),
+    url("https://res.cloudinary.com/dl6zbzu06/image/upload/v1743880333/IMG_2410_aq7vsx.jpg")
+      left 50% top 50% / cover no-repeat border-box,
     hsl(var(--blue-800));
 }
 
 .content a.messages {
-  background: 
-    linear-gradient(hsl(var(--zinc-900),0.5), hsl(var(--zinc-900),0.8)), 
-    url("https://res.cloudinary.com/dl6zbzu06/image/upload/v1743880628/64iJ879h4k_f2a9ga_1_rjm9wy_cl53mi.jpg") 
-    left 50% top 50% / cover no-repeat border-box, 
+  background:
+    linear-gradient(hsl(var(--zinc-900), 0.3), hsl(var(--zinc-900), 0.7)),
+    url("https://res.cloudinary.com/dl6zbzu06/image/upload/v1743880628/64iJ879h4k_f2a9ga_1_rjm9wy_cl53mi.jpg")
+      left 50% top 50% / cover no-repeat border-box,
     hsl(var(--blue-800));
 }
 
@@ -123,7 +123,7 @@
   .content a h2 {
     font-size: 2rem;
   }
-  
+
   .content a p {
     font-size: 1rem;
   }
@@ -151,16 +151,16 @@
   .content a h2 {
     font-size: 2.5rem;
   }
-  
+
   .content a p {
     font-size: 1.25rem;
   }
 
   .content a.messages {
-    background: 
-      linear-gradient(hsl(var(--zinc-900),0.5), hsl(var(--zinc-900),0.8)), 
-      url("https://res.cloudinary.com/dl6zbzu06/image/upload/v1743880628/64iJ879h4k_f2a9ga_1_rjm9wy_cl53mi.jpg") 
-      left 0% top 50% / 110% no-repeat border-box, 
+    background:
+      linear-gradient(hsl(var(--zinc-900), 0.3), hsl(var(--zinc-900), 0.7)),
+      url("https://res.cloudinary.com/dl6zbzu06/image/upload/v1743880628/64iJ879h4k_f2a9ga_1_rjm9wy_cl53mi.jpg")
+        left 0% top 50% / 110% no-repeat border-box,
       hsl(var(--blue-800));
   }
 }

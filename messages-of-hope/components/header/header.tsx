@@ -70,6 +70,7 @@ const Header = () => {
           <Link
             className={styles.desktop}
             href="https://www.instagram.com/messagesof.hope/"
+            target="_blank"
           >
             <Instagram size={16} strokeWidth={2} />
             Instagram

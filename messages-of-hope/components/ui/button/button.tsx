@@ -21,7 +21,7 @@ const Button = ({
   id: _id,
   children,
   href,
-  target = "_blank",
+  target = "_self",
   colour = "blue",
 }: ButtonProps) => {
   return (

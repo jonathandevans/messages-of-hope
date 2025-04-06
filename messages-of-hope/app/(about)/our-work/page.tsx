@@ -138,7 +138,7 @@ const OurWork = () => {
                   As an organisation we have done many pop-up art sessions where
                   we've had people, write messages, colour their feelings, and
                   draw on canvases. This again allows people to perform a
-                  well-being check-i, provides a nice creative outlet in the
+                  well-being check-in, provides a nice creative outlet in the
                   day, and gives the opportunity to talk and meet new people.
                 </p>
                 <p>
@@ -147,7 +147,7 @@ const OurWork = () => {
                 </p>
               </div>
 
-              <Button href="/" className={styles.button}>
+              <Button href="/line-of-hope" className={styles.button}>
                 Learn More
                 <ArrowRight size={16} strokeWidth={3} />
               </Button>
@@ -236,7 +236,7 @@ const OurWork = () => {
                 </p>
               </div>
 
-              <Button href="/" className={styles.button}>
+              <Button href="/#events" className={styles.button}>
                 Learn More
                 <ArrowRight size={16} strokeWidth={3} />
               </Button>
@@ -278,7 +278,7 @@ const OurWork = () => {
                 </p>
               </div>
 
-              <Button href="/" className={styles.button} colour="yellow">
+              <Button href="/messages-of-hope" className={styles.button} colour="yellow">
                 Learn More
                 <ArrowRight size={16} strokeWidth={3} />
               </Button>

@@ -368,6 +368,7 @@
 
 .upcomingEvents h2 {
   margin: 0 auto;
+  margin-bottom: 1rem;
   font-size: 2rem;
   font-weight: 600;
   text-align: center;
@@ -411,6 +412,8 @@
   align-items: flex-start;
   gap: 0.5rem;
   width: 100%;
+  align-self: flex-start;
+  margin-top: 1rem;
 }
 
 .upcomingEvents .list article h4 {
@@ -425,10 +428,6 @@
   font-weight: 700;
   color: hsl(var(--zinc-800));
   margin: 0;
-}
-
-.upcomingEvents .list article .button {
-  align-self: flex-end;
 }
 
 @media (min-width: 64rem) {
@@ -451,6 +450,7 @@
     grid-column: 2 / 4;
     width: 95%;
     margin: 0 auto;
+    margin-top: 2rem;
   }
 
   .upcomingEvents .list article img {

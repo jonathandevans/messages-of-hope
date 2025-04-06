@@ -48,13 +48,13 @@ const OurTeam = () => {
               </a>
             </p>
             <p>
-              Bethan is the founder of Messages of Hope. She is a mental health
-              advocate and a filmmaker, passionately using creativity to spread
-              messages of hope and support to those struggling with their mental
-              health. Bethan's personal experiences with Borderline Personality
-              Disorder and her journey through recovery deeply inform her work,
-              driving her commitment to inspire others and advocate for better
-              mental health care.
+              Hi, I'm Beth, the founder of Messages of Hope. I'm a mental health
+              advocate and a filmmaker, using creativity to spread messages of
+              hope and support to those struggling with their mental health. My
+              personal experiences with Borderline Personality Disorder and
+              journey through recovery deeply inform my work, driving my
+              commitment to inspire others and advocate for better mental health
+              care.
             </p>
           </div>
         </article>
@@ -108,7 +108,12 @@ const OurTeam = () => {
                 liv@messagesofhope.co.uk
               </a>
             </p>
-            <p>Need something about Liv.</p>
+            <p>
+              Hey, I'm Liv, the newest director of Messages of Hope. After
+              seeing the work that Beth has been doing this past year, I decided
+              to join the team. I'm looking forward to seeing how my
+              contributions help Messages of Hope in the future.
+            </p>
           </div>
         </article>
 

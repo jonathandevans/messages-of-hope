@@ -1,152 +1,9 @@
 .banner {
-  position: relative;
   background:
     linear-gradient(hsl(var(--zinc-900), 0.3), hsl(var(--zinc-900), 0.7)),
     url("https://res.cloudinary.com/dl6zbzu06/image/upload/v1743890174/EB3939A3-BAEA-4436-850A-39BA150A3750_sy9u6g.jpg")
       left 50% top 50% / cover no-repeat border-box,
     hsl(var(--blue-800));
-}
-
-.banner .art1 {
-  position: absolute;
-  bottom: -1rem;
-  left: -1.5rem;
-  width: 4rem;
-  height: 4rem;
-  z-index: 1;
-  background: hsl(var(--yellow-400));
-  border-radius: 50%;
-}
-
-.banner .art2 {
-  position: absolute;
-  bottom: -2.5rem;
-  left: 2rem;
-  width: 5rem;
-  height: 5rem;
-  z-index: 3;
-  background: hsl(var(--blue-300));
-  border-radius: 50%;
-}
-
-.banner .art3 {
-  position: absolute;
-  bottom: -0.5rem;
-  left: 6rem;
-  width: 3rem;
-  height: 3rem;
-  z-index: 2;
-  background: hsl(var(--blue-800));
-  border-radius: 50%;
-}
-
-.banner .art4 {
-  position: absolute;
-  bottom: -1.75rem;
-  left: 8rem;
-  width: 4rem;
-  height: 4rem;
-  z-index: 1;
-  background: hsl(var(--yellow-400));
-  border-radius: 50%;
-}
-
-.banner .art5 {
-  position: absolute;
-  bottom: -1rem;
-  left: 11rem;
-  width: 3rem;
-  height: 3rem;
-  z-index: 2;
-  background: hsl(var(--blue-300));
-  border-radius: 50%;
-}
-
-.banner .art6 {
-  position: absolute;
-  bottom: -3rem;
-  right: -1.5rem;
-  width: 5rem;
-  height: 5rem;
-  z-index: 1;
-  background: hsl(var(--yellow-400));
-  border-radius: 50%;
-}
-
-.banner .art7 {
-  position: absolute;
-  bottom: -2.5rem;
-  right: 2rem;
-  width: 5rem;
-  height: 5rem;
-  z-index: 3;
-  background: hsl(var(--blue-800));
-  border-radius: 50%;
-}
-
-.banner .art8 {
-  position: absolute;
-  bottom: -0.5rem;
-  right: 6rem;
-  width: 3rem;
-  height: 3rem;
-  z-index: 2;
-  background: hsl(var(--blue-300));
-  border-radius: 50%;
-}
-
-.banner .art9 {
-  position: absolute;
-  bottom: -3rem;
-  right: 8rem;
-  width: 5rem;
-  height: 5rem;
-  z-index: 1;
-  background: hsl(var(--blue-800));
-  border-radius: 50%;
-}
-
-.banner .art10 {
-  position: absolute;
-  bottom: -2rem;
-  right: 12rem;
-  width: 3rem;
-  height: 3rem;
-  z-index: 2;
-  background: hsl(var(--yellow-400));
-  border-radius: 50%;
-}
-
-.banner .inner {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  width: 90%;
-  max-width: 79rem;
-  margin: 0 auto 3rem auto;
-  padding-bottom: 3rem;
-  height: 23rem;
-  gap: 1rem;
-}
-
-.banner h1 {
-  margin: 0;
-  font-size: 3rem;
-  color: hsl(var(--zinc-100));
-}
-
-.banner p {
-  font-size: 1.25rem;
-  font-style: italic;
-  color: hsl(var(--zinc-200));
-  width: 100%;
-}
-
-@media (min-width: 64rem) {
-  .banner .inner {
-    width: 95%;
-  }
 }
 
 .what {
@@ -157,6 +14,7 @@
   width: 90%;
   max-width: 79rem;
   margin: 3rem auto;
+  gap: 3rem;
 }
 
 .what .text {
@@ -174,14 +32,21 @@
 }
 
 .what img {
-  display: none;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  max-width: 25rem;
+}
+
+.what .button {
+  align-self: flex-end;
 }
 
 @media (min-width: 48rem) {
   .what {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    grid-template-columns: 3fr 2fr;
   }
 
   .what img {

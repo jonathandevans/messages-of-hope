@@ -56,7 +56,7 @@ const Home = () => {
 
           <Image
             src="https://res.cloudinary.com/dl6zbzu06/image/upload/v1743549732/eT3lf4bF2M_tl9glu_1_hmnuzy_rgpkdl.jpg"
-            alt="Connections 2024 event at Convent Gardens London"
+            alt="Connections 2024 filming at Convent Gardens London"
             width={4800}
             height={2649}
           />
@@ -125,6 +125,7 @@ const Home = () => {
                 "url('https://res.cloudinary.com/dl6zbzu06/image/upload/v1743596025/PtSSYegxG0_kqt4qv_1_kc0aqo_jw54ot.jpg')",
             }}
             className={styles.link2}
+            target="_blank"
           >
             <h3>Follow our Instagram</h3>
             <p>
@@ -149,7 +150,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className={styles.upcomingEvents}>
+      <section className={styles.upcomingEvents} id="events">
         <h2>Upcoming Events</h2>
         <div className={styles.list}>
           <article>
@@ -177,14 +178,6 @@ const Home = () => {
                 to come together and support each other through creative
                 activities. Keep an eye on our socials for updates on the event.
               </p>
-              <Button
-                colour="outline"
-                href="/bags-of-hope"
-                className={styles.button}
-              >
-                Learn More
-                <ArrowRight size={16} strokeWidth={3} />
-              </Button>
             </div>
           </article>
         </div>
