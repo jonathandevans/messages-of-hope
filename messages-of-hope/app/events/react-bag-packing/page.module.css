@@ -1,0 +1,51 @@
+.banner {
+  background: 
+    linear-gradient(hsl(var(--zinc-900),0.3), hsl(var(--zinc-900),0.7)), 
+    url("https://res.cloudinary.com/dl6zbzu06/image/upload/v1743592893/IMG_1599_wpo5wq.jpg") 
+    left 50% top 85% / cover no-repeat border-box, 
+    hsl(var(--blue-800));
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  margin: 4rem auto;
+  max-width: 79rem;
+  gap: 2rem;
+}
+
+.panel .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.panel .text .button {
+  align-self: flex-end;
+}
+
+.panel img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  max-width: 25rem;
+}
+
+@media (min-width: 40rem) {
+  .panel {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+@media (min-width: 64rem) {
+  .panel {
+    width: 95%;
+  }
+}
