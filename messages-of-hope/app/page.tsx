@@ -178,6 +178,9 @@ const Home = () => {
                 to come together and support each other through creative
                 activities. Keep an eye on our socials for updates on the event.
               </p>
+              <Button colour="outline" href="/bags-of-hope" className={styles.button}>
+                Learn More <ArrowRight strokeWidth={3} size={16} />
+              </Button>
             </div>
           </article>
         </div>

@@ -430,6 +430,10 @@
   margin: 0;
 }
 
+.upcomingEvents .list article .button {
+  align-self: flex-end;
+}
+
 @media (min-width: 64rem) {
   .upcomingEvents {
     width: 95%;
