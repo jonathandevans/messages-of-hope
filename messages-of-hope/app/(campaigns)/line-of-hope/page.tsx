@@ -44,7 +44,7 @@ const LineOfHope = () => {
           </p>
           <Button
             className={styles.button}
-            href="/events/feeling-blue"
+            href="/events/feeling-blue-2024"
             colour="outline"
           >
             Check out our Latest Line

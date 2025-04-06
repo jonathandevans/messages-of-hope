@@ -78,7 +78,7 @@ const Home = () => {
               Write a Message
               <ArrowRight size={16} strokeWidth={3} />
             </Button>
-            <Button href="/events/react-bag-packing">
+            <Button href="/events/react-bag-packing-2024">
               Our Latest Event
               <ArrowRight size={16} strokeWidth={3} />
             </Button>

@@ -53,10 +53,10 @@ const Footer = () => {
                 <Link href="/events">Events</Link>
               </li>
               <li>
-                <Link href="/events/react-bag-packing">React Bag Packing</Link>
+                <Link href="/events/react-bag-packing-2024">React Bag Packing</Link>
               </li>
               <li>
-                <Link href="/events/feeling-blue">Feeling Blue</Link>
+                <Link href="/events/feeling-blue-2024">Feeling Blue</Link>
               </li>
               <li>
                 <Link href="/events/connections-2024">Connections 2024</Link>
@@ -69,7 +69,7 @@ const Footer = () => {
               Write a Message
               <ArrowRight size={16} strokeWidth={3} />
             </Button>
-            <Button href="/events/react-bag-packing">
+            <Button href="/events/react-bag-packing-2024">
               Our Latest Event
               <ArrowRight size={16} strokeWidth={3} />
             </Button>

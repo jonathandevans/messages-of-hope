@@ -35,6 +35,10 @@
   width: 100%;
 }
 
+.panel a {
+  color: hsl(var(--blue-800));
+}
+
 .panel img {
   width: 100%;
   height: auto;
