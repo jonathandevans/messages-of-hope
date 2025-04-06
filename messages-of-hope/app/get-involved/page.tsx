@@ -12,7 +12,7 @@ import Dropdown from "@/components/ui/dropdown/dropdown";
 export const metadata: Metadata = generateMetadata({
   title: "Get Involved",
   description:
-    "Messages of Hope is a Community Interest Company that relies on donations to continue our work. Find out how you can support us and help us spread hope.",
+    "Messages of Hope is run by a small team of directors, all passionate about the work we do, but we cannot do it alone. Here we are asking for your support. A donation from you will help us continue to reach those who are struggling to cope. We are always looking for people to support our work beyond the donation, so please reach out to us if you can help.",
 });
 
 const GetInvolved = () => {
@@ -30,19 +30,21 @@ const GetInvolved = () => {
           <div className={styles.content}>
             <h1>Get Involved</h1>
             <p>
-              Messages of Hope is a Community Interest Company encouraging
-              people to write hopeful messages for those struggling with mental
-              health. We organise a range of projects each year, each designed
-              to connect communities through creativity and collective empathy.
-              Our initiatives include collaborative art pieces, video projects
-              for mental health awareness days, and public displays of messages
-              of hope.
+              Messages of Hope is run by a small team of directors, all
+              passionate about the work we do, but we cannot do it alone. Here
+              we are asking for your support. Whether you can provide a donation
+              directly, send us items for Bags of Hope, or even just share our
+              work and story on Instagram your support is what we rely on. With
+              your help, we can be there for everyone who needs us.
             </p>
             <p>
-              Messages of Hope is a Community Interest Company encouraging
-              people to write hopeful messages for those struggling with mental
-              health. We organise a range of projects each year, each designed
-              to connect communities through creativity and collective empathy.
+              Messages of Hope is committed to improving individuals' mental
+              well-being. A donation from you will help us continue to reach
+              those who are struggling to cope. We are always looking for people
+              to support our work beyond the donation, especially as we are
+              looking to run more events than ever before, so please reach out
+              to us if you can help. You can email us, or message us on
+              Instagram.
             </p>
           </div>
         </div>
@@ -51,21 +53,21 @@ const GetInvolved = () => {
       <section className={styles.incredible}>
         <h2>You're about to do something really incredible</h2>
         <p>
-          Messages of Hope is a Community Interest Company encouraging people to
-          write hopeful messages for those struggling with mental health. We
-          organise a range of projects each year, each designed to connect
-          communities through creativity and collective empathy. Messages of
-          Hope is a Community Interest Company encouraging people to write
-          hopeful messages for those struggling with mental health. We organise
-          a range of projects each year, each designed to connect communities
-          through creativity and collective empathy.
+          With your money we are able to continue to support psychiatric
+          patients as well as those struggling with their mental health
+          throughout England and Wales. Your money will enable us to continue
+          providing Bags of Hope for psychiatric patients, go out into
+          communities to create collaborative art projects, and financially
+          support the ongoing work within the organisation. With your support,
+          Messages of Hope plans to run indefinitely and expand yearly, to
+          provide communities with increasingly more mental health support.
         </p>
         <p>
-          Our initiatives include collaborative art pieces, video projects for
-          mental health awareness days, and public displays of messages of hope.
+          If you like what we do and who we are and want to help, there are many
+          ways you could help us out.
         </p>
         <Button
-          href="https://donate.stripe.com/fZedR5bh0fUv2xa144"
+          href="https://buy.stripe.com/fZe5kzdp88s3efS001"
           target="_blank"
           colour="yellow"
           className={styles.button}
@@ -123,19 +125,22 @@ const GetInvolved = () => {
         <div className={styles.inner}>
           <div className={styles.text}>
             <p>
-              Messages of Hope is a Community Interest Company encouraging
-              people to write hopeful messages for those struggling with mental
-              health. We organise a range of projects each year, each designed
-              to connect communities through creativity and collective empathy.
+              When you donate, you'll be taken to a secure webpage where you can
+              contribute a one-off or regular donation. Messages of Hope heavily
+              relies on the gratuitous donations we receive from individuals
+              like yourself. Any amount you are able to give in support of
+              Messages of Hope is hugely appreciated.
             </p>
             <p>
-              Messages of Hope is a Community Interest Company encouraging
-              people to write hopeful messages for those struggling with mental
-              health.
+              If you're unable to donate, simply sharing our Instagram stories
+              helps immensely in raising awareness and garnering broader support
+              for our cause. Every act of kindness, big or small, contributes to
+              making a meaningful impact on the lives of those struggling with
+              their mental health.
             </p>
           </div>
           <div className={styles.links}>
-            <Link href="">
+            <Link href="https://buy.stripe.com/fZe5kzdp88s3efS001" target="_blank">
               <Image
                 src="https://res.cloudinary.com/dl6zbzu06/image/upload/v1743865511/Writing_a_Message_2_-_Connections_2024_1_l5cy7x_ih3mor.jpg"
                 alt="A member of the public writing a message of hope"
@@ -144,7 +149,7 @@ const GetInvolved = () => {
               />
               <h3>Make a single donation</h3>
             </Link>
-            <Link href="">
+            <Link href="https://donate.stripe.com/14k28n2Ku9w7dbO5km" target="_blank">
               <Image
                 src="https://res.cloudinary.com/dl6zbzu06/image/upload/v1743865730/90m1s9J70V_jauwnv_1_owhrtt_r0km6p.jpg"
                 alt="A member of the public writing a message of hope"
@@ -160,19 +165,20 @@ const GetInvolved = () => {
       <section className={styles.incredible}>
         <h2>Your support has never been more important</h2>
         <p>
-          Messages of Hope is a Community Interest Company encouraging people to
-          write hopeful messages for those struggling with mental health. We
-          organise a range of projects each year, each designed to connect
-          communities through creativity and collective empathy. Messages of
-          Hope is a Community Interest Company encouraging people to write
-          hopeful messages for those struggling with mental health.
+          In the UK, an estimated five children in every classroom have a mental
+          health problem and 80% of young people with mental health needs said
+          the pandemic made their mental health worse. Around 1 in 4 adults in
+          the UK experience a mental health problem each year, with 1 in 6
+          people report experiencing a common mental health problem (like
+          anxiety and depression) in any given week in England. But it doesn't
+          have to be this way, things can get better.
         </p>
         <p>
-          Our initiatives include collaborative art pieces, video projects for
-          mental health awareness days, and public displays of messages of hope.
+          Donate today so we can continue to offer support to those who need it,
+          when they need it.
         </p>
         <Button
-          href="https://donate.stripe.com/fZedR5bh0fUv2xa144"
+          href="https://buy.stripe.com/fZe5kzdp88s3efS001"
           target="_blank"
           colour="yellow"
           className={styles.button}
@@ -185,12 +191,12 @@ const GetInvolved = () => {
       <section className={styles.other}>
         <h3>Other ways to help</h3>
         <p>
-          Messages of Hope is a Community Interest Company encouraging people to
-          write hopeful messages for those struggling with mental health. We
-          organise a range of projects each year, each designed to connect
-          communities through creativity and collective empathy. Messages of
-          Hope is a Community Interest Company encouraging people to write
-          hopeful messages for those struggling with mental health.
+          We understand if you do not feel comfortable, or are unable to provide
+          us with a cash donation. If you still want to support our work, we
+          have setup and Amazon Wishlist so that we can fill the bags used in
+          the Bags of Hope campaign. Alternatively you can buy our
+          self-published colouring book, with the profits going to our continued
+          work in the community.
         </p>
         <div className={styles.content}>
           <Dropdown title="Amazon Wishlist">
@@ -206,7 +212,7 @@ const GetInvolved = () => {
               a challenging time. We also list snacks and activities that can be
               included in the bags.
             </p>
-            <Button href="">
+            <Button href="https://www.amazon.co.uk/hz/wishlist/ls/2B8A3SKRC0F49?ref_=wl_share" target="_blank">
               Amazon Wishlist
               <ArrowRight size={16} strokeWidth={3} />
             </Button>
@@ -234,7 +240,7 @@ const GetInvolved = () => {
               You can now purchase our Message of Hope colouring book via
               Amazon.
             </p>
-            <Button href="">
+            <Button href="https://www.amazon.co.uk/Messages-Hope-Bethan-Hannah-Evans/dp/B0D3XLX1K2/ref=sr_1_1?crid=32KF2KZ9FLD32&dib=eyJ2IjoiMSJ9.PhczWzNPLNkjDM2Abu_Bgg.IAGmlyeVbbYQwqPXz2z5Nw4AkB7opJZjPQBVM9OGxkc&dib_tag=se&keywords=messages+of+hope+colouring+book+bethan+evans&qid=1717027563&sprefix=messages+of+hope+colouring+book+bethan+evans%2Caps%2C77&sr=8-1" target="_blank">
               Colouring Book
               <ArrowRight size={16} strokeWidth={3} />
             </Button>
@@ -242,7 +248,7 @@ const GetInvolved = () => {
         </div>
       </section>
 
-      <ContactForm />
+      <ContactForm title="Get In Touch" />
 
       <MessagePanel />
 

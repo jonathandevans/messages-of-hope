@@ -85,7 +85,6 @@
 .incredible h2 {
   font-size: 2rem;
   margin: 0;
-  margin-bottom: 0.5rem;
 }
 
 .incredible p {
@@ -221,8 +220,8 @@
 .howTo .links {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   gap: 2rem;
   width: 100%;
   max-width: 30rem;
@@ -275,7 +274,7 @@
   .howTo .links {
     flex-direction: row;
     justify-content: center;
-    align-items: stretch;
+    align-items: flex-start;
     gap: 1rem;
     max-width: none;
   }
