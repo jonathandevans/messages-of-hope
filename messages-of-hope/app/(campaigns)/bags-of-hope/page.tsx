@@ -261,6 +261,13 @@ const BagsOfHope = () => {
             making a meaningful impact on the lives of those struggling with
             their mental health.
           </p>
+          <p>
+            We appreciate all donations, but here are some suggestions for items
+            that are always in need. Please ensure all items are new and
+            unopened. Any items we receive that cannot be put into a bag, will
+            be donated to a food bank or other appropriate charity. If you're
+            not sure, just drop us a message. Thank you for your support!
+          </p>
           <div className={styles.links}>
             <Button
               href="https://www.instagram.com/messagesof.hope/"
