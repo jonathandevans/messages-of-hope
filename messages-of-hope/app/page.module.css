@@ -1,0 +1,558 @@
+.banner {
+  max-width: 79rem;
+  margin: 2rem auto;
+}
+
+.banner .hero {
+  width: 100%;
+  max-width: 30rem;
+  height: 23rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: auto;
+}
+
+.banner .art1 {
+  display: block;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 20.5rem;
+  background: hsl(var(--blue-300));
+  transform: rotate(2.5deg);
+  z-index: 1;
+}
+
+.banner .art2 {
+  display: block;
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  width: 70%;
+  height: 20.5rem;
+  background: hsl(var(--blue-800));
+  transform: rotate(-5.5deg);
+  z-index: 2;
+}
+
+.banner .hero img {
+  width: 100%;
+  object-fit: cover;
+  height: 16.25rem;
+  position: relative;
+  z-index: 3;
+}
+
+.banner .content {
+  width: 95%;
+  max-width: 79rem;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.banner .content h1 {
+  margin: 0 0 1rem 0;
+}
+
+.banner .content p {
+  margin: 0;
+}
+
+.banner .content .links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+@media (min-width: 40rem) {
+  .banner {
+    gap: 1rem;
+  }
+
+  .banner .content {
+    width: 90%;
+  }
+
+  .banner .content .links {
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .banner {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    width: 95%;
+  }
+}
+
+@media (min-width: 76rem) {
+  .banner .hero {
+    max-width: 36.125rem;
+    height: 26.6rem;
+  }
+
+  .banner .art1 {
+    height: 24.3rem;
+    top: 4%;
+  }
+
+  .banner .art2 {
+    height: 24.3rem;
+  }
+
+  .banner .hero img {
+    width: 36.125rem;
+    height: 19.5rem;
+  }
+
+  .banner .content {
+    width: 37.125rem;
+    margin-left: 0;
+  }
+}
+
+.getInvolved {
+  background: hsl(var(--blue-300));
+  margin: 3rem auto;
+  padding: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.getInvolved h2 {
+  margin: 0 auto;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  width: 90%;
+  z-index: 2;
+  position: relative;
+}
+
+.getInvolved .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 25rem;
+  margin: 2rem auto 0 auto;
+  gap: 1rem;
+  position: relative;
+}
+
+.getInvolved .links .art1,
+.getInvolved .links .art2,
+.getInvolved .links .art3 {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  height: auto;
+  aspect-ratio: 1/1;
+  background: hsl(var(--yellow-400));
+  border-radius: 50%;
+}
+
+.getInvolved .links .art1 {
+  width: 6rem;
+  top: -2%;
+  left: 85%;
+}
+.getInvolved .links .art2 {
+  width: 9rem;
+  top: 28%;
+  left: -15%;
+}
+.getInvolved .links .art3 {
+  width: 8rem;
+  top: 64%;
+  left: 84%;
+}
+
+.getInvolved .links a {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: flex-end;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1.03;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  padding: 10% 5%;
+  box-shadow: inset 0 -200px 100px hsla(var(--zinc-800), 80%);
+  z-index: 2;
+  text-decoration: none;
+  color: hsl(var(--zinc-800));
+}
+
+.getInvolved .links .link1 {
+  background: hsl(var(--blue-800)) left 50% bottom 30% / 150% no-repeat
+    border-box;
+}
+
+.getInvolved .links .link2,
+.getInvolved .links .link3 {
+  background: hsl(var(--blue-800)) left 50% bottom 30% / cover no-repeat
+    border-box;
+}
+
+.getInvolved .links a h3 {
+  z-index: 3;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: hsl(var(--zinc-100));
+  margin: 0 0 0.5rem 0;
+  transition: all 0.5s;
+}
+
+.getInvolved .links a:hover h3,
+.getInvolved .links a:focus h3,
+.getInvolved .links a:active h3 {
+  color: hsl(var(--blue-300));
+}
+
+.getInvolved .links a p {
+  z-index: 3;
+  color: hsl(var(--zinc-100));
+}
+
+@media (min-width: 40rem) {
+  .getInvolved .links .art1 {
+    width: 6rem;
+    top: 27%;
+    left: 10%;
+  }
+  .getInvolved .links .art2 {
+    width: 9rem;
+    top: 50%;
+    left: 80%;
+  }
+  .getInvolved .links .art3 {
+    width: 8rem;
+    top: 92%;
+    left: -10%;
+  }
+
+  .getInvolved .ring1 {
+    position: absolute;
+    top: -3rem;
+    left: -10.5rem;
+  }
+  .getInvolved .ring1 span:nth-of-type(1) {
+    display: block;
+    width: 17rem;
+    aspect-ratio: 1/1;
+    border: 19px solid hsl(var(--blue-500));
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .getInvolved .ring1 span:nth-of-type(2) {
+    display: block;
+    width: 13rem;
+    aspect-ratio: 1/1;
+    border: 15px solid hsl(var(--blue-600));
+    border-radius: 50%;
+    position: absolute;
+    top: 7rem;
+    left: 8rem;
+    z-index: 1;
+  }
+  .getInvolved .ring1 span:nth-of-type(3) {
+    display: block;
+    width: 16.5rem;
+    aspect-ratio: 1/1;
+    border: 8px solid hsl(var(--blue-400));
+    border-radius: 50%;
+    position: absolute;
+    top: 13rem;
+    left: 2rem;
+    z-index: 1;
+  }
+
+  .getInvolved .ring2 {
+    position: absolute;
+    bottom: -6rem;
+    right: -15rem;
+  }
+  .getInvolved .ring2 span:nth-of-type(1) {
+    display: block;
+    width: 33rem;
+    aspect-ratio: 1/1;
+    border: 17px solid hsl(var(--blue-500));
+    border-radius: 50%;
+    z-index: 1;
+  }
+  .getInvolved .ring2 span:nth-of-type(2) {
+    display: block;
+    width: 24rem;
+    aspect-ratio: 1/1;
+    border: 13px solid hsl(var(--blue-600));
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0rem;
+    right: 0rem;
+    z-index: 1;
+  }
+  .getInvolved .ring2 span:nth-of-type(3) {
+    display: block;
+    width: 20rem;
+    aspect-ratio: 1/1;
+    border: 15px solid hsl(var(--blue-400));
+    border-radius: 50%;
+    position: absolute;
+    bottom: -2rem;
+    right: 18rem;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 64rem) {
+  .getInvolved .links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    width: 95%;
+    max-width: 79rem;
+  }
+
+  .getInvolved .links .art1 {
+    width: 6rem;
+    top: 85%;
+    left: -5%;
+  }
+  .getInvolved .links .art2 {
+    width: 8rem;
+    top: 60%;
+    left: 60%;
+  }
+  .getInvolved .links .art3 {
+    width: 9rem;
+    top: -8%;
+    left: 93%;
+  }
+
+  .getInvolved .links a {
+    width: auto;
+    height: 26.25rem;
+    aspect-ratio: unset;
+    position: relative;
+    padding: 10% 5%;
+  }
+
+  .getInvolved .ring2 {
+    position: absolute;
+    bottom: -12rem;
+    right: -20rem;
+  }
+}
+
+.upcomingEvents {
+  max-width: 79rem;
+  margin: 3rem auto;
+}
+
+.upcomingEvents h2 {
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  width: 90%;
+}
+
+.upcomingEvents .list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: 2rem auto 0 auto;
+  gap: 1rem;
+}
+
+.upcomingEvents .list article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  position: relative; 
+}
+
+.upcomingEvents .list article img {
+  width: 100%;
+  max-width: 25.625rem;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  margin: auto;
+  border-radius: 10px;
+  border: 12px solid hsl(var(--yellow-400));
+}
+
+.upcomingEvents .list article div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+  width: 100%;
+  align-self: flex-start;
+  margin-top: 1rem;
+}
+
+.upcomingEvents .list article h4 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: hsl(var(--zinc-800));
+  margin: 0;
+}
+
+.upcomingEvents .list article h3 {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: hsl(var(--zinc-800));
+  margin: 0;
+}
+
+.upcomingEvents .list article .button {
+  align-self: flex-end;
+}
+
+@media (min-width: 64rem) {
+  .upcomingEvents {
+    width: 95%;
+  }
+
+  .upcomingEvents .list {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .upcomingEvents .list article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  .upcomingEvents .list article div {
+    grid-column: 2 / 4;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+
+  .upcomingEvents .list article img {
+    aspect-ratio: auto;
+    width: 100%;
+    max-width: 25.625rem;
+    height: 25.625rem;
+  }
+}
+
+.ourStory {
+  width: 100%;
+  margin: 3rem auto;
+  position: relative;
+}
+
+.ourStory h2 {
+  margin: 0 auto;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  width: 90%;
+}
+
+.ourStory .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem auto 0 auto;
+  gap: 1rem;
+  position: relative;
+  width: 90%;
+  max-width: 79rem;
+}
+
+.ourStory .content img {
+  width: 100%;
+  max-width: 25.625rem;
+  height: auto;
+  object-fit: cover;
+  margin: auto;
+  border-radius: 10px;
+}
+
+.ourStory .content div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.ourStory .content div p {
+  width: 100%;
+}
+
+.ourStory .content div .button {
+  align-self: flex-end;
+}
+
+@media (min-width: 64rem) {
+  .ourStory {
+    width: 100%;
+  }
+
+  .ourStory .content {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+    min-width: 60rem;
+  }
+
+  .ourStory .content img {
+    grid-column: 2 / 3;
+  }
+
+  .ourStory .content div {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .ourStory .content {
+    width: 95%;
+  }
+}
+
+.rightLines {
+  display: none;
+}
+
+@media (min-width: 120rem) {
+  .rightLines {
+    display: block;
+    position: absolute;
+    right: 0rem;
+    top: 0;
+  }
+}

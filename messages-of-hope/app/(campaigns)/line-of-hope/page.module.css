@@ -1,0 +1,64 @@
+.banner {
+  background:
+    linear-gradient(hsl(var(--zinc-900), 0.3), hsl(var(--zinc-900), 0.7)),
+    url("https://res.cloudinary.com/dl6zbzu06/image/upload/v1743890174/EB3939A3-BAEA-4436-850A-39BA150A3750_sy9u6g.jpg")
+      left 50% top 50% / cover no-repeat border-box,
+    hsl(var(--blue-800));
+}
+
+.what {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 79rem;
+  margin: 3rem auto;
+  gap: 3rem;
+}
+
+.what .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.what h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.what img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  max-width: 25rem;
+}
+
+.what .button {
+  align-self: flex-end;
+}
+
+@media (min-width: 48rem) {
+  .what {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .what img {
+    display: block;
+    width: 100%;
+    height: 25rem;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 64rem) {
+  .what {
+    width: 95%;
+  }
+}

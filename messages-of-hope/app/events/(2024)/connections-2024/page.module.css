@@ -1,0 +1,139 @@
+.banner {
+  background: 
+    linear-gradient(hsl(var(--zinc-900),0.3), hsl(var(--zinc-900),0.7)), 
+    url("https://res.cloudinary.com/dl6zbzu06/image/upload/v1743549732/eT3lf4bF2M_tl9glu_1_hmnuzy_rgpkdl.jpg") 
+    left 50% top 40% / cover no-repeat border-box, 
+    hsl(var(--blue-800));
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 79rem;
+  gap: 1rem;
+  margin: 3rem auto;
+}
+
+.text h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  width: 100%;
+}
+
+.text p {
+  width: 100%;
+}
+
+@media (min-width: 64rem) {
+  .text {
+    width: 95%;
+  }
+}
+
+.videos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 79rem;
+  margin: 3rem auto;
+  gap: 1rem;
+}
+
+.videos > * {
+  width: 100%;
+  aspect-ratio: 16/9;
+  height: auto;
+  max-width: 25rem;
+}
+
+@media (min-width: 48rem) {
+  .videos {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .videos > * {
+    max-width: 35rem;
+  }
+}
+
+@media (min-width: 64rem) {
+  .videos {
+    width: 95%;
+  }
+}
+
+.thanks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0;
+  width: 100%;
+  padding: 3rem 0;
+  background: hsl(var(--blue-800));
+}
+
+.thanks .inner {
+  width: 90%;
+  max-width: 79rem;
+  margin: 0 auto;
+}
+
+.thanks .inner p {
+  color: hsl(var(--zinc-100));
+  width: 100%;
+}
+
+.gallery {
+  width: 100%;
+  padding: 3rem 0;
+  margin: 3rem auto;
+  background: hsl(var(--blue-300));
+}
+
+.gallery .inner {
+  width: 90%;
+  max-width: 79rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.gallery .inner img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  height: auto;
+  object-fit: cover;
+  margin: auto;
+  border-radius: 10px;
+}
+
+@media (min-width: 32rem) {
+  .gallery .inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 48rem) {
+  .gallery .inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media (min-width: 64rem) {
+  .gallery .inner {
+    width: 95%;
+  }
+}

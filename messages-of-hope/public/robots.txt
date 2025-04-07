@@ -1,6 +1,5 @@
 User-agent: *
-Disallow: /login
+Disallow: /api
 Disallow: /privacy-policy
-Disallow: /admin
 
 Sitemap: https://www.messagesofhope.co.uk/sitemap.xml

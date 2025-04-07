@@ -1,0 +1,152 @@
+.banner {
+  background: 
+    linear-gradient(hsl(var(--zinc-900),0.3), hsl(var(--zinc-900),0.7)), 
+    url("https://res.cloudinary.com/dl6zbzu06/image/upload/v1743890174/EB3939A3-BAEA-4436-850A-39BA150A3750_sy9u6g.jpg") 
+    left 50% top 50% / cover no-repeat border-box, 
+    hsl(var(--blue-800));
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  width: 90%;
+  max-width: 79rem;
+  margin: 3rem auto;
+}
+
+.intro .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.intro h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.intro img {
+  width: 100%;
+  height: auto;
+  max-width: 25rem;
+}
+
+@media (min-width: 48rem) {
+  .intro {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    gap: 3rem;
+  }
+
+  .intro img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: 25rem;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 64rem) {
+  .intro {
+    width: 95%;
+  }
+}
+
+.timeline {
+  width: 90%;
+  max-width: 79rem;
+  margin: 3rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+@media (min-width: 64rem) {
+  .timeline {
+    width: 95%;
+  }
+}
+
+.timeline h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.timeline article {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.timeline article h3 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.25rem;
+  background: hsl(var(--blue-300));
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+  color: hsl(var(--blue-800));
+}
+
+.timeline article .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.timeline article .text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.timeline article .text p {
+  width: 100%;
+}
+
+.timeline article .content img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  max-width: 25rem;
+}
+
+@media (min-width: 40rem) {
+  .timeline article .content {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    align-items: flex-start;
+    margin: 0 auto;
+  }
+
+  .timeline article .imageContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .timeline article .content img {
+    max-width: 20rem;
+    margin: 0 auto;
+  }
+}

@@ -5,9 +5,19 @@ generator client {
 datasource db {
   provider  = "postgresql"
   url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_DATABASE_URL")
+  directUrl = env("DIRECT_URL")
 }
 
+model Message {
+  id              String    @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  message         String
+  submitted       DateTime? @default(now()) @db.Date
+  instagramHandle String?
+  source          Source    @default(website)
+  category        Category  @default(uncategorised)
+  public          Boolean   @default(false)
+  used            Boolean   @default(false)
+}
 
 enum Source {
   website
@@ -26,63 +36,3 @@ enum Category {
   suicide_prevention
   uncategorised
 }
-
-enum UserRole {
-  user
-  admin
-}
-
-
-model Message {
-  id              String    @id @default(dbgenerated("gen_random_uuid()"))
-  message         String
-  submitted       DateTime? @default(now()) @db.Date
-  instagramHandle String?
-  source          Source    @default(website)
-  category        Category  @default(uncategorised)
-  updatedAt       DateTime? @updatedAt
-  updatedBy       String?
-  public          Boolean   @default(false)
-  used            Boolean   @default(false)
-
-  // Relation
-  updatedByUser   User?     @relation(fields: [updatedBy], references: [id])
-}
-
-model User {
-  id            String    @id @default(dbgenerated("gen_random_uuid()"))
-  name          String?
-  email         String    @unique
-  emailVerified DateTime?
-  image         String?
-  password      String?
-  role          UserRole  @default(user)
-  createdAt     DateTime  @default(now())
-  updatedAt     DateTime  @updatedAt
-  accounts      Account[]
-  messages      Message[]
-}
-
-model Account {
-  userId            String
-  type              String
-  provider          String
-  providerAccountId String
-  refresh_token     String?
-  access_token      String?
-  expires_at        Int?
-  token_type        String?
-  scope             String?
-  id_token          String?
-  session_state     String?
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
-
-  // Relation
-  user              User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  // Constraints
-  @@id([provider, providerAccountId])
-}
-
-

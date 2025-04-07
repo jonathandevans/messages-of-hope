@@ -1,0 +1,89 @@
+.banner {
+  background: 
+    linear-gradient(hsl(var(--zinc-900),0.3), hsl(var(--zinc-900),0.7)), 
+    url("https://res.cloudinary.com/dl6zbzu06/image/upload/v1743893755/Messages_of_Hope_2023_1_rpedc7_qsozmo.jpg") 
+    left 50% top 90% / cover no-repeat border-box, 
+    hsl(var(--blue-800));
+}
+
+.panel {
+  display: flex;
+  margin: 3rem auto;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 79rem;
+  gap: 3rem;
+}
+
+.panel .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.panel .images {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.panel .images img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+@media (min-width: 40rem) {
+  .panel .images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 50rem) {
+  .panel {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .panel .images {
+    display: flex;
+  }
+}
+
+@media (min-width: 60rem) {
+  .panel {
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+@media (min-width: 64rem) {
+  .panel {
+    width: 95%;
+  }
+}
+
+.finish {
+  display: block;
+  margin: 3rem auto;
+  width: 90%;
+  max-width: 79rem;
+  height: auto;
+  max-height: 30rem;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+@media (min-width: 64rem) {
+  .finish {
+    width: 95%;
+  }
+}
