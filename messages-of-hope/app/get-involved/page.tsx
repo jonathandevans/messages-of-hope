@@ -38,12 +38,12 @@ const GetInvolved = () => {
               your help, we can be there for everyone who needs us.
             </p>
             <p>
-              Messages of Hope is committed to improving individuals' mental
-              well-being. A donation from you will help us continue to reach
-              those who are struggling to cope. We are always looking for people
-              to support our work beyond the donation, especially as we are
-              looking to run more events than ever before, so please reach out
-              to us if you can help. You can email us, or message us on
+              Messages of Hope is committed to improving individuals&apos;
+              mental well-being. A donation from you will help us continue to
+              reach those who are struggling to cope. We are always looking for
+              people to support our work beyond the donation, especially as we
+              are looking to run more events than ever before, so please reach
+              out to us if you can help. You can email us, or message us on
               Instagram.
             </p>
           </div>
@@ -51,7 +51,7 @@ const GetInvolved = () => {
       </section>
 
       <section className={styles.incredible}>
-        <h2>You're about to do something really incredible</h2>
+        <h2>You&apos;re about to do something really incredible</h2>
         <p>
           With your money we are able to continue to support psychiatric
           patients as well as those struggling with their mental health
@@ -125,22 +125,25 @@ const GetInvolved = () => {
         <div className={styles.inner}>
           <div className={styles.text}>
             <p>
-              When you donate, you'll be taken to a secure webpage where you can
-              contribute a one-off or regular donation. Messages of Hope heavily
-              relies on the gratuitous donations we receive from individuals
-              like yourself. Any amount you are able to give in support of
-              Messages of Hope is hugely appreciated.
+              When you donate, you&apos;ll be taken to a secure webpage where
+              you can contribute a one-off or regular donation. Messages of Hope
+              heavily relies on the gratuitous donations we receive from
+              individuals like yourself. Any amount you are able to give in
+              support of Messages of Hope is hugely appreciated.
             </p>
             <p>
-              If you're unable to donate, simply sharing our Instagram stories
-              helps immensely in raising awareness and garnering broader support
-              for our cause. Every act of kindness, big or small, contributes to
-              making a meaningful impact on the lives of those struggling with
-              their mental health.
+              If you&apos;re unable to donate, simply sharing our Instagram
+              stories helps immensely in raising awareness and garnering broader
+              support for our cause. Every act of kindness, big or small,
+              contributes to making a meaningful impact on the lives of those
+              struggling with their mental health.
             </p>
           </div>
           <div className={styles.links}>
-            <Link href="https://buy.stripe.com/fZe5kzdp88s3efS001" target="_blank">
+            <Link
+              href="https://buy.stripe.com/fZe5kzdp88s3efS001"
+              target="_blank"
+            >
               <Image
                 src="https://res.cloudinary.com/dl6zbzu06/image/upload/v1743865511/Writing_a_Message_2_-_Connections_2024_1_l5cy7x_ih3mor.jpg"
                 alt="A member of the public writing a message of hope"
@@ -149,7 +152,10 @@ const GetInvolved = () => {
               />
               <h3>Make a single donation</h3>
             </Link>
-            <Link href="https://donate.stripe.com/14k28n2Ku9w7dbO5km" target="_blank">
+            <Link
+              href="https://donate.stripe.com/14k28n2Ku9w7dbO5km"
+              target="_blank"
+            >
               <Image
                 src="https://res.cloudinary.com/dl6zbzu06/image/upload/v1743865730/90m1s9J70V_jauwnv_1_owhrtt_r0km6p.jpg"
                 alt="A member of the public writing a message of hope"
@@ -170,8 +176,8 @@ const GetInvolved = () => {
           the pandemic made their mental health worse. Around 1 in 4 adults in
           the UK experience a mental health problem each year, with 1 in 6
           people report experiencing a common mental health problem (like
-          anxiety and depression) in any given week in England. But it doesn't
-          have to be this way, things can get better.
+          anxiety and depression) in any given week in England. But it
+          doesn&apos;t have to be this way, things can get better.
         </p>
         <p>
           Donate today so we can continue to offer support to those who need it,
@@ -201,9 +207,9 @@ const GetInvolved = () => {
         <div className={styles.content}>
           <Dropdown title="Amazon Wishlist">
             <p>
-              If you don't feel comfortable with a donation of money, we have
-              setup and Amazon wishlist so that we can fill the bags used in the
-              Bags of Hope campaign.
+              If you don&apos;t feel comfortable with a donation of money, we
+              have setup and Amazon wishlist so that we can fill the bags used
+              in the Bags of Hope campaign.
             </p>
             <p>
               Items that we are looking for include body wash, wipes, socks, and
@@ -212,7 +218,10 @@ const GetInvolved = () => {
               a challenging time. We also list snacks and activities that can be
               included in the bags.
             </p>
-            <Button href="https://www.amazon.co.uk/hz/wishlist/ls/2B8A3SKRC0F49?ref_=wl_share" target="_blank">
+            <Button
+              href="https://www.amazon.co.uk/hz/wishlist/ls/2B8A3SKRC0F49?ref_=wl_share"
+              target="_blank"
+            >
               Amazon Wishlist
               <ArrowRight size={16} strokeWidth={3} />
             </Button>
@@ -240,7 +249,10 @@ const GetInvolved = () => {
               You can now purchase our Message of Hope colouring book via
               Amazon.
             </p>
-            <Button href="https://www.amazon.co.uk/Messages-Hope-Bethan-Hannah-Evans/dp/B0D3XLX1K2/ref=sr_1_1?crid=32KF2KZ9FLD32&dib=eyJ2IjoiMSJ9.PhczWzNPLNkjDM2Abu_Bgg.IAGmlyeVbbYQwqPXz2z5Nw4AkB7opJZjPQBVM9OGxkc&dib_tag=se&keywords=messages+of+hope+colouring+book+bethan+evans&qid=1717027563&sprefix=messages+of+hope+colouring+book+bethan+evans%2Caps%2C77&sr=8-1" target="_blank">
+            <Button
+              href="https://www.amazon.co.uk/Messages-Hope-Bethan-Hannah-Evans/dp/B0D3XLX1K2/ref=sr_1_1?crid=32KF2KZ9FLD32&dib=eyJ2IjoiMSJ9.PhczWzNPLNkjDM2Abu_Bgg.IAGmlyeVbbYQwqPXz2z5Nw4AkB7opJZjPQBVM9OGxkc&dib_tag=se&keywords=messages+of+hope+colouring+book+bethan+evans&qid=1717027563&sprefix=messages+of+hope+colouring+book+bethan+evans%2Caps%2C77&sr=8-1"
+              target="_blank"
+            >
               Colouring Book
               <ArrowRight size={16} strokeWidth={3} />
             </Button>
@@ -262,13 +274,14 @@ const GetInvolved = () => {
           endeavour to put all of the listed items into one Bag of Hope but due
           to our reliance on donations, some bags may contain slightly fewer
           items and our attempts to meet the checklist are on a best effort
-          basis. Additionally, only bags labelled "female" and "gender neutral"
-          contain sanitary products. The price of our Bags of Hope is based upon
-          our ability to bulk buy producs with any monetary donations we receive
-          and does not reflect the price of a Bag of Hope that is filled with
-          items from our Amazon Wishlist. Whilst donation examples are given in
-          terms of their contribution to Bags of Hope, Messages of Hope retain
-          the right to use donations in any way appropriate.
+          basis. Additionally, only bags labelled &quot;female&quot; and
+          &quot;gender neutral&quot; contain sanitary products. The price of our
+          Bags of Hope is based upon our ability to bulk buy producs with any
+          monetary donations we receive and does not reflect the price of a Bag
+          of Hope that is filled with items from our Amazon Wishlist. Whilst
+          donation examples are given in terms of their contribution to Bags of
+          Hope, Messages of Hope retain the right to use donations in any way
+          appropriate.
           <br />
           <sup>2</sup> Essential items include: 2 in 1 or shampoo & conditioner,
           body wash & flannel, toothbrush & paste, roll-on deodorant, pants &
@@ -281,16 +294,16 @@ const GetInvolved = () => {
           items into one Bag of Hope but due to our reliance on donations, some
           bags may contain slightly fewer items and our attempts to meet the
           checklist are on a best effort basis. Additionally, only bags labelled
-          "female" and "gender neutral" contain sanitary products. The price of
-          our Bags of Hope is based upon our ability to bulk buy producs with
-          any monetary donations we receive and does not reflect the price of a
-          Bag of Hope that is filled with items from our Amazon Wishlist. Whilst
-          donation examples are given in terms of their contribution to Bags of
-          Hope, Messages of Hope retain the right to use donations in any way
-          appropriate.
+          &quot;female&quot; and &quot;gender neutral&quot; contain sanitary
+          products. The price of our Bags of Hope is based upon our ability to
+          bulk buy producs with any monetary donations we receive and does not
+          reflect the price of a Bag of Hope that is filled with items from our
+          Amazon Wishlist. Whilst donation examples are given in terms of their
+          contribution to Bags of Hope, Messages of Hope retain the right to use
+          donations in any way appropriate.
           <br />
           <sup>3</sup> This costing analysis is based on the production of 10
-          'Life Saver' Bags of Hope, as described in <sup>1</sup>, with items
+          &apos;Life Saver&apos; Bags of Hope, as described in <sup>1</sup>, with items
           bought in bulk and use of existing stockpile. Whilst donation examples
           are given in terms of their contribution to Bags of Hope, Messages of
           Hope retain the right to use donations in any way appropriate.

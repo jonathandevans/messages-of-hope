@@ -16,7 +16,8 @@ export async function GET() {
     mess.forEach((item) => _mess.push(item.message));
     return new Response(JSON.stringify({ messages: _mess }), { status: 200 });
   } catch (err) {
-    return new Response(JSON.stringify({ error: "Failed to fetch messages" }), {
+    console.log("Error fetching messages:", err);
+    return new Response(JSON.stringify({ error: "Failed to fetch messages", }), {
       status: 500,
     });
   }

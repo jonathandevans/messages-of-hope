@@ -48,13 +48,13 @@ const OurTeam = () => {
               </a>
             </p>
             <p>
-              Hi, I'm Beth, the founder of Messages of Hope. I'm a mental health
-              advocate and a filmmaker, using creativity to spread messages of
-              hope and support to those struggling with their mental health. My
-              personal experiences with Borderline Personality Disorder and
-              journey through recovery deeply inform my work, driving my
-              commitment to inspire others and advocate for better mental health
-              care.
+              Hi, I&apos;m Beth, the founder of Messages of Hope. I&apos;m a
+              mental health advocate and a filmmaker, using creativity to spread
+              messages of hope and support to those struggling with their mental
+              health. My personal experiences with Borderline Personality
+              Disorder and journey through recovery deeply inform my work,
+              driving my commitment to inspire others and advocate for better
+              mental health care.
             </p>
           </div>
         </article>
@@ -77,7 +77,7 @@ const OurTeam = () => {
               </a>
             </p>
             <p>
-              Hi, I'm Jonny, a director of Messages of Hope. My passion for
+              Hi, I&apos;m Jonny, a director of Messages of Hope. My passion for
               using creativity to spread messages of hope stems from witnessing
               the toll mental health struggles have taken on people in his life.
               In the beginning, I was motivated by the personal experiences of
@@ -109,9 +109,9 @@ const OurTeam = () => {
               </a>
             </p>
             <p>
-              Hey, I'm Liv, the newest director of Messages of Hope. After
+              Hey, I&apos;m Liv, the newest director of Messages of Hope. After
               seeing the work that Beth has been doing this past year, I decided
-              to join the team. I'm looking forward to seeing how my
+              to join the team. I&apos;m looking forward to seeing how my
               contributions help Messages of Hope in the future.
             </p>
           </div>
@@ -131,8 +131,8 @@ const OurTeam = () => {
             <h3>(Unofficial) Director</h3>
             <p>
               Woof woof! woof! Teddy is an unofficial director of Messages of
-              Hope as Companies House won't let her be on the paperwork. Teddy
-              is Bethan's constant companion and has been apart of the Messages
+              Hope as Companies House won&apos;t let her be on the paperwork. Teddy
+              is Bethan&apos;s constant companion and has been apart of the Messages
               of Hope team since adoption. With a wagging tail and a heart full
               of love, she is passionate about using cuddles to spread messages
               of hope and support to those struggling with their mental health.

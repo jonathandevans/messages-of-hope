@@ -17,7 +17,7 @@ export async function POST(request: Request) {
   }
 
   try {
-    const work = await resend.emails.send({
+    await resend.emails.send({
       from: "NO-REPLY <no-reply@messagesofhope.co.uk>",
       to: "contact@messagesofhope.co.uk",
       replyTo: req.email,

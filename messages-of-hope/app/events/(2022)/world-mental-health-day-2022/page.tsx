@@ -30,7 +30,7 @@ const WorldMentalHealthDay2022 = () => {
           <p>
             Our aim for this event was to create a mural that displayed
             anonymous messages of hope that could be showcased at City Hall, and
-            that's exactly what we did. We were able to collect over 200
+            that&apos;s exactly what we did. We were able to collect over 200
             messages for this event and approximately 50 messages from attendees
             of the event, on the day.
           </p>

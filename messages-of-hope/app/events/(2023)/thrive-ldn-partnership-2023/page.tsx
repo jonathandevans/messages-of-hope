@@ -38,7 +38,7 @@ const ThriveLDNPartnership2023 = () => {
       <section className={styles.panel}>
         <p>
           Launched during Mental Health Awareness Week 2023 and aligning with
-          Thrive LDN's Getting Through This Together campaign, the collaboration
+          Thrive LDN&apos;s Getting Through This Together campaign, the collaboration
           will see anonymous messages submitted by Londoners shared daily. The
           hundreds of anonymous messages have been submitted from Londoners,
           many who have experienced their own difficulties and challenges and
@@ -48,7 +48,7 @@ const ThriveLDNPartnership2023 = () => {
         </p>
         <p>
           The collaboration began in October 2022 during World Mental Health Day
-          2022 both online and on the day at London's City Hall as part of the
+          2022 both online and on the day at London&apos;s City Hall as part of the
           Never Alone LDN festival. The project was a way of offering Londoners
           an opportunity to connect and share experiences through messages
           written by those living and working in the city.

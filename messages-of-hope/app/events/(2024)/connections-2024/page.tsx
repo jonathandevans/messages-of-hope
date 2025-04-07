@@ -100,7 +100,7 @@ const Connections2024 = () => {
             that helped us bring Connections 2024 together. From approaching
             strangers to ask for messages of hope, to dancing in the streets of
             London, they did it all! Thank you again because without you,
-            Connections 2024 wouldn't have been possible.
+            Connections 2024 wouldn&apos;t have been possible.
           </p>
         </div>
       </section>

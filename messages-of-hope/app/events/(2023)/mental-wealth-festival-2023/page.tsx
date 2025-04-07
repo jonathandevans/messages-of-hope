@@ -34,13 +34,13 @@ const MentalWealthFestival2023 = () => {
             to colour in the emotion they were feeling in order to create a
             colourful collaborative art piece. Each colour was assigned an
             emotion and members of the public were encouraged to colour in the
-            canvas as they please. City Lit's Mental Wealth Festival was an
+            canvas as they please. City Lit&apos;s Mental Wealth Festival was an
             incredible opportunity for us to connect with other creatives that
             use art and creativity to aid their mental health and well-being.
           </p>
           <p>
             To view these canvases, make sure you visit City Lit next time
-            you're in London. Be sure to follow{" "}
+            you&apos;re in London. Be sure to follow{" "}
             <a
               href="https://www.instagram.com/messagesof.hope/"
               target="_blank"

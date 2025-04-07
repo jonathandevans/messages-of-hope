@@ -97,8 +97,8 @@ const FeelingBlue = () => {
                 ornaments to take home. This was the heart of the Feeling Blue?
                 event. On Friday 11th we asked students to donate £1 to wear
                 blue. This fundraising event encourages you to take time and
-                actually reflect on how you've been feeling. Life can be very
-                hectic and it's very easy to forget to check in ourselves.
+                actually reflect on how you&apos;ve been feeling. Life can be very
+                hectic and it&apos;s very easy to forget to check in ourselves.
               </p>
               <p>
                 In the afternoon Urdang then hosted a Bags of Hope packing event

@@ -9,9 +9,9 @@ const staticMessages = [
   "Even on your darkest days, there is always hope. You are your unique self, there is no one in the world like you, or ever will be. One day, someone will need you, let them have that chance.",
 ];
 
-interface MessagePanelProps extends HTMLAttributes<HTMLDivElement> {}
-
-const MessagePanel = ({ className: _className } : MessagePanelProps) => {
+const MessagePanel = ({
+  className: _className,
+}: HTMLAttributes<HTMLDivElement>) => {
   const [messages, setMessages] = useState(staticMessages);
   const currentMessage = useRef(0);
 
@@ -44,7 +44,7 @@ const MessagePanel = ({ className: _className } : MessagePanelProps) => {
       if (id < 0) {
         id = messages.length - 1;
       }
-      let _mess = document.getElementById("message-div__" + id);
+      const _mess = document.getElementById("message-div__" + id);
       _mess!.classList.add(styles.hidden);
       _mess!.classList.remove(styles.after);
     }, 1000);

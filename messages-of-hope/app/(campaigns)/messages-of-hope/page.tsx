@@ -41,7 +41,7 @@ const MessagesOfHope = () => {
             perform a wellbeing check-in.
           </p>
           <p>
-            As an organisation we have done many pop-up art sessions where we've
+            As an organisation we have done many pop-up art sessions where we&apos;ve
             had people, write messages, colour their feelings, and draw on
             canvases. This again allows people to perform a well-being check-in,
             provides a nice creative outlet in the day, and gives the

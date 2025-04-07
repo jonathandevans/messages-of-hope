@@ -5,7 +5,6 @@ import ContactForm from "@/components/contact-form/contact-form";
 import MessagePanel from "@/components/messages-panel/messages-panel";
 import Button from "@/components/ui/button/button";
 import { ArrowRight } from "lucide-react";
-import Link from "next/link";
 import { generateMetadata } from "@/lib/utils";
 import { Metadata } from "next";
 import DonatePanel from "@/components/donate-panel/donate-panel";
@@ -77,7 +76,7 @@ const OurWork = () => {
           allow a variety of people to come together in possibly a large
           creative project such as a video, or smaller arts and crafts, we
           strive to create a space in which people can share and feel like
-          they've been heard. It also provides individuals with a chance to know
+          they&apos;ve been heard. It also provides individuals with a chance to know
           that they are not alone.
         </p>
         <p>
@@ -136,7 +135,7 @@ const OurWork = () => {
                 </p>
                 <p>
                   As an organisation we have done many pop-up art sessions where
-                  we've had people, write messages, colour their feelings, and
+                  we&apos;ve had people, write messages, colour their feelings, and
                   draw on canvases. This again allows people to perform a
                   well-being check-in, provides a nice creative outlet in the
                   day, and gives the opportunity to talk and meet new people.
@@ -178,8 +177,8 @@ const OurWork = () => {
                 <p>
                   In 2024 alone, we received over 5000 donations and donated
                   over 250 bags to psychiatric wards. One patient commented,
-                  'Receiving a Bag of Hope when I was admitted to hospital gave
-                  me hope and reminded me that I wasn't alone.' We are in
+                  &apos;Receiving a Bag of Hope when I was admitted to hospital gave
+                  me hope and reminded me that I wasn&apos;t alone.&apos; We are in
                   constant communication with psychiatric patients and staff to
                   ensure that the items we are providing are useful and
                   appropriate.
@@ -230,7 +229,7 @@ const OurWork = () => {
                   be turned into a Line of Hope.
                 </p>
                 <p>
-                  We're actively looking for organisations to partner with to
+                  We&apos;re actively looking for organisations to partner with to
                   run MOH Social events, so please reach out if you want to be
                   involved.
                 </p>
@@ -274,7 +273,7 @@ const OurWork = () => {
                 <p>
                   Write a message of hope for someone struggling with their
                   mental health. Your message could be the one that makes a
-                  difference in someone's life.
+                  difference in someone&apos;s life.
                 </p>
               </div>
 

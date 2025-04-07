@@ -168,7 +168,7 @@ const Home = () => {
                 with the Barry Social Sisters in a bag-packing event for our
                 Bags of Hope campaign. This event marks the start of our efforts
                 to run community bag-packing events in the form of MOH Socials.
-                Members of Barry's Social Sisters have been collecting items for
+                Members of Barry&apos;s Social Sisters have been collecting items for
                 the past few weeks that we will organise and place into bags to
                 donate to patients in the South Wales area. This event will
                 include bag decorating, message writing, and clay decorating.
@@ -198,7 +198,7 @@ const Home = () => {
           <div>
             <p>
               Messages of Hope was first created in 2020 by Bethan Evans. This
-              saw the creation of the "There is Hope" video, in which people in
+              saw the creation of the &quot;There is Hope&quot; video, in which people in
               the South Wales area wrote messages for those struggling with
               their mental health during COVID-19. However, between the years of
               2019 and 2022, Bethan was at war with her mental health, more
@@ -224,7 +224,7 @@ const Home = () => {
               the Bags of Hope campaign. Through this campaign, we provide
               essential items to patients arriving in psychiatric wards. Since
               starting this campaign we have seen thousands of donated items,
-              allowing us to create over 300 bags, and we're only just getting
+              allowing us to create over 300 bags, and we&apos;re only just getting
               started.
             </p>
             <p>

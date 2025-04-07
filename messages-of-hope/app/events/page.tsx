@@ -20,7 +20,7 @@ const Events = () => {
             Messages of Hope puts on numerous events throughout the year to
             further support our campaigns. These events over the years have
             included video projects, pop-up art events, and bag packing. From
-            2025, we're starting MOH socials, where we partner with other groups
+            2025, we&apos;re starting MOH socials, where we partner with other groups
             to organise several creative activities, such as Line of Hope setups
             and bag decorating for Bags of Hope, in a fun social environment.
           </p>

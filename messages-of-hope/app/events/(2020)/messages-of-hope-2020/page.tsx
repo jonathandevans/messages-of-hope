@@ -32,7 +32,7 @@ const MessagesOfHope2020 = () => {
         </p>
         <p>
           Beth had just moved home to South Wales after dropping out of her
-          second year of university because Bethan's mental health was severly
+          second year of university because Bethan&apos;s mental health was severly
           impacting her studies, when the idea of Messages of Hope came to her.
         </p>
         <p>

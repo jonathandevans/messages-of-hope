@@ -134,7 +134,7 @@ const OurStory = () => {
                 project.
               </p>
               <p>
-                Bethan's work was also recognised this year being awarded the
+                Bethan&apos;s work was also recognised this year being awarded the
                 Mental Health and Wellbeing Award in Wales for Most Inspiring
                 Individual.
               </p>
@@ -145,7 +145,7 @@ const OurStory = () => {
         <article className={styles.year}>
           <h2>
             <span />
-            2025 - When life doesn't give you lemons, go and find some
+            2025 - When life doesn&apos;t give you lemons, go and find some
           </h2>
           <div className={styles.content}>
             <Image
@@ -166,7 +166,7 @@ const OurStory = () => {
               </p>
               <p>
                 Our resilience has already started to be rewarded with our Bags
-                of Hope packing events with React Support Services and Barry's
+                of Hope packing events with React Support Services and Barry&apos;s
                 Social Sisters.
               </p>
             </div>

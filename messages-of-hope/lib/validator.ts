@@ -1,7 +1,6 @@
 export const checkContactForm = ({
   name,
   email,
-  organisation,
   subject,
   message,
 }: {
@@ -24,7 +23,6 @@ export const checkContactForm = ({
 
 export const checkMessageSubmission = ({
   message,
-  handle,
 }: {
   message: string;
   handle: string;

@@ -53,7 +53,7 @@ const BagsOfHope = () => {
           <p>
             Our community-driven approach includes bag-packing events where
             individuals can come together to contribute items and help assemble
-            the bags. We're excited to expand these events to involve the
+            the bags. We&apos;re excited to expand these events to involve the
             general public, inviting people to support our mission and
             participate in creating bags.
           </p>
@@ -73,8 +73,8 @@ const BagsOfHope = () => {
           We gather feedback through surveys, social media messages, and
           in-person conversations during drop-offs to ensure we include items
           that meet the needs of the patients. Through feedback received, we
-          went on to make 'gender neutral' and 'vegan' Bags of Hope to ensure
-          that our project was inclusive.
+          went on to make &apos;gender neutral&apos; and &apos;vegan&apos; Bags
+          of Hope to ensure that our project was inclusive.
         </p>
         <p>
           If you are a former/current patient or an employee on a psychiatric
@@ -99,8 +99,8 @@ const BagsOfHope = () => {
               Donated
             </h3>
             <p>
-              We've received over 5000 items donated from the members of the
-              public and businesses to go into Bags of Hope.
+              We&apos;ve received over 5000 items donated from the members of
+              the public and businesses to go into Bags of Hope.
             </p>
           </article>
 
@@ -123,7 +123,7 @@ const BagsOfHope = () => {
               Helped
             </h3>
             <p>
-              We've been able to deliver bags to patients over 16 wards
+              We&apos;ve been able to deliver bags to patients over 16 wards
               throughout England and South Wales.
             </p>
           </article>
@@ -134,9 +134,9 @@ const BagsOfHope = () => {
         <h2>What goes into a Bag of Hope?</h2>
         <p>
           Due to the quality of the Bags of Hope, it costs us around £20 to £25
-          to fill a bag. We currently make two types of bags which we've dubbed
-          The Life Saver, containing only essential items, and The Premium
-          Bundle, which also contains two bonus items. There are three
+          to fill a bag. We currently make two types of bags which we&apos;ve
+          dubbed The Life Saver, containing only essential items, and The
+          Premium Bundle, which also contains two bonus items. There are three
           variations on both of these bags with male, female and gender neutral
           options. As the bags include snacks we also mark them as vegan
           friendly when appropriate.<sup>1</sup>
@@ -223,8 +223,8 @@ const BagsOfHope = () => {
             In 2024 we received over 5000 donations and donated over 250 bags to
             psychiatric wards. With funding we plan to be able to double the
             amount of Bags of Hope we donate in a year. One patient commented,
-            'Receiving a Bag of Hope when I was admitted to hospital gave me
-            hope and reminded me that I wasn't alone.'
+            &apos;Receiving a Bag of Hope when I was admitted to hospital gave
+            me hope and reminded me that I wasn&apos;t alone.&apos;
           </p>
         </div>
 
@@ -255,18 +255,19 @@ const BagsOfHope = () => {
             a significant difference.
           </p>
           <p>
-            If you're unable to donate, simply sharing our Instagram stories
-            helps immensely in raising awareness and garnering broader support
-            for our cause. Every act of kindness, big or small, contributes to
-            making a meaningful impact on the lives of those struggling with
-            their mental health.
+            If you&apos;re unable to donate, simply sharing our Instagram
+            stories helps immensely in raising awareness and garnering broader
+            support for our cause. Every act of kindness, big or small,
+            contributes to making a meaningful impact on the lives of those
+            struggling with their mental health.
           </p>
           <p>
             We appreciate all donations, but here are some suggestions for items
             that are always in need. Please ensure all items are new and
             unopened. Any items we receive that cannot be put into a bag, will
-            be donated to a food bank or other appropriate charity. If you're
-            not sure, just drop us a message. Thank you for your support!
+            be donated to a food bank or other appropriate charity. If
+            you&apos;re not sure, just drop us a message. Thank you for your
+            support!
           </p>
           <div className={styles.links}>
             <Button
@@ -355,13 +356,13 @@ const BagsOfHope = () => {
           items into one Bag of Hope but due to our reliance on donations, some
           bags may contain slightly fewer items and our attempts to meet the
           checklist are on a best effort basis. Additionally, only bags labelled
-          "female" and "gender neutral" contain sanitary products. The price of
-          our Bags of Hope is based upon our ability to bulk buy producs with
-          any monetary donations we receive and does not reflect the price of a
-          Bag of Hope that is filled with items from our Amazon Wishlist. The
-          ability to mark bags as vegan friendly is done on a best effort basis,
-          and cannot be guaranteed to be correct. It is the responsibility of
-          those using the product to confirm the contents.
+          &quot;female&quot; and &quot;gender neutral&quot; contain sanitary
+          products. The price of our Bags of Hope is based upon our ability to
+          bulk buy producs with any monetary donations we receive and does not
+          reflect the price of a Bag of Hope that is filled with items from our
+          Amazon Wishlist. The ability to mark bags as vegan friendly is done on
+          a best effort basis, and cannot be guaranteed to be correct. It is the
+          responsibility of those using the product to confirm the contents.
           <br />
           <sup>2</sup> This list is a example of what we intend to put into the
           Life Saver bag, not a checklist we have to adhere to when making the

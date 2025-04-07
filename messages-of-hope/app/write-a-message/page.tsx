@@ -28,14 +28,14 @@ const WriteAMessage = () => {
             <p>
               Write a message of hope for someone struggling with their mental
               health. Your message could be the one that makes a difference in
-              someone's life. Messages of Hope collects messages of hope and
+              someone&apos;s life. Messages of Hope collects messages of hope and
               spreads them far and wide. Keep an eye on our social media pages
               to see if your message is shared.
             </p>
             <p>
-              If you'd like us to tag you on social media when your message of
+              If you&apos;d like us to tag you on social media when your message of
               hope is posted, leave your Instagram handle below. Please note,
-              this is optional and if you'd like your message of hope to remain
+              this is optional and if you&apos;d like your message of hope to remain
               anonymous just leave it blank. Thank you for your help in
               spreading hope.
             </p>
