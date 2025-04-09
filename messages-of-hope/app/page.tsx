@@ -151,7 +151,7 @@ const Home = () => {
       </section>
 
       <section className={styles.upcomingEvents} id="events">
-        <h2>Upcoming Events</h2>
+        <h2>Recent Events</h2>
         <div className={styles.list}>
           <article>
             <Image
@@ -164,19 +164,19 @@ const Home = () => {
               <h4>Tuesday 8th April 2025</h4>
               <h3>Bags of Hope at Social Sisters</h3>
               <p>
-                On Tuesday 8th of April, Messages of Hope will be collaborating
+                On Tuesday 8th of April, Messages of Hope collaborated
                 with the Barry Social Sisters in a bag-packing event for our
-                Bags of Hope campaign. This event marks the start of our efforts
+                Bags of Hope campaign. This event marked the start of our efforts
                 to run community bag-packing events in the form of MOH Socials.
-                Members of Barry&apos;s Social Sisters have been collecting items for
-                the past few weeks that we will organise and place into bags to
-                donate to patients in the South Wales area. This event will
-                include bag decorating, message writing, and clay decorating.
+                Members of Barry&apos;s Social Sisters had been collecting items for
+                the past few weeks that we organised and placed into bags to
+                donate to patients in the South Wales area. This event included
+                bag decorating, message writing, and clay decorating.
               </p>
               <p>
-                We aim to provide a space that allows members of the community
+                We aimed to provide a space that allows members of the community
                 to come together and support each other through creative
-                activities. Keep an eye on our socials for updates on the event.
+                activities. Through this event we were able to donate over 70 bags of hope across the wards at LLandough hospital. We want to give a special thank you to all those who donated items and helped us make the bags.
               </p>
               <Button colour="outline" href="/bags-of-hope" className={styles.button}>
                 Learn More <ArrowRight strokeWidth={3} size={16} />
