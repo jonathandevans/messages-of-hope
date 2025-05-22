@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
 import type { Metadata } from "next";
-import Header from "@/components/header/header";
+import Header from "@/components/frontend/header/header";
 import { Coiny, Quicksand, Open_Sans } from "next/font/google";
 import "./globals.css";
 
 // Metadata setup
 import { generateMetadata } from "@/lib/utils";
-import Footer from "@/components/footer/footer";
+import Footer from "@/components/frontend/footer/footer";
 export const metadata: Metadata = generateMetadata();
 
 // Fonts

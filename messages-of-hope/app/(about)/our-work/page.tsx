@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Banner from "../banner";
 import styles from "./page.module.css";
-import ContactForm from "@/components/contact-form/contact-form";
-import MessagePanel from "@/components/messages-panel/messages-panel";
-import Button from "@/components/ui/button/button";
+import ContactForm from "@/components/frontend/contact-form/contact-form";
+import MessagePanel from "@/components/frontend/messages-panel/messages-panel";
+import Button from "@/components/frontend/button/button";
 import { ArrowRight } from "lucide-react";
 import { generateMetadata } from "@/lib/utils";
 import { Metadata } from "next";
-import DonatePanel from "@/components/donate-panel/donate-panel";
+import DonatePanel from "@/components/frontend/donate-panel/donate-panel";
 
 export const metadata: Metadata = generateMetadata({
   title: "Our Work",

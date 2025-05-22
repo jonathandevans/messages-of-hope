@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 import styles from "./page.module.css";
 import { generateMetadata } from "@/lib/utils";
-import Banner from "@/components/banner/banner";
-import MessagePanel from "@/components/messages-panel/messages-panel";
+import Banner from "@/components/frontend/banner/banner";
+import MessagePanel from "@/components/frontend/messages-panel/messages-panel";
 
 export const metadata: Metadata = generateMetadata({
   title: "Thrive LDN Partnership",

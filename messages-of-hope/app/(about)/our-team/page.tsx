@@ -1,7 +1,7 @@
-import ContactForm from "@/components/contact-form/contact-form";
+import ContactForm from "@/components/frontend/contact-form/contact-form";
 import Banner from "../banner";
 import styles from "./page.module.css";
-import MessagePanel from "@/components/messages-panel/messages-panel";
+import MessagePanel from "@/components/frontend/messages-panel/messages-panel";
 import { Metadata } from "next";
 import { generateMetadata } from "@/lib/utils";
 import Image from "next/image";

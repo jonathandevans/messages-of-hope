@@ -1,3 +1,10 @@
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
 import { Metadata } from "next";
 
 export const generateMetadata = ({
@@ -12,8 +19,8 @@ export const generateMetadata = ({
   const _title = absolute
     ? absolute
     : title
-      ? `${title} - Messages of Hope`
-      : "Messages of Hope";
+    ? `${title} - Messages of Hope`
+    : "Messages of Hope";
 
   return {
     title: _title,

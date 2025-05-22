@@ -1,8 +1,8 @@
-import MessagePanel from "@/components/messages-panel/messages-panel";
+import MessagePanel from "@/components/frontend/messages-panel/messages-panel";
 import styles from "./page.module.css";
 import Image from "next/image";
-import Banner from "@/components/banner/banner";
-import Button from "@/components/ui/button/button";
+import Banner from "@/components/frontend/banner/banner";
+import Button from "@/components/frontend/button/button";
 import { ArrowRight } from "lucide-react";
 import { generateMetadata } from "@/lib/utils";
 import { Metadata } from "next";

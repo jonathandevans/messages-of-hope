@@ -1,6 +1,6 @@
-import ContactForm from "@/components/contact-form/contact-form";
+import ContactForm from "@/components/frontend/contact-form/contact-form";
 import styles from "./page.module.css";
-import MessagePanel from "@/components/messages-panel/messages-panel";
+import MessagePanel from "@/components/frontend/messages-panel/messages-panel";
 import Image from "next/image";
 import {
   ArrowRight,
@@ -9,9 +9,9 @@ import {
   Shirt,
   ShoppingBag,
 } from "lucide-react";
-import DonatePanel from "@/components/donate-panel/donate-panel";
-import Banner from "@/components/banner/banner";
-import Button from "@/components/ui/button/button";
+import DonatePanel from "@/components/frontend/donate-panel/donate-panel";
+import Banner from "@/components/frontend/banner/banner";
+import Button from "@/components/frontend/button/button";
 import { Metadata } from "next";
 import { generateMetadata } from "@/lib/utils";
 

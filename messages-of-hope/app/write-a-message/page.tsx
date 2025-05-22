@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import styles from "./page.module.css";
 import { generateMetadata } from "@/lib/utils";
-import MessagePanel from "@/components/messages-panel/messages-panel";
+import MessagePanel from "@/components/frontend/messages-panel/messages-panel";
 import Image from "next/image";
 import MessageSubmission from "./message-submission";
 

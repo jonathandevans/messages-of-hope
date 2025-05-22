@@ -1,4 +1,4 @@
-import MessagePanel from "@/components/messages-panel/messages-panel";
+import MessagePanel from "@/components/frontend/messages-panel/messages-panel";
 import Banner from "../banner";
 import styles from "./page.module.css";
 import { generateMetadata } from "@/lib/utils";

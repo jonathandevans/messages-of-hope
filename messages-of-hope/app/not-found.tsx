@@ -1,4 +1,4 @@
-import Button from "@/components/ui/button/button";
+import Button from "@/components/frontend/button/button";
 import { generateMetadata } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 import { Metadata } from "next";

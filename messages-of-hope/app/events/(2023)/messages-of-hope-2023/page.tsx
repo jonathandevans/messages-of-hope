@@ -1,9 +1,9 @@
-import Banner from "@/components/banner/banner";
+import Banner from "@/components/frontend/banner/banner";
 import styles from "./page.module.css";
 import { Metadata } from "next";
 import { generateMetadata } from "@/lib/utils";
 import Image from "next/image";
-import MessagePanel from "@/components/messages-panel/messages-panel";
+import MessagePanel from "@/components/frontend/messages-panel/messages-panel";
 
 export const metadata: Metadata = generateMetadata({
   title: "Messages of Hope 2023",

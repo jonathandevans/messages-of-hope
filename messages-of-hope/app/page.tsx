@@ -1,10 +1,10 @@
-import Button from "@/components/ui/button/button";
+import Button from "@/components/frontend/button/button";
 import styles from "./page.module.css";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import ContactForm from "@/components/contact-form/contact-form";
-import MessagesPanel from "@/components/messages-panel/messages-panel";
+import ContactForm from "@/components/frontend/contact-form/contact-form";
+import MessagesPanel from "@/components/frontend/messages-panel/messages-panel";
 
 const Home = () => {
   return (

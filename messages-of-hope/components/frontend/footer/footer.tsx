@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "./footer.module.css";
-import Button from "../ui/button/button";
+import Button from "../button/button";
 import { ArrowRight, Facebook, Instagram, MailOpen } from "lucide-react";
 
 const Footer = () => {

@@ -1,13 +1,13 @@
-import MessagePanel from "@/components/messages-panel/messages-panel";
+import MessagePanel from "@/components/frontend/messages-panel/messages-panel";
 import styles from "./page.module.css";
 import Image from "next/image";
-import ContactForm from "@/components/contact-form/contact-form";
-import Button from "@/components/ui/button/button";
+import ContactForm from "@/components/frontend/contact-form/contact-form";
+import Button from "@/components/frontend/button/button";
 import { ArrowRight, Hospital, Package, PackagePlus } from "lucide-react";
 import { Metadata } from "next";
 import { generateMetadata } from "@/lib/utils";
 import Link from "next/link";
-import Dropdown from "@/components/ui/dropdown/dropdown";
+import Dropdown from "@/components/frontend/dropdown/dropdown";
 
 export const metadata: Metadata = generateMetadata({
   title: "Get Involved",
