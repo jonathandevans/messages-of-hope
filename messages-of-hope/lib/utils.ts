@@ -46,7 +46,7 @@ export const generateMetadata = ({
       images: ["/icon.png"],
     },
 
-    metadataBase: new URL(`${process.env.BASE_URL}`),
+    metadataBase: new URL(`${process.env.NEXT_PUBLIC_BASE_URL}`),
     referrer: "origin-when-cross-origin",
     formatDetection: {
       email: false,

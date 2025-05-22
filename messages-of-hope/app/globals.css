@@ -1,7 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Coiny&family=Quicksand:wght@300..700&display=swap');
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hidden {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+}
+
+@theme {
+  --color-moh-blue: #98d3e7;
+  --color-moh-dark-blue: #3b5c81;
+  --color-moh-yellow: #f5b429;
+
+  --font-coiny: "Coiny", sans-serif;
+  --font-quicksand: "Quicksand", sans-serif;
+}
 
 @theme inline {
   --color-background: var(--background);
@@ -44,68 +66,8 @@
 }
 
 :root {
-  --zinc-50: 0, 0%, 98%;
-  --zinc-100: 240, 5%, 96%;
-  --zinc-200: 240, 6%, 90%;
-  --zinc-300: 240, 5%, 84%;
-  --zinc-400: 240, 5%, 65%;
-  --zinc-500: 240, 4%, 46%;
-  --zinc-600: 240, 5%, 34%;
-  --zinc-700: 240, 5%, 26%;
-  --zinc-800: 240, 4%, 16%;
-  --zinc-900: 240, 6%, 10%;
-  --zinc-950: 240, 10%, 4%;
-
-  --blue-50: 195, 61%, 88%;
-  --blue-100: 196, 63%, 83%;
-  --blue-200: 195, 63%, 79%;
-  --blue-300: 195, 62%, 75%; /* Primary blue */
-  --blue-400: 199, 46%, 67%;
-  --blue-500: 202, 36%, 59%;
-  --blue-600: 205, 29%, 51%;
-  --blue-700: 209, 32%, 44%;
-  --blue-800: 212, 37%, 37%; /* Alt blue */
-  --blue-900: 215, 41%, 31%;
-  --blue-950: 220, 61%, 15%;
-
-  --yellow-50: 48, 100%, 96%;
-  --yellow-100: 48, 96%, 89%;
-  --yellow-200: 48, 97%, 77%;
-  --yellow-300: 46, 97%, 65%;
-  --yellow-400: 41, 91%, 56%; /* Primary yellow */
-  --yellow-500: 38, 92%, 50%;
-  --yellow-600: 32, 95%, 44%;
-  --yellow-700: 26, 90%, 37%;
-  --yellow-800: 23, 84%, 31%;
-  --yellow-900: 22, 77%, 26%;
-  --yellow-950: 21, 92%, 14%;
-
-  --red-50: 0, 86%, 97%;
-  --red-100: 0, 93%, 94%;
-  --red-200: 0, 96%, 89%;
-  --red-300: 0, 94%, 82%;
-  --red-400: 0, 91%, 71%;
-  --red-500: 0, 84%, 60%;
-  --red-600: 0, 72%, 51%;
-  --red-700: 0, 74%, 42%;
-  --red-800: 0, 70%, 35%;
-  --red-900: 0, 63%, 31%;
-  --red-950: 0, 75%, 15%;
-
-  --green-50: 138, 76%, 97%;
-  --green-100: 141, 84%, 93%;
-  --green-200: 141, 79%, 85%;
-  --green-300: 142, 77%, 73%;
-  --green-400: 142, 69%, 58%;
-  --green-500: 142, 71%, 45%;
-  --green-600: 142, 76%, 36%;
-  --green-700: 142, 72%, 29%;
-  --green-800: 143, 64%, 24%;
-  --green-900: 144, 61%, 20%;
-  --green-950: 145, 80%, 10%;
-
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
+  --background: oklch(0.99 0 0);
   --foreground: oklch(0.141 0.005 285.823);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.141 0.005 285.823);
@@ -181,11 +143,6 @@
   }
 }
 
-html,
-body {
-  background: hsl(var(--zinc-100));
-}
-
 *,
 *::before,
 *::after {
@@ -196,7 +153,6 @@ html {
   min-height: -webkit-fill-available;
   overflow-x: hidden;
   min-width: 280px;
-  width: 100%;
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
 }
@@ -216,30 +172,4 @@ main {
   min-width: 280px;
   width: 100%;
   min-height: 90svh;
-}
-
-h1 {
-  font-family: var(--font-title);
-  font-size: 3rem;
-  line-height: 98%;
-  margin: 2.5rem auto 1rem auto;
-  color: hsl(var(--zinc-800));
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-heading);
-  letter-spacing: -0.075rem;
-  margin: 1rem auto 0.5rem auto;
-  color: hsl(var(--zinc-800));
-}
-
-p {
-  font-family: var(--font-body);
-  font-size: 1rem;
-  margin: 0 auto;
-  color: hsl(var(--zinc-800));
 }
