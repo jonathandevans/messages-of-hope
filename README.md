@@ -14,28 +14,8 @@ The application is designed using a mobile-first approach. The application is de
 
 Find the design [here](https://www.figma.com/design/EPLZyXpwPixaVd2QdufwvT/Base?node-id=0-1&t=WjjGneCl9vh9mWeZ-1).
 
-## Frontend Development
-
-The frontend of the application is built using the Next.js framework. The frontend uses the app router to navigate between pages and components. The frontend is styled using CSS modules. The application is built using a number of components. These components are located in the _components/_ directory. The components come with their own variations and styles that can be utilised through the `variants` prop. There are two main types of components: layout components which we call panels and content components.
-
-### Panel Components:
-
-- [Navbar](/docs/components/navbar.md)
-- [Footer](/docs/components/footer.md)
-- [Banner](/docs/components/banner.md)
-- [CardPanel](/docs/components/card-panel.md)
-- [ContactForm](/docs/components/contact-form.md)
-- [LinkGrid](/docs/components/link-grid.md)
-- [MaxWidthWrapper](/docs/components/max-width-wrapper.md)
-- [MessageSlideshow](/docs/components/message-slideshow.md)
-- [TextPanel](/docs/components/text-panel.md)
-
-### Content Components:
-
-- [Button](/docs/components/button.md)
-
 ## Third Party Resources
 
 - [Vercel](https://vercel.com/): The application is hosted on Vercel.
-- [Supabase](https://supabase.io/): The application uses Supabase for the database.
-- [Cloudinary](https://cloudinary.com/): The application uses Cloudinary for image hosting.
+- [Supabase](https://supabase.com/): The application uses Supabase for the database.
+- [Tailwind](https://tailwindcss.com/): Styling is done primarily using Tailwind, but custom components use CSS modules for a granular approach.
