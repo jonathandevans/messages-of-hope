@@ -11,7 +11,7 @@ const changeLivesLinks = [
     description:
       "Help us to help more people. Messages of Hope relies on donations to continue our work in the community",
     backgroundImage:
-      "https://res.cloudinary.com/dl6zbzu06/image/upload/v1743592893/IMG_1599_wpo5wq.jpg",
+      "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/react_boh.jpg",
     backgroundSizing: "bg-[length:150%]",
   },
   {
@@ -20,7 +20,7 @@ const changeLivesLinks = [
     description:
       "We use our socials to spread our messages, news and our upcoming events. Follow and engage to show support",
     backgroundImage:
-      "https://res.cloudinary.com/dl6zbzu06/image/upload/v1743596025/PtSSYegxG0_kqt4qv_1_kc0aqo_jw54ot.jpg",
+      "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/connections_bts.jpg",
     backgroundSizing: "bg-cover",
   },
   {
@@ -29,21 +29,21 @@ const changeLivesLinks = [
     description:
       "Learn more about what we do and how we use our donations to help the community",
     backgroundImage:
-      "https://res.cloudinary.com/dl6zbzu06/image/upload/v1743595919/5CnpFGoOdE_k3kxev_1_gkehfp_htcqlm.jpg",
+      "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/street_party.jpg",
     backgroundSizing: "bg-cover",
   },
 ];
 
 export default function HomeRoute() {
   return (
-    <main className="flex flex-col gap-y-16 mt-2 mb-12 relative">
+    <main className="flex flex-col gap-y-16 mt-2 mb-12 relative overflow-x-hidden">
       <section className="max-w-7xl mx-auto flex flex-col items-center gap-6 lg:flex-row-reverse lg:w-[90%] lg:justify-between lg:gap-10 xl:gap-25">
         <div className="h-82 max-w-lg flex justify-center items-center relative lg:w-[100%]">
           <span className="absolute top-[5%] left-[5%] w-[90%] h-80 bg-moh-blue rotate-[2.5deg] z-1" />
           <span className="absolute top-[5%] left-[15%] w-[70%] h-80 bg-moh-dark-blue -rotate-[5.5deg] z-2" />
 
           <Image
-            src="https://rqrmdylmzqlsucevuikq.supabase.co/storage/v1/object/public/published/assets/connections2024.jpg"
+            src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/connections_2024.jpg"
             alt="Connections 2024 filming at Convent Gardens London"
             width={4800}
             height={2649}
@@ -80,7 +80,7 @@ export default function HomeRoute() {
           How can you help us change lives?
         </h2>
 
-        <div className="flex flex-col w-[90%] max-w-md gap-6 mx-auto md:grid grid-cols-3 md:max-w-7xl">
+        <div className="flex flex-col w-[90%] max-w-sm gap-6 mx-auto md:grid grid-cols-3 md:max-w-7xl">
           {changeLivesLinks.map((item) => (
             <Link
               key={item.href}
@@ -101,11 +101,13 @@ export default function HomeRoute() {
       </section>
 
       <section className="w-[90%] max-w-7xl mx-auto flex flex-col gap-6">
-        <h2 className="font-quicksand text-3xl tracking-tight font-semibold text-center">Our Story So Far...</h2>
+        <h2 className="font-quicksand text-3xl tracking-tight font-semibold text-center">
+          Our Story So Far...
+        </h2>
 
         <div className="flex flex-col gap-4 md:grid grid-cols-3">
           <Image
-            src="https://rqrmdylmzqlsucevuikq.supabase.co/storage/v1/object/public/published/assets/storyMap.png"
+            src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/moh_map.png"
             width={535}
             height={616}
             alt="Roadmap of Messages of Hope history"
@@ -147,7 +149,13 @@ export default function HomeRoute() {
               Our work at Messages of Hope is ongoing and we look forward to the
               next chapter in our journey.
             </p>
-            <Button href="/our-story" colour="outline" text="Learn More" size="sm" className="self-end" />
+            <Button
+              href="/our-story"
+              colour="outline"
+              text="Learn More"
+              size="sm"
+              className="self-end"
+            />
           </div>
         </div>
       </section>

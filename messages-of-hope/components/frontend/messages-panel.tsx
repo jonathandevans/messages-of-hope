@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, HTMLAttributes } from "react";
 import styles from "./custom-css/messages-panel.module.css";
+import { createBrowserClient } from "@/lib/supabase/client";
 
 const staticMessages = [
   "Life is a journey and everyone's different. No matter how many times you fall please get back up. You don't know what the future will bring or what's around the corner for you. Just take one step at a time no matter how small that is, even if it's a wrong turn or backwards just keep going. Lots of love from a survivor.",
@@ -17,7 +18,12 @@ export function MessagesPanel({
 
   useEffect(() => {
     const fetchMessages = async () => {
-      // TODO: Implement messages request
+      const supabase = createBrowserClient();
+      const { data } = await supabase.from("public_messages").select();
+      if (data) {
+        const mess = data.map((item) => item.message);
+        setMessages(mess);
+      }
     };
     fetchMessages();
   }, []);
