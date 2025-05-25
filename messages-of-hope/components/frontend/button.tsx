@@ -26,7 +26,7 @@ export function Button({
         colour === "outline"
           ? "border-2 border-moh-dark-blue text-moh-dark-blue"
           : "",
-        size === "sm" ? "text-sm py-1 px-2" : ""
+        size === "sm" ? "text-sm py-1.5 px-3" : ""
       )}
     >
       {text} <ArrowRight className="size-4" />

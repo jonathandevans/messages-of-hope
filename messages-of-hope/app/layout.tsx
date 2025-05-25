@@ -18,7 +18,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${openSans.className} antialiased`}>{children}</body>
+      <body className={`${openSans.className} antialiased overflow-y-scroll`}>
+        {children}
+      </body>
     </html>
   );
 }

@@ -27,31 +27,16 @@ import {
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import Link from "next/link";
-
-type Message = {
-  id: string;
-  message: string;
-  submitted: string | null;
-  source: "website" | "event" | "instagram" | "other";
-  category:
-    | "togetherness"
-    | "personal_stories"
-    | "reaching_out"
-    | "practical_advice"
-    | "affirmations"
-    | "recovery"
-    | "suicide_prevention"
-    | "uncategorised";
-  public: boolean;
-  used: boolean;
-  instagram_handle: string | null;
-};
+import { useRouter, useSearchParams } from "next/navigation";
+import { Message } from "@/lib/types";
 
 export function MessagesTable() {
-  const [totalCount, setTotalCount] = useState<number>(0);
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const page: number = Number(searchParams.get("page")) || 1;
+  const pageSize: number = Number(searchParams.get("pageSize")) || 15;
 
-  const [page, setPage] = useState<number>(1);
-  const [pageSize, setPageSize] = useState<number>(15);
+  const [totalCount, setTotalCount] = useState<number>(0);
 
   const [data, setData] = useState<Message[] | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -76,7 +61,7 @@ export function MessagesTable() {
         .select("*")
         .order("submitted", { ascending: false, nullsFirst: false })
         .limit(pageSize)
-        .range(pageSize * page, pageSize * (page + 1));
+        .range(pageSize * (page - 1), pageSize * page - 1);
       if (error) {
         setError(`${error.code}: ${error.message}`);
         return;
@@ -133,9 +118,11 @@ export function MessagesTable() {
                   <TableCell className="max-w-lg overflow-hidden text-ellipsis">
                     {item.message}
                   </TableCell>
-                  <TableCell>{item.submitted}</TableCell>
+                  <TableCell>{item.submitted || <span className="text-muted-foreground italic">NULL</span>}</TableCell>
                   <TableCell className="capitalize">{item.source}</TableCell>
-                  <TableCell className="capitalize">{item.category}</TableCell>
+                  <TableCell className="capitalize">
+                    {(item.category as string).replace("_", " ")}
+                  </TableCell>
                   <TableCell>
                     {item.public ? (
                       <Badge variant="outline">public</Badge>
@@ -150,14 +137,14 @@ export function MessagesTable() {
                           <MoreHorizontal className="size-4" />
                         </Button>
                       </DropdownMenuTrigger>
-                      <DropdownMenuContent align="center">
+                      <DropdownMenuContent align="end">
                         <DropdownMenuItem asChild>
                           <Link href={`/dashboard/messages/${item.id}`}>
                             Edit
                           </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem asChild>
-                          <Link href={`/dashboard/messages/${item.id}/delete`}>
+                          <Link className="text-red-500 focus:text-red-600" href={`/dashboard/messages/${item.id}/delete`}>
                             Delete
                           </Link>
                         </DropdownMenuItem>
@@ -170,26 +157,29 @@ export function MessagesTable() {
           </Table>
           <div className="grid grid-cols-3">
             <div className="flex items-center justify-center gap-2 col-start-2">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => {
-                  setPage((prev) => (prev === 1 ? prev : prev - 1));
-                }}
-              >
-                <ChevronLeft />
+              <Button variant="ghost" size="icon" asChild>
+                <Link
+                  href={{
+                    pathname: "/dashboard/messages",
+                    query: { page: page === 1 ? 1 : page - 1, pageSize },
+                  }}
+                >
+                  <ChevronLeft />
+                </Link>
               </Button>
               <p>{page}</p>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => {
-                  setPage((prev) =>
-                    prev === totalCount / pageSize ? prev : prev + 1
-                  );
-                }}
-              >
-                <ChevronRight />
+              <Button variant="ghost" size="icon" asChild>
+                <Link
+                  href={{
+                    pathname: "/dashboard/messages",
+                    query: {
+                      page: page === totalCount / pageSize ? page : page + 1,
+                      pageSize,
+                    },
+                  }}
+                >
+                  <ChevronRight />
+                </Link>
               </Button>
             </div>
 
@@ -199,7 +189,9 @@ export function MessagesTable() {
                 className="col-start-3 w-fit text-sm"
                 defaultValue={pageSize}
                 onChange={(e) => {
-                  setPageSize(e.target.value as unknown as number);
+                  router.push(
+                    `/dashboard/messages?page=${page}&pageSize=${e.target.value}`
+                  );
                 }}
               >
                 <option value={10}>10</option>

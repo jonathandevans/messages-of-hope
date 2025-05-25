@@ -75,17 +75,21 @@ export default function HomeRoute() {
         </div>
       </section>
 
-      <section className="flex flex-col gap-6 bg-moh-blue py-12">
+      <section className="flex flex-col gap-6 bg-moh-blue py-12 relative overflow-hidden">
         <h2 className="font-quicksand text-3xl tracking-tight font-semibold w-[90%] mx-auto text-center">
           How can you help us change lives?
         </h2>
 
-        <div className="flex flex-col w-[90%] max-w-sm gap-6 mx-auto md:grid grid-cols-3 md:max-w-7xl">
+        <div className="flex flex-col w-[90%] max-w-sm gap-6 mx-auto md:grid grid-cols-3 md:max-w-7xl relative">
+          <span className="absolute z-1 aspect-square bg-moh-yellow rounded-full w-24 -top-[2%] left-[85%] sm:top-[27%] sm:left-[10%] lg:top-[85%] lg:-left-[5%]" />
+          <span className="absolute z-1 aspect-square bg-moh-yellow rounded-full w-36 top-[28%] -left-[15%] sm:top-[50%] sm:left-[80%] lg:top-[60%] lg:left-[60%]" />
+          <span className="absolute z-1 aspect-square bg-moh-yellow rounded-full w-32 top-[64%] left-[84%] sm:top-[92%] sm:-left-[10%] lg:-top-[8%] lg:left-[93%]" />
+
           {changeLivesLinks.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className={`bg-moh-dark-blue bg-no-repeat ${item.backgroundSizing} bg-origin-border aspect-[1/1.03] rounded-lg inset-shadow-zinc-800/90 inset-shadow-[0_-200px_100px] text-zinc-100 hover:text-moh-blue transition-all px-[5%] py-[10%] flex flex-col justify-end gap-2 md:h-100 md:aspect-auto`}
+              className={`bg-moh-dark-blue bg-no-repeat ${item.backgroundSizing} bg-origin-border aspect-[1/1.03] rounded-lg inset-shadow-zinc-800/90 inset-shadow-[0_-200px_100px] text-zinc-100 hover:text-moh-blue transition-all px-[5%] py-[10%] flex flex-col justify-end gap-2 md:h-100 md:aspect-auto relative z-3`}
               style={{
                 backgroundPosition: "left 50% bottom 30%",
                 backgroundImage: `url('${item.backgroundImage}')`,

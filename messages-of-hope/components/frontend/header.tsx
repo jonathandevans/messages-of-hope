@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Instagram, Menu } from "lucide-react";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTitle,
@@ -61,23 +62,23 @@ export function Header() {
               <SheetTitle />
             </SheetHeader>
             <nav className={`flex flex-col items-center gap-y-8`}>
-              <Link href="/">
-                <Image
-                  src="https://rqrmdylmzqlsucevuikq.supabase.co/storage/v1/object/public/published/assets/mohLogo.png"
-                  alt="Messages of Hope Logo"
-                  width={5635}
-                  height={2152}
-                  className="h-12 w-auto"
-                />
-              </Link>
-              {navLinks.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="font-semibold text-md"
-                >
-                  {item.name}
+              <SheetClose asChild>
+                <Link href="/">
+                  <Image
+                    src="https://rqrmdylmzqlsucevuikq.supabase.co/storage/v1/object/public/published/assets/mohLogo.png"
+                    alt="Messages of Hope Logo"
+                    width={5635}
+                    height={2152}
+                    className="h-12 w-auto"
+                  />
                 </Link>
+              </SheetClose>
+              {navLinks.map((item) => (
+                <SheetClose asChild key={item.href}>
+                  <Link href={item.href} className="font-semibold text-md">
+                    {item.name}
+                  </Link>
+                </SheetClose>
               ))}
             </nav>
           </SheetContent>
