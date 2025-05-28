@@ -61,7 +61,7 @@ export function Header() {
             <SheetHeader>
               <SheetTitle />
             </SheetHeader>
-            <nav className={`flex flex-col items-center gap-y-8`}>
+            <nav className={`flex flex-col items-center gap-y-8 font-quicksand font-semibold`}>
               <SheetClose asChild>
                 <Link href="/">
                   <Image

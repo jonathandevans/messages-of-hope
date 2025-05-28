@@ -1,6 +1,7 @@
 import { AboutBanner } from "@/components/frontend/about-banner";
 import { Button } from "@/components/frontend/button";
 import { ContactForm } from "@/components/frontend/contact-form";
+import DonatePanel from "@/components/frontend/donate-panel";
 import { MessagesPanel } from "@/components/frontend/messages-panel";
 import { cn, generateMetadata } from "@/lib/utils";
 import { Metadata } from "next";
@@ -241,6 +242,8 @@ export default function OurWorkRoute() {
           ))}
         </div>
       </section>
+
+      <DonatePanel />
 
       <ContactForm title="Get Involved" />
 

@@ -22,6 +22,8 @@
 
   --font-coiny: "Coiny", sans-serif;
   --font-quicksand: "Quicksand", sans-serif;
+
+  --breakpoint-xs: 30rem;
 }
 
 @custom-variant dark (&:is(.dark *));
