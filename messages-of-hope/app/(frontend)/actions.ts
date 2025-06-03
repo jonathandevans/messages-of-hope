@@ -37,3 +37,28 @@ export async function getMessagesAction() {
     return { error: "Failed" };
   }
 }
+
+export async function submitMessageAction(
+  prevState: any,
+  formData: FormData
+) {
+  try {
+    if (!formData.get("message")) {
+      return { error: "Message is required" };
+    }
+
+    const supabase = await createAdminClient();
+    const { error } = await supabase
+      .from("messages")
+      .insert({
+        message: formData.get("message"),
+        instagram_handle: formData.get("instagram-handle") || null,
+      });
+
+    if (error) throw new Error(error.message);
+
+    return { success: true };
+  } catch (error) {
+    return { error: "Failed to submit message" };
+  }
+}

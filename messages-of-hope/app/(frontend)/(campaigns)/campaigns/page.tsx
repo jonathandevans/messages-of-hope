@@ -13,7 +13,7 @@ export default function CampaignsRoute() {
   return (
     <main className="flex flex-col gap-y-16 mb-12 relative overflow-x-hidden">
       <section className="py-12 bg-moh-blue">
-        <div className="max-w-7xl mx-auto w-[90%] grid gap-6">
+        <div className="max-w-7xl mx-auto w-[90%] grid gap-3">
           <h1 className="font-coiny text-5xl tracking-tighter">Campaigns</h1>
           <p>
             The campaigns Messages of Hope organise are a form of long term
