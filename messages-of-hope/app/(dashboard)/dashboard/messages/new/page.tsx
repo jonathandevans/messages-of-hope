@@ -69,6 +69,10 @@ export default function NewMessageRoute() {
         }
 
         const supabase = createBrowserClient();
+
+        const auth = await supabase.auth.getUser();
+        const id = auth.data.user?.id;
+
         const { error } = await supabase.from("messages").insert({
           message: formData.get("message"),
           submitted:
@@ -81,6 +85,8 @@ export default function NewMessageRoute() {
             formData.get("instagram_handle") === ""
               ? null
               : formData.get("instagram_handle"),
+          updated_by: id,
+          updated_at: new Date().toISOString(),
         });
 
         if (error) throw new Error(`${error.code} : ${error.message}`);
@@ -88,6 +94,7 @@ export default function NewMessageRoute() {
         setError(
           error instanceof Error ? error.message : "Something went wrong..."
         );
+        return;
       }
 
       redirect("/dashboard/messages");
@@ -96,17 +103,17 @@ export default function NewMessageRoute() {
 
   return (
     <main className="w-[90%] mx-auto max-w-7xl flex flex-col gap-y-4 mt-2 mb-12">
-      <div className="flex items-center font-quicksand font-semibold gap-x-2">
+      <div className="flex items-center gap-x-2">
         <Button size="icon" variant="outline" onClick={() => router.back()}>
           <ChevronLeft className="size-5" />
         </Button>
-        go back
+        <h3 className="font-quicksand font-semibold tracking-tight text-xl">Go Back</h3>
       </div>
 
       {error && (
         <Alert>
           <AlertTitle className="text-lg flex gap-2 items-center">
-            <AlertCircle className="text-red-500 bg-red-200 p-1.5 rounded-full size-8" />{" "}
+            <AlertCircle className="text-red-500 bg-red-200 p-1.5 rounded-full size-7" />{" "}
             Oops something went wrong...
           </AlertTitle>
           <AlertDescription>{error}</AlertDescription>
@@ -116,7 +123,7 @@ export default function NewMessageRoute() {
       <form onSubmit={handleSubmit}>
         <Card>
           <CardHeader>
-            <CardTitle className="font-quicksand font-semibold text-2xl">
+            <CardTitle className="font-quicksand font-bold text-3xl tracking-tighter">
               New Message
             </CardTitle>
             <CardDescription>

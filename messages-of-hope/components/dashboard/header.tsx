@@ -19,7 +19,7 @@ export function Header() {
   return (
     <header className="py-6 flex items-center justify-between w-[90%] max-w-7xl mx-auto">
       <nav className="font-quicksand font-semibold flex gap-8 items-center">
-        <Link href="/dashboard" className="flex gap-2">
+        <Link href="/dashboard" className="flex gap-2 items-center">
           <Image
             src="https://rqrmdylmzqlsucevuikq.supabase.co/storage/v1/object/public/published/assets/mohLogo.png"
             alt=""
@@ -27,7 +27,7 @@ export function Header() {
             height={2152}
             className="h-12 w-auto"
           />
-          <div className="flex flex-col font-coiny tracking-tighter text-2xl/5 text-moh-dark-blue">
+          <div className="flex flex-col justify-center font-coiny gap-1 tracking-tighter text-2xl/5 text-moh-dark-blue relative top-[1px]">
             <span>Admin</span>
             <span>Console</span>
           </div>

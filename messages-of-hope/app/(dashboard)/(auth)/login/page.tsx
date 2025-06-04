@@ -58,7 +58,7 @@ export default function LoginRoute() {
     <form onSubmit={handleSubmit}>
       <Link
         href="/"
-        className="w-fit text-xs text-zinc-500 flex gap-1 m-4 hover:underline"
+        className="w-fit text-xs text-muted-foreground flex gap-1 m-4 hover:underline"
       >
         <ChevronLeft className="size-4" />
         Back to main site
@@ -67,12 +67,12 @@ export default function LoginRoute() {
         <CardHeader>
           <Image
             src="https://rqrmdylmzqlsucevuikq.supabase.co/storage/v1/object/public/published/assets/mohLogo.png"
-            alt=""
+            alt="Logo"
             width={5635}
             height={2152}
-            className="h-14 w-auto mx-auto mb-4"
+            className="h-18 w-auto mx-auto mb-4"
           />
-          <CardTitle className="font-quicksand text-xl font-semibold tracking-tight">
+          <CardTitle className="font-quicksand text-3xl font-bold tracking-tighter">
             Log in.
           </CardTitle>
           <CardDescription>

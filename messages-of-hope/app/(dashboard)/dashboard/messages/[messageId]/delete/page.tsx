@@ -32,7 +32,7 @@ export default function MessageDeleteRoute() {
 
       <Card className="max-w-xl mx-auto w-[90%]">
         <CardHeader>
-          <CardTitle className="font-quicksand font-semibold text-xl">
+          <CardTitle className="font-quicksand font-bold text-xl tracking-tighter">
             Are you sure?
           </CardTitle>
           <CardDescription>
