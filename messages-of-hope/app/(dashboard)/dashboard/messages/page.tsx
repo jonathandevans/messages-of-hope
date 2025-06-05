@@ -4,7 +4,14 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
-import { Card, CardContent } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   DropdownMenu,
@@ -29,7 +36,7 @@ import {
 import { createBrowserClient } from "@/lib/supabase/client";
 import { Message } from "@/lib/types";
 import { cn } from "@/lib/utils";
-import { formatISO } from "date-fns";
+import { formatISO, set } from "date-fns";
 import {
   CalendarIcon,
   ChevronLeft,
@@ -42,57 +49,63 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
+
+const sourceOptions = [
+  { value: "website", label: "Website" },
+  { value: "event", label: "Event" },
+  { value: "instagram", label: "Instagram" },
+  { value: "other", label: "Other" },
+];
+
+const categoryOptions = [
+  { value: "personal_stories", label: "Personal Stories" },
+  { value: "togetherness", label: "Togetherness" },
+  { value: "reaching_out", label: "Reaching Out" },
+  { value: "practical_advice", label: "Practical Advice" },
+  { value: "affirmations", label: "Affirmations" },
+  { value: "recovery", label: "Recovery" },
+  { value: "suicide_prevention", label: "Suicide Prevention" },
+  { value: "uncategorised", label: "Uncategorised" },
+];
 
 export default function MessagesDashboard() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const page: number = Number(searchParams.get("page")) || 1;
   const pageSize: number = Number(searchParams.get("pageSize")) || 30;
-  const filter = JSON.parse(searchParams.get("filter") || "{}");
+  const filter = useMemo(
+    () => JSON.parse(searchParams.get("formFilter") || "{}"),
+    [searchParams.get("formFilter")]
+  );
 
   const [count, setCount] = useState<number>(0);
-
-  const filterRef = useRef<Boolean>(false);
-  const [currentFilter, setCurrentFilter] = useState(filter);
-  const [filterResetCount, setFilterResetCount] = useState(0);
-
   const [data, setData] = useState<Message[] | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    const getData = async () => {
-      const supabase = createBrowserClient();
-
-      const { count, status, statusText } = await supabase
-        .from("messages")
-        .select("*", { count: "exact", head: true });
-      if (!count) {
-        setError(`${status}: ${statusText}`);
-        return;
-      }
-      setCount(count);
-    };
-    getData();
-  }, [filter]);
+  const [openFilter, setOpenFilter] = useState<boolean>(false);
+  const [currentFilter, setCurrentFilter] = useState(filter);
 
   useEffect(() => {
     const getData = async () => {
-      const supabase = createBrowserClient();
+      setError(null);
 
-      const { data, error, status, statusText } = await supabase
+      const supabase = createBrowserClient();
+      const { data, error, count } = await supabase
         .from("messages")
-        .select("*")
+        .select("*", { count: "exact" })
+        .in("source", filter.source || sourceOptions.map((o) => o.value))
+        .in("category", filter.category || categoryOptions.map((o) => o.value))
         .range((page - 1) * pageSize, page * pageSize - 1)
         .order("submitted", { ascending: false, nullsFirst: false });
 
       if (error) {
-        setError(`${status}: ${statusText}`);
+        setError(`${error.code}: ${error.message}`);
         return;
       }
 
+      setCount(count || 0);
       setData(data);
-      setError(null);
     };
     getData();
   }, [page, pageSize, filter]);
@@ -109,7 +122,7 @@ export default function MessagesDashboard() {
             variant="outline"
             className="w-fit flex gap-2 self-end font-quicksand font-semibold"
             onClick={() => {
-              filterRef.current = !filterRef.current;
+              setOpenFilter((prev) => !prev);
             }}
           >
             <Filter className="size-4" />
@@ -126,38 +139,126 @@ export default function MessagesDashboard() {
         </div>
       </section>
 
-      <MessagesFilterMenu
-        filterRef={filterRef}
-        filterResetCount={filterResetCount}
-        currentFilter={currentFilter}
-        setCurrentFilter={setCurrentFilter}
-        setFilterResetCount={setFilterResetCount}
-        page={page}
-        pageSize={pageSize}
-        router={router}
-      />
+      {openFilter && (
+        <Card>
+          <CardHeader>
+            <CardTitle className="font-quicksand font-semibold tracking-tight text-xl">
+              Filter Messages
+            </CardTitle>
+            <CardDescription>
+              You can filter the messages by source, category, and
+              public/private status. The filters are applied to the current
+              page.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="flex gap-6">
+            {/* Source */}
+            <div className="flex flex-col gap-2">
+              <p>Source:</p>
+              {sourceOptions.map((option) => (
+                <div key={option.value} className="flex items-center gap-2">
+                  <Checkbox
+                    id={`source-${option.value}`}
+                    checked={
+                      Array.isArray(currentFilter.source) &&
+                      currentFilter.source.includes(option.value)
+                    }
+                    onCheckedChange={(checked) => {
+                      const newSource = checked
+                        ? [...(currentFilter.source || []), option.value]
+                        : (currentFilter.source || []).filter(
+                            (s: string) => s !== option.value
+                          );
 
-      <MessagesTable data={data} error={error} />
+                      // If no source is selected, remove the source filter
+                      if (newSource.length === 0) {
+                        const newFilter = { ...currentFilter };
+                        delete newFilter.source;
+                        setCurrentFilter(newFilter);
+                        return;
+                      }
 
-      <MessagesPagination
-        page={page}
-        pageSize={pageSize}
-        count={count}
-        router={router}
-      />
-    </main>
-  );
-}
+                      setCurrentFilter({ ...currentFilter, source: newSource });
+                    }}
+                  />
+                  <Label htmlFor={`source-${option.value}`} className="text-sm">
+                    {option.label}
+                  </Label>
+                </div>
+              ))}
+            </div>
 
-function MessagesTable({
-  data,
-  error,
-}: {
-  data: Message[] | null;
-  error: string | null;
-}) {
-  return (
-    <>
+            {/* Category */}
+            <div className="flex flex-col gap-2">
+              <p>Category:</p>
+              {categoryOptions.map((option) => (
+                <div key={option.value} className="flex items-center gap-2">
+                  <Checkbox
+                    id={`category-${option.value}`}
+                    checked={
+                      Array.isArray(currentFilter.category) &&
+                      currentFilter.category.includes(option.value)
+                    }
+                    onCheckedChange={(checked) => {
+                      const newCategory = checked
+                        ? [...(currentFilter.category || []), option.value]
+                        : (currentFilter.category || []).filter(
+                            (s: string) => s !== option.value
+                          );
+
+                      // If no category is selected, remove the category filter
+                      if (newCategory.length === 0) {
+                        const newFilter = { ...currentFilter };
+                        delete newFilter.category;
+                        setCurrentFilter(newFilter);
+                        return;
+                      }
+
+                      setCurrentFilter({
+                        ...currentFilter,
+                        category: newCategory,
+                      });
+                    }}
+                  />
+                  <Label
+                    htmlFor={`category-${option.value}`}
+                    className="text-sm"
+                  >
+                    {option.label}
+                  </Label>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+          <CardFooter className="flex gap-2 justify-end">
+            <Button
+              variant="link"
+              className="font-quicksand font-semibold"
+              onClick={() => {
+                setOpenFilter(false);
+                setCurrentFilter({});
+                router.push(`/dashboard/messages?page=1&pageSize=${pageSize}`);
+              }}
+            >
+              Reset Filter
+            </Button>
+            <Button
+              className="bg-moh-dark-blue hover:bg-moh-dark-blue/80 font-quicksand font-semibold tracking-tight"
+              onClick={() => {
+                setOpenFilter(false);
+                router.push(
+                  `/dashboard/messages?page=1&pageSize=${pageSize}&formFilter=${JSON.stringify(
+                    currentFilter
+                  )}`
+                );
+              }}
+            >
+              Apply Filter
+            </Button>
+          </CardFooter>
+        </Card>
+      )}
+
       {error ? (
         <Alert className="max-w-xl mx-auto">
           <AlertTitle className="text-lg font-quicksand font-semibold flex items-center gap-2">
@@ -247,7 +348,63 @@ function MessagesTable({
           </TableBody>
         </Table>
       )}
-    </>
+
+      <section className="grid grid-cols-3">
+        <div className="flex items-center justify-center gap-2 col-start-2">
+          <Button variant="ghost" size="icon" asChild>
+            <Link
+              href={{
+                pathname: "/dashboard/messages",
+                query: {
+                  page: count === 0 ? 1 : page === 1 ? 1 : page - 1,
+                  pageSize,
+                  formFilter: JSON.stringify(filter),
+                },
+              }}
+            >
+              <ChevronLeft />
+            </Link>
+          </Button>
+          <p>{page}</p>
+          <Button variant="ghost" size="icon" asChild>
+            <Link
+              href={{
+                pathname: "/dashboard/messages",
+                query: {
+                  page:
+                    count === 0
+                      ? 1
+                      : page >= count / pageSize
+                        ? page
+                        : page + 1,
+                  pageSize,
+                  formFilter: JSON.stringify(filter),
+                },
+              }}
+            >
+              <ChevronRight />
+            </Link>
+          </Button>
+        </div>
+
+        <div className="flex items-center justify-end gap-2">
+          <p className="text-sm text-muted-foreground">page size:</p>
+          <select
+            className="col-start-3 w-fit text-sm"
+            defaultValue={pageSize}
+            onChange={(e) => {
+              router.push(
+                `/dashboard/messages?page=1&pageSize=${e.target.value}&formFilter=${JSON.stringify(filter)}`
+              );
+            }}
+          >
+            <option value={15}>15</option>
+            <option value={30}>30</option>
+            <option value={45}>45</option>
+          </select>
+        </div>
+      </section>
+    </main>
   );
 }
 
@@ -304,486 +461,5 @@ function DatePicker({
         </div>
       </PopoverContent>
     </Popover>
-  );
-}
-
-function MessagesFilterMenu({
-  filterRef,
-  filterResetCount,
-  currentFilter,
-  setCurrentFilter,
-  setFilterResetCount,
-  page,
-  pageSize,
-  router,
-}: {
-  filterRef: React.MutableRefObject<Boolean>;
-  filterResetCount: number;
-  currentFilter: any;
-  setCurrentFilter: (f: any) => void;
-  setFilterResetCount: React.Dispatch<React.SetStateAction<number>>;
-  page: number;
-  pageSize: number;
-  router: any;
-}) {
-  return (
-    <Card
-      key={filterResetCount}
-      className={cn(filterRef.current ? "" : "hidden")}
-    >
-      <CardContent className="grid gap-4">
-        <p className="text-muted-foreground">
-          You can filter the messages by source, category, and public/private
-          status. The filters are applied to the current page.
-        </p>
-        <div className="flex gap-6">
-          {/* Date */}
-          <div className="flex flex-col gap-2">
-            <p className="font-quicksand font-semibold tracking-tight">
-              Date Range
-            </p>
-            <DatePicker
-              date={
-                currentFilter.fromDate
-                  ? new Date(currentFilter.fromDate)
-                  : undefined
-              }
-              setDate={(submitted) => {
-                const newFilter = { ...currentFilter, fromDate: submitted };
-                setCurrentFilter(newFilter);
-              }}
-              text="From Date"
-            />
-            <DatePicker
-              date={
-                currentFilter.toDate
-                  ? new Date(currentFilter.toDate)
-                  : undefined
-              }
-              setDate={(submitted) => {
-                const newFilter = { ...currentFilter, toDate: submitted };
-                setCurrentFilter(newFilter);
-              }}
-              text="To Date"
-            />
-          </div>
-
-          {/* Source */}
-          <div className="flex flex-col gap-2">
-            <p className="font-quicksand font-semibold tracking-tight">
-              Source
-            </p>
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="source-website"
-                checked={currentFilter.source?.includes("website")}
-                onCheckedChange={(checked) => {
-                  const newSource = checked
-                    ? [...(currentFilter.source || []), "website"]
-                    : (currentFilter.source || []).filter(
-                        (s: string) => s !== "website"
-                      );
-                  setCurrentFilter({ ...currentFilter, source: newSource });
-                }}
-              />
-              <Label htmlFor="source-website" className="text-sm font-medium">
-                Website
-              </Label>
-            </div>
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="source-event"
-                checked={currentFilter.source?.includes("event")}
-                onCheckedChange={(checked) => {
-                  const newSource = checked
-                    ? [...(currentFilter.source || []), "event"]
-                    : (currentFilter.source || []).filter(
-                        (s: string) => s !== "event"
-                      );
-                  setCurrentFilter({ ...currentFilter, source: newSource });
-                }}
-              />
-              <Label htmlFor="source-event" className="text-sm">
-                Event
-              </Label>
-            </div>
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="source-instagram"
-                checked={currentFilter.source?.includes("instagram")}
-                onCheckedChange={(checked) => {
-                  const newSource = checked
-                    ? [...(currentFilter.source || []), "instagram"]
-                    : (currentFilter.source || []).filter(
-                        (s: string) => s !== "instagram"
-                      );
-                  setCurrentFilter({ ...currentFilter, source: newSource });
-                }}
-              />
-              <Label htmlFor="source-instagram" className="text-sm">
-                Instagram
-              </Label>
-            </div>
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="source-other"
-                checked={currentFilter.source?.includes("other")}
-                onCheckedChange={(checked) => {
-                  const newSource = checked
-                    ? [...(currentFilter.source || []), "other"]
-                    : (currentFilter.source || []).filter(
-                        (s: string) => s !== "other"
-                      );
-                  setCurrentFilter({ ...currentFilter, source: newSource });
-                }}
-              />
-              <Label htmlFor="source-other" className="text-sm">
-                Other
-              </Label>
-            </div>
-          </div>
-
-          {/* Category */}
-          <div className="flex flex-col gap-2">
-            <p className="font-quicksand font-semibold tracking-tight">
-              Category
-            </p>
-
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="category-personal_stories"
-                checked={currentFilter.category?.includes("personal_stories")}
-                onCheckedChange={(checked) => {
-                  const newCategory = checked
-                    ? [...(currentFilter.category || []), "personal_stories"]
-                    : (currentFilter.category || []).filter(
-                        (s: string) => s !== "personal_stories"
-                      );
-                  setCurrentFilter({
-                    ...currentFilter,
-                    category: newCategory,
-                  });
-                }}
-              />
-              <Label
-                htmlFor="category-personal_stories"
-                className="text-sm font-medium"
-              >
-                Personal Stories
-              </Label>
-            </div>
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="category-togetherness"
-                checked={currentFilter.category?.includes("togetherness")}
-                onCheckedChange={(checked) => {
-                  const newCategory = checked
-                    ? [...(currentFilter.category || []), "togetherness"]
-                    : (currentFilter.category || []).filter(
-                        (s: string) => s !== "togetherness"
-                      );
-                  setCurrentFilter({
-                    ...currentFilter,
-                    category: newCategory,
-                  });
-                }}
-              />
-              <Label htmlFor="category-togetherness" className="text-sm">
-                Togetherness
-              </Label>
-            </div>
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="category-reaching_out"
-                checked={currentFilter.category?.includes("reaching_out")}
-                onCheckedChange={(checked) => {
-                  const newCategory = checked
-                    ? [...(currentFilter.category || []), "reaching_out"]
-                    : (currentFilter.category || []).filter(
-                        (s: string) => s !== "reaching_out"
-                      );
-                  setCurrentFilter({
-                    ...currentFilter,
-                    category: newCategory,
-                  });
-                }}
-              />
-              <Label htmlFor="category-reaching_out" className="text-sm">
-                Reaching Out
-              </Label>
-            </div>
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="category-practical_advice"
-                checked={currentFilter.category?.includes("practical_advice")}
-                onCheckedChange={(checked) => {
-                  const newCategory = checked
-                    ? [...(currentFilter.category || []), "practical_advice"]
-                    : (currentFilter.category || []).filter(
-                        (s: string) => s !== "practical_advice"
-                      );
-                  setCurrentFilter({
-                    ...currentFilter,
-                    category: newCategory,
-                  });
-                }}
-              />
-              <Label htmlFor="category-practical_advice" className="text-sm">
-                Practical Advice
-              </Label>
-            </div>
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="category-affirmations"
-                checked={currentFilter.category?.includes("affirmations")}
-                onCheckedChange={(checked) => {
-                  const newCategory = checked
-                    ? [...(currentFilter.category || []), "affirmations"]
-                    : (currentFilter.category || []).filter(
-                        (s: string) => s !== "affirmations"
-                      );
-                  setCurrentFilter({
-                    ...currentFilter,
-                    category: newCategory,
-                  });
-                }}
-              />
-              <Label htmlFor="category-affirmations" className="text-sm">
-                Affirmations
-              </Label>
-            </div>
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="category-recovery"
-                checked={currentFilter.category?.includes("recovery")}
-                onCheckedChange={(checked) => {
-                  const newCategory = checked
-                    ? [...(currentFilter.category || []), "recovery"]
-                    : (currentFilter.category || []).filter(
-                        (s: string) => s !== "recovery"
-                      );
-                  setCurrentFilter({
-                    ...currentFilter,
-                    category: newCategory,
-                  });
-                }}
-              />
-              <Label htmlFor="category-recovery" className="text-sm">
-                Recovery
-              </Label>
-            </div>
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="category-suicide_prevention"
-                checked={currentFilter.category?.includes("suicide_prevention")}
-                onCheckedChange={(checked) => {
-                  const newCategory = checked
-                    ? [...(currentFilter.category || []), "suicide_prevention"]
-                    : (currentFilter.category || []).filter(
-                        (s: string) => s !== "suicide_prevention"
-                      );
-                  setCurrentFilter({
-                    ...currentFilter,
-                    category: newCategory,
-                  });
-                }}
-              />
-              <Label htmlFor="category-suicide_prevention" className="text-sm">
-                Suicide Prevention
-              </Label>
-            </div>
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="category-uncategorised"
-                checked={currentFilter.category?.includes("uncategorised")}
-                onCheckedChange={(checked) => {
-                  const newCategory = checked
-                    ? [...(currentFilter.category || []), "uncategorised"]
-                    : (currentFilter.category || []).filter(
-                        (s: string) => s !== "uncategorised"
-                      );
-                  setCurrentFilter({
-                    ...currentFilter,
-                    category: newCategory,
-                  });
-                }}
-              />
-              <Label htmlFor="category-uncategorised" className="text-sm">
-                Uncategorised
-              </Label>
-            </div>
-          </div>
-
-          {/* Published */}
-          <div className="flex flex-col gap-2">
-            <p className="font-quicksand font-semibold tracking-tight">
-              Published Status
-            </p>
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="public"
-                checked={currentFilter.public?.includes("true")}
-                onCheckedChange={(checked) => {
-                  const newPublished = checked
-                    ? [...(currentFilter.public || []), "true"]
-                    : (currentFilter.public || []).filter(
-                        (s: string) => s !== "true"
-                      );
-                  setCurrentFilter({ ...currentFilter, public: newPublished });
-                }}
-              />
-              <Label htmlFor="public" className="text-sm font-medium">
-                Published
-              </Label>
-            </div>
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="private"
-                checked={currentFilter.public?.includes("false")}
-                onCheckedChange={(checked) => {
-                  const newPublished = checked
-                    ? [...(currentFilter.public || []), "false"]
-                    : (currentFilter.public || []).filter(
-                        (s: string) => s !== "false"
-                      );
-                  setCurrentFilter({ ...currentFilter, public: newPublished });
-                }}
-              />
-              <Label htmlFor="private" className="text-sm">
-                Private
-              </Label>
-            </div>
-          </div>
-
-          {/* Used */}
-          <div className="flex flex-col gap-2">
-            <p className="font-quicksand font-semibold tracking-tight">Used</p>
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="used"
-                checked={currentFilter.used?.includes("true")}
-                onCheckedChange={(checked) => {
-                  const newUsed = checked
-                    ? [...(currentFilter.used || []), "true"]
-                    : (currentFilter.used || []).filter(
-                        (s: string) => s !== "true"
-                      );
-                  setCurrentFilter({ ...currentFilter, used: newUsed });
-                }}
-              />
-              <Label htmlFor="used" className="text-sm font-medium">
-                Used
-              </Label>
-            </div>
-            <div className="flex items-center gap-2">
-              <Checkbox
-                id="unused"
-                checked={currentFilter.used?.includes("false")}
-                onCheckedChange={(checked) => {
-                  const newUsed = checked
-                    ? [...(currentFilter.used || []), "false"]
-                    : (currentFilter.used || []).filter(
-                        (s: string) => s !== "false"
-                      );
-                  setCurrentFilter({ ...currentFilter, used: newUsed });
-                }}
-              />
-              <Label htmlFor="unused" className="text-sm">
-                Unused
-              </Label>
-            </div>
-          </div>
-        </div>
-        <div className="flex justify-end gap-2">
-          <Button
-            variant="link"
-            className="font-quicksand font-semibold tracking-tight"
-            onClick={() => {
-              setCurrentFilter({});
-              setFilterResetCount((c) => c + 1);
-              filterRef.current = false;
-              router.push(
-                `/dashboard/messages?page=${page}&pageSize=${pageSize}`
-              );
-            }}
-          >
-            Clear Filter
-          </Button>
-          <Button
-            className="bg-moh-dark-blue hover:bg-moh-dark-blue/80 font-quicksand font-semibold tracking-tight"
-            onClick={() => {
-              filterRef.current = false;
-              router.push(
-                `/dashboard/messages?page=${page}&pageSize=${pageSize}&filter=${JSON.stringify(
-                  currentFilter
-                )}`
-              );
-            }}
-          >
-            Filter Results
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
-  );
-}
-
-function MessagesPagination({
-  page,
-  pageSize,
-  count,
-  router,
-}: {
-  page: number;
-  pageSize: number;
-  count: number;
-  router: any;
-}) {
-  return (
-    <div className="grid grid-cols-3">
-      <div className="flex items-center justify-center gap-2 col-start-2">
-        <Button variant="ghost" size="icon" asChild>
-          <Link
-            href={{
-              pathname: "/dashboard/messages",
-              query: { page: page === 1 ? 1 : page - 1, pageSize },
-            }}
-          >
-            <ChevronLeft />
-          </Link>
-        </Button>
-        <p>{page}</p>
-        <Button variant="ghost" size="icon" asChild>
-          <Link
-            href={{
-              pathname: "/dashboard/messages",
-              query: {
-                page: page === count / pageSize ? page : page + 1,
-                pageSize,
-              },
-            }}
-          >
-            <ChevronRight />
-          </Link>
-        </Button>
-      </div>
-
-      <div className="flex items-center justify-end gap-2">
-        <p className="text-sm text-muted-foreground">page size:</p>
-        <select
-          className="col-start-3 w-fit text-sm"
-          defaultValue={pageSize}
-          onChange={(e) => {
-            router.push(
-              `/dashboard/messages?page=${page}&pageSize=${e.target.value}`
-            );
-          }}
-        >
-          <option value={15}>15</option>
-          <option value={30}>30</option>
-          <option value={45}>45</option>
-        </select>
-      </div>
-    </div>
   );
 }
