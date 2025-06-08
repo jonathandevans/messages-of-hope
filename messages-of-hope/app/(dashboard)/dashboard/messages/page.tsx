@@ -3,7 +3,6 @@
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
 import {
   Card,
   CardContent,
@@ -21,11 +20,6 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Label } from "@/components/ui/label";
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import {
   Table,
   TableBody,
   TableCell,
@@ -34,11 +28,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { createBrowserClient } from "@/lib/supabase/client";
-import { Message } from "@/lib/types";
-import { cn } from "@/lib/utils";
-import { formatISO, set } from "date-fns";
+import { categoryOptions, Message, sourceOptions } from "@/lib/types";
 import {
-  CalendarIcon,
   ChevronLeft,
   ChevronRight,
   CirclePlus,
@@ -51,24 +42,6 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useEffect, useState, useMemo } from "react";
 
-const sourceOptions = [
-  { value: "website", label: "Website" },
-  { value: "event", label: "Event" },
-  { value: "instagram", label: "Instagram" },
-  { value: "other", label: "Other" },
-];
-
-const categoryOptions = [
-  { value: "personal_stories", label: "Personal Stories" },
-  { value: "togetherness", label: "Togetherness" },
-  { value: "reaching_out", label: "Reaching Out" },
-  { value: "practical_advice", label: "Practical Advice" },
-  { value: "affirmations", label: "Affirmations" },
-  { value: "recovery", label: "Recovery" },
-  { value: "suicide_prevention", label: "Suicide Prevention" },
-  { value: "uncategorised", label: "Uncategorised" },
-];
-
 export default function MessagesDashboard() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -78,6 +51,8 @@ export default function MessagesDashboard() {
     () => JSON.parse(searchParams.get("formFilter") || "{}"),
     [searchParams.get("formFilter")]
   );
+
+  const [supabase] = useState(() => createBrowserClient());
 
   const [count, setCount] = useState<number>(0);
   const [data, setData] = useState<Message[] | null>(null);
@@ -90,7 +65,6 @@ export default function MessagesDashboard() {
     const getData = async () => {
       setError(null);
 
-      const supabase = createBrowserClient();
       const { data, error, count } = await supabase
         .from("messages")
         .select("*", { count: "exact" })
@@ -405,61 +379,5 @@ export default function MessagesDashboard() {
         </div>
       </section>
     </main>
-  );
-}
-
-function DatePicker({
-  date,
-  setDate,
-  text = "Pick a Date",
-}: {
-  date: Date | undefined;
-  setDate: (_: Date | undefined) => void;
-  text?: string;
-}) {
-  return (
-    <Popover>
-      <PopoverTrigger asChild>
-        <Button
-          variant={"outline"}
-          className={cn(
-            "justify-start text-left font-normal bg-card min-w-[200px]",
-            !date && "text-muted-foreground"
-          )}
-        >
-          <CalendarIcon />
-          {date ? (
-            formatISO(date, { representation: "date" })
-          ) : (
-            <span>{text}</span>
-          )}
-        </Button>
-      </PopoverTrigger>
-      <PopoverContent className="flex w-auto flex-col space-y-2 p-2">
-        <div className="rounded-md border">
-          <Calendar
-            mode="single"
-            defaultMonth={
-              new Date(
-                date?.getFullYear() ?? new Date().getFullYear(),
-                date?.getMonth() ?? new Date().getMonth()
-              )
-            }
-            selected={date}
-            onSelect={(selectedDate) => {
-              setDate(selectedDate ?? undefined);
-            }}
-          />
-          <Button
-            variant="ghost"
-            className="w-full"
-            type="button"
-            onClick={() => setDate(undefined)}
-          >
-            Clear Date
-          </Button>
-        </div>
-      </PopoverContent>
-    </Popover>
   );
 }

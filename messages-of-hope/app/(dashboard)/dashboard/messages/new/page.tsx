@@ -27,100 +27,62 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { createBrowserClient } from "@/lib/supabase/client";
 import { cn } from "@/lib/utils";
 import { formatISO } from "date-fns";
 import { AlertCircle, CalendarIcon, ChevronLeft, Loader2 } from "lucide-react";
-import { redirect, useRouter } from "next/navigation";
-import { FormEvent, useState, useTransition } from "react";
+import { useRouter } from "next/navigation";
+import { useActionState, useState } from "react";
+import { newMessageAction } from "../actions";
+import { useForm } from "@conform-to/react";
+import { newMessageSchema } from "@/lib/zod-schemas";
+import { parseWithZod } from "@conform-to/zod/v4";
 
 export default function NewMessageRoute() {
   const router = useRouter();
 
   const [submitted, setSubmitted] = useState<string | undefined>();
-  const [source, setSource] = useState<string | undefined>();
-  const [category, setCategory] = useState<string | undefined>();
-  const [published, setPublished] = useState<string | undefined>("false");
-  const [used, setUsed] = useState<string | undefined>("false");
 
-  const [pending, startTransition] = useTransition();
-  const [error, setError] = useState<string | undefined>();
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-
-    startTransition(async () => {
-      try {
-        if ((formData.get("message") as string).trim() === "") {
-          throw new Error("Message cannot be empty");
-        }
-        if (
-          !formData.get("source") ||
-          (formData.get("source") as string).trim() === ""
-        ) {
-          throw new Error("Source cannot be empty");
-        }
-        if (
-          !formData.get("category") ||
-          (formData.get("category") as string).trim() === ""
-        ) {
-          throw new Error("Category cannot be empty");
-        }
-
-        const supabase = createBrowserClient();
-
-        const auth = await supabase.auth.getUser();
-        const id = auth.data.user?.id;
-
-        const { error } = await supabase.from("messages").insert({
-          message: formData.get("message"),
-          submitted:
-            formData.get("submitted") === "" ? null : formData.get("submitted"),
-          source: formData.get("source"),
-          category: formData.get("category"),
-          public: formData.get("public") === "false" ? false : true,
-          used: formData.get("used") === "false" ? false : true,
-          instagram_handle:
-            formData.get("instagram_handle") === ""
-              ? null
-              : formData.get("instagram_handle"),
-          updated_by: id,
-          updated_at: new Date().toISOString(),
-        });
-
-        if (error) throw new Error(`${error.code} : ${error.message}`);
-      } catch (error) {
-        setError(
-          error instanceof Error ? error.message : "Something went wrong..."
-        );
-        return;
-      }
-
-      redirect("/dashboard/messages");
-    });
-  };
+  const [prevResult, newMessage, pending] = useActionState(
+    newMessageAction,
+    undefined
+  );
+  const [form, fields] = useForm({
+    id: "new-message",
+    lastResult: prevResult?.zod_error || null,
+    onValidate({ formData }) {
+      return parseWithZod(formData, { schema: newMessageSchema });
+    },
+    shouldValidate: "onBlur",
+    shouldRevalidate: "onInput",
+  });
 
   return (
-    <main className="w-[90%] mx-auto max-w-7xl flex flex-col gap-y-4 mt-2 mb-12">
+    <main className="w-[90%] mx-auto max-w-7xl flex flex-col gap-y-4 mb-12">
       <div className="flex items-center gap-x-2">
         <Button size="icon" variant="outline" onClick={() => router.back()}>
           <ChevronLeft className="size-5" />
         </Button>
-        <h3 className="font-quicksand font-semibold tracking-tight text-xl">Go Back</h3>
+        <h3 className="font-quicksand font-semibold tracking-tight text-xl">
+          Go Back
+        </h3>
       </div>
 
-      {error && (
+      {prevResult?.error && (
         <Alert>
           <AlertTitle className="text-lg flex gap-2 items-center">
             <AlertCircle className="text-red-500 bg-red-200 p-1.5 rounded-full size-7" />{" "}
             Oops something went wrong...
           </AlertTitle>
-          <AlertDescription>{error}</AlertDescription>
+          <AlertDescription>{prevResult.error}</AlertDescription>
         </Alert>
       )}
 
-      <form onSubmit={handleSubmit}>
+      <form
+        id={form.id}
+        onSubmit={form.onSubmit}
+        action={newMessage}
+        noValidate
+      >
         <Card>
           <CardHeader>
             <CardTitle className="font-quicksand font-bold text-3xl tracking-tighter">
@@ -134,27 +96,45 @@ export default function NewMessageRoute() {
             <div className="grid gap-4">
               <div className="grid gap-2">
                 <Label>Message</Label>
-                <Textarea className="h-30" name="message" />
+                <Textarea
+                  className="h-30"
+                  key={fields.message.key}
+                  name={fields.message.name}
+                />
+                {fields.message.errors && (
+                  <ul className="text-red-500 text-xs">
+                    {fields.message.errors.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
 
               <div className="grid gap-2">
                 <Label>Submitted (Optional)</Label>
-                <input name="submitted" value={submitted || ""} type="hidden" />
+                <input
+                  defaultValue={submitted}
+                  type="hidden"
+                  key={fields.submitted.key}
+                  name={fields.submitted.name}
+                />
                 <DatePicker
                   date={submitted ? new Date(submitted) : undefined}
                   setDate={setSubmitted}
                 />
+                {fields.submitted.errors && (
+                  <ul className="text-red-500 text-xs">
+                    {fields.submitted.errors.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
 
-              <div className="grid grid-cols-2 gap-4">
-                <div className="grid gap-2">
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="flex flex-col gap-2">
                   <Label>Source</Label>
-                  <input defaultValue={source} type="hidden" name="source" />
-                  <Select
-                    onValueChange={(val) => {
-                      setSource(val);
-                    }}
-                  >
+                  <Select name={fields.source.name} key={fields.source.key}>
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Source" />
                     </SelectTrigger>
@@ -165,20 +145,18 @@ export default function NewMessageRoute() {
                       <SelectItem value="other">Other</SelectItem>
                     </SelectContent>
                   </Select>
+                  {fields.source.errors && (
+                    <ul className="text-red-500 text-xs">
+                      {fields.source.errors.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
 
-                <div className="grid gap-2">
+                <div className="flex flex-col gap-2">
                   <Label>Category</Label>
-                  <input
-                    defaultValue={category}
-                    type="hidden"
-                    name="category"
-                  />
-                  <Select
-                    onValueChange={(val) => {
-                      setCategory(val);
-                    }}
-                  >
+                  <Select key={fields.category.key} name={fields.category.name}>
                     <SelectTrigger className="w-full">
                       <SelectValue placeholder="Category" />
                     </SelectTrigger>
@@ -201,16 +179,23 @@ export default function NewMessageRoute() {
                       </SelectItem>
                     </SelectContent>
                   </Select>
+                  {fields.category.errors && (
+                    <ul className="text-red-500 text-xs">
+                      {fields.category.errors.map((item, index) => (
+                        <li key={index}>{item}</li>
+                      ))}
+                    </ul>
+                  )}
                 </div>
               </div>
 
               <div className="grid gap-2">
                 <Label>Message Visibility</Label>
-                <input type="hidden" name="public" defaultValue={published} />
                 <RadioGroup
                   defaultValue={"false"}
                   className="gap-1"
-                  onValueChange={(val) => setPublished(val)}
+                  key={fields.public.key}
+                  name={fields.public.name}
                 >
                   <div className="flex gap-2 items-center">
                     <RadioGroupItem value="true" />
@@ -221,14 +206,22 @@ export default function NewMessageRoute() {
                     <p className="text-xs">Private</p>
                   </div>
                 </RadioGroup>
+                {fields.public.errors && (
+                  <ul className="text-red-500 text-xs">
+                    {fields.public.errors.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
+
               <div className="grid gap-2">
                 <Label>Has this message been used in a post?</Label>
-                <input type="hidden" name="used" defaultValue={used} />
                 <RadioGroup
                   defaultValue={"false"}
                   className="gap-1"
-                  onValueChange={(val) => setUsed(val)}
+                  key={fields.used.key}
+                  name={fields.used.name}
                 >
                   <div className="flex gap-2 items-center">
                     <RadioGroupItem value="true" />
@@ -239,22 +232,39 @@ export default function NewMessageRoute() {
                     <p className="text-xs">No</p>
                   </div>
                 </RadioGroup>
+                {fields.used.errors && (
+                  <ul className="text-red-500 text-xs">
+                    {fields.used.errors.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
 
               <div className="grid gap-2">
                 <Label>Instagram Handle (Optional)</Label>
-                <Input name="instagram_handle" />
+                <Input
+                  name={fields.instagram_handle.name}
+                  key={fields.instagram_handle.key}
+                />
+                {fields.instagram_handle.errors && (
+                  <ul className="text-red-500 text-xs">
+                    {fields.instagram_handle.errors.map((item, index) => (
+                      <li key={index}>{item}</li>
+                    ))}
+                  </ul>
+                )}
               </div>
             </div>
           </CardContent>
           <CardFooter className="flex justify-end">
-            <Button variant="secondary" disabled={pending}>
+            <Button variant="secondary" disabled={pending} type="submit">
               {pending ? (
                 <>
-                  <Loader2 className="animate-spin" /> Please wait
+                  <Loader2 className="size-4 animate-spin" /> Please wait
                 </>
               ) : (
-                "Create Message"
+                <>Create Message</>
               )}
             </Button>
           </CardFooter>

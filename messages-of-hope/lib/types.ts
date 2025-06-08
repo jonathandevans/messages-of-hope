@@ -1,3 +1,21 @@
+export const sourceOptions = [
+  { value: "website", label: "Website" },
+  { value: "event", label: "Event" },
+  { value: "instagram", label: "Instagram" },
+  { value: "other", label: "Other" },
+];
+
+export const categoryOptions = [
+  { value: "personal_stories", label: "Personal Stories" },
+  { value: "togetherness", label: "Togetherness" },
+  { value: "reaching_out", label: "Reaching Out" },
+  { value: "practical_advice", label: "Practical Advice" },
+  { value: "affirmations", label: "Affirmations" },
+  { value: "recovery", label: "Recovery" },
+  { value: "suicide_prevention", label: "Suicide Prevention" },
+  { value: "uncategorised", label: "Uncategorised" },
+];
+
 export type Message = {
   id: string;
   message: string;
