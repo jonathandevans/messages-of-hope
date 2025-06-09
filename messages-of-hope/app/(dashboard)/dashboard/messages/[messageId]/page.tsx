@@ -27,7 +27,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { createBrowserClient } from "@/lib/supabase/client";
 import { Message } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { formatISO } from "date-fns";
@@ -40,13 +39,17 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
-import { useActionState, useEffect, useState } from "react";
+import {
+  FormEvent,
+  useActionState,
+  useEffect,
+  useState,
+  useTransition,
+} from "react";
 import { editMessageAction } from "../actions";
-import { useForm } from "@conform-to/react";
-import { parseWithZod } from "@conform-to/zod/v4";
-import { editMessageSchema } from "@/lib/zod-schemas";
+import { createBrowserClient } from "@/lib/supabase/client";
 
-export default function MessageEditRoute() {
+export default function EditMessageRoute() {
   const { messageId } = useParams();
 
   const router = useRouter();
@@ -54,47 +57,71 @@ export default function MessageEditRoute() {
 
   const [message, setMessage] = useState<Message | undefined>();
   const [error, setError] = useState<string | undefined>();
+  const [messageError, setMessageError] = useState<string | undefined>();
 
   const [counter, setCounter] = useState<number>(0);
   const [submitted, setSubmitted] = useState<string | undefined>();
 
-  // TODO: Remove useEffect, separate to server and client components
-  // useEffect(() => {
-  //   const getData = async () => {
-  //     setError(undefined);
-
-  //     const { data, error } = await supabase
-  //       .from("messages")
-  //       .select()
-  //       .eq("id", messageId)
-  //       .single();
-
-  //     if (error) {
-  //       setError(`${error.code}: ${error.message}`);
-  //     } else {
-  //       setMessage(data);
-  //       if ((data as Message).submitted) {
-  //         const date = (data as Message).submitted || undefined;
-  //         setSubmitted(date);
-  //       }
-  //     }
-  //   };
-  //   getData();
-  // }, [counter]);
-
-  const [prevResult, editMessage, pending] = useActionState(
+  const [prevResult, editMessage] = useActionState(
     editMessageAction,
     undefined
   );
-  const [form, fields] = useForm({
-    id: "edit-message",
-    lastResult: prevResult?.zod_error || null,
-    onValidate({ formData }) {
-      return parseWithZod(formData, { schema: editMessageSchema });
-    },
-    shouldValidate: "onBlur",
-    shouldRevalidate: "onInput",
-  });
+  const [pending, startTransition] = useTransition();
+
+  useEffect(() => {
+    const getData = async () => {
+      setError(undefined);
+
+      const { data, error } = await supabase
+        .from("messages")
+        .select()
+        .eq("id", messageId)
+        .single();
+
+      if (error) {
+        setError(`${error.code}: ${error.message}`);
+      } else {
+        setMessage(data);
+        if ((data as Message).submitted) {
+          const date = (data as Message).submitted || undefined;
+          setSubmitted(date);
+        }
+      }
+    };
+    getData();
+  }, []);
+
+  useEffect(() => {
+    if (prevResult?.success) {
+      setMessage(prevResult.success);
+      if ((prevResult.success as Message).submitted) {
+        const date = (prevResult.success as Message).submitted || undefined;
+        setSubmitted(date);
+      }
+      setCounter((prev) => prev + 1);
+    }
+  }, [prevResult]);
+
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    setMessageError(undefined);
+
+    startTransition(() => {
+      if (
+        !formData.get("message") ||
+        (formData.get("message") as string).trim() === ""
+      ) {
+        setMessageError("Message cannot be empty");
+        return;
+      } else if ((formData.get("message") as string).trim().length < 3) {
+        setMessageError("Message is too short");
+        return;
+      }
+
+      editMessage(formData);
+    });
+  };
 
   return (
     <main className="w-[90%] mx-auto max-w-7xl flex flex-col gap-y-4 mb-12">
@@ -146,13 +173,7 @@ export default function MessageEditRoute() {
             </Alert>
           )}
 
-          <form
-            id={form.id}
-            onSubmit={form.onSubmit}
-            action={editMessage}
-            key={counter}
-            noValidate
-          >
+          <form key={counter} onSubmit={handleSubmit}>
             <Card>
               <CardHeader>
                 <CardTitle className="font-quicksand font-bold text-3xl tracking-tighter">
@@ -166,13 +187,8 @@ export default function MessageEditRoute() {
                 <div className="grid gap-4">
                   <div className="grid gap-2">
                     <Label className="italic">Message Id</Label>
-                    <input
-                      type="hidden"
-                      name={fields.id.name}
-                      key={fields.id.key}
-                      defaultValue={message.id}
-                    />
-                    <Input value={message.id} disabled />
+                    <input type="hidden" name="id" defaultValue={message.id} />
+                    <Input defaultValue={message.id} disabled />
                   </div>
 
                   <div className="grid gap-2">
@@ -180,15 +196,10 @@ export default function MessageEditRoute() {
                     <Textarea
                       className="h-30"
                       defaultValue={message.message}
-                      name={fields.message.name}
-                      key={fields.message.key}
+                      name="message"
                     />
-                    {fields.message.errors && (
-                      <ul className="text-red-500 text-xs">
-                        {fields.message.errors.map((item, index) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
+                    {messageError && (
+                      <p className="text-xs text-red-500">{messageError}</p>
                     )}
                   </div>
 
@@ -197,30 +208,18 @@ export default function MessageEditRoute() {
                     <input
                       defaultValue={submitted}
                       type="hidden"
-                      key={fields.submitted.key}
-                      name={fields.submitted.name}
+                      name="submitted"
                     />
                     <DatePicker
                       date={submitted ? new Date(submitted) : undefined}
                       setDate={setSubmitted}
                     />
-                    {fields.submitted.errors && (
-                      <ul className="text-red-500 text-xs">
-                        {fields.submitted.errors.map((item, index) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                    )}
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
                     <div className="flex flex-col gap-2">
                       <Label>Source</Label>
-                      <Select
-                        name={fields.source.name}
-                        key={fields.source.key}
-                        defaultValue={message.source}
-                      >
+                      <Select name="source" defaultValue={message.source}>
                         <SelectTrigger className="w-full">
                           <SelectValue placeholder="Source" />
                         </SelectTrigger>
@@ -231,22 +230,11 @@ export default function MessageEditRoute() {
                           <SelectItem value="other">Other</SelectItem>
                         </SelectContent>
                       </Select>
-                      {fields.source.errors && (
-                        <ul className="text-red-500 text-xs">
-                          {fields.source.errors.map((item, index) => (
-                            <li key={index}>{item}</li>
-                          ))}
-                        </ul>
-                      )}
                     </div>
 
                     <div className="flex flex-col gap-2">
                       <Label>Category</Label>
-                      <Select
-                        key={fields.category.key}
-                        name={fields.category.name}
-                        defaultValue={message.category}
-                      >
+                      <Select name="category" defaultValue={message.category}>
                         <SelectTrigger className="w-full">
                           <SelectValue placeholder="Category" />
                         </SelectTrigger>
@@ -275,13 +263,6 @@ export default function MessageEditRoute() {
                           </SelectItem>
                         </SelectContent>
                       </Select>
-                      {fields.category.errors && (
-                        <ul className="text-red-500 text-xs">
-                          {fields.category.errors.map((item, index) => (
-                            <li key={index}>{item}</li>
-                          ))}
-                        </ul>
-                      )}
                     </div>
                   </div>
 
@@ -290,8 +271,7 @@ export default function MessageEditRoute() {
                     <RadioGroup
                       defaultValue={message.public ? "true" : "false"}
                       className="gap-1"
-                      key={fields.public.key}
-                      name={fields.public.name}
+                      name="public"
                     >
                       <div className="flex gap-2 items-center">
                         <RadioGroupItem value="true" />
@@ -302,13 +282,6 @@ export default function MessageEditRoute() {
                         <p className="text-xs">Private</p>
                       </div>
                     </RadioGroup>
-                    {fields.public.errors && (
-                      <ul className="text-red-500 text-xs">
-                        {fields.public.errors.map((item, index) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                    )}
                   </div>
 
                   <div className="grid gap-2">
@@ -316,8 +289,7 @@ export default function MessageEditRoute() {
                     <RadioGroup
                       defaultValue={message.used ? "true" : "false"}
                       className="gap-1"
-                      key={fields.used.key}
-                      name={fields.used.name}
+                      name="used"
                     >
                       <div className="flex gap-2 items-center">
                         <RadioGroupItem value="true" />
@@ -328,47 +300,33 @@ export default function MessageEditRoute() {
                         <p className="text-xs">No</p>
                       </div>
                     </RadioGroup>
-                    {fields.used.errors && (
-                      <ul className="text-red-500 text-xs">
-                        {fields.used.errors.map((item, index) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                    )}
                   </div>
 
                   <div className="grid gap-2">
                     <Label>Instagram Handle (Optional)</Label>
                     <Input
-                      name={fields.instagram_handle.name}
-                      key={fields.instagram_handle.key}
+                      name="instagram_handle"
                       defaultValue={message.instagram_handle || undefined}
                     />
-                    {fields.instagram_handle.errors && (
-                      <ul className="text-red-500 text-xs">
-                        {fields.instagram_handle.errors.map((item, index) => (
-                          <li key={index}>{item}</li>
-                        ))}
-                      </ul>
-                    )}
                   </div>
                 </div>
               </CardContent>
               <CardFooter>
                 <div className="flex justify-between items-center w-full gap-4">
-                  {/* <Button
+                  <Button
                     variant="link"
                     className="text-xs"
                     type="button"
                     disabled={pending}
                     onClick={() => {
+                      setSubmitted(message.submitted || undefined);
                       setCounter((prev) => prev + 1);
                     }}
                   >
                     Reset Message
-                  </Button> */}
+                  </Button>
                   <div className="flex gap-4">
-                    {/* <Button
+                    <Button
                       variant="destructive"
                       type="button"
                       disabled={pending}
@@ -377,7 +335,7 @@ export default function MessageEditRoute() {
                       <Link href={`/dashboard/messages/${messageId}/delete`}>
                         Delete Message
                       </Link>
-                    </Button> */}
+                    </Button>
                     <Button
                       variant="secondary"
                       disabled={pending}
@@ -440,7 +398,8 @@ function DatePicker({
             }
             selected={date}
             onSelect={(selectedDate) => {
-              if (selectedDate) setDate(selectedDate.toDateString());
+              if (selectedDate)
+                setDate(formatISO(selectedDate, { representation: "date" }));
             }}
           />
           <Button

@@ -1,4 +1,5 @@
 import { z } from "zod/v4";
+import { conformZodMessage } from "@conform-to/zod/v4";
 
 export const newMessageSchema = z.object({
   message: z
@@ -7,7 +8,7 @@ export const newMessageSchema = z.object({
         i.input === undefined ? "Message cannot be empty" : "Invalid input",
     })
     .min(3),
-  submitted: z.date().optional(),
+  submitted: z.iso.date().optional(),
   source: z.enum(["website", "event", "instagram", "other"], {
     error: (i) =>
       i.input === undefined
@@ -39,5 +40,122 @@ export const newMessageSchema = z.object({
 
 export const editMessageSchema = newMessageSchema.extend({
   id: z.uuid(),
-  user_id: z.uuid(),
 });
+
+export const newEventSchema = z.object({
+  title: z
+    .string({
+      error: (i) =>
+        i.input === undefined ? "Message cannot be empty" : "Invalid input",
+    })
+    .min(5)
+    .max(150),
+  description: z
+    .string({
+      error: (i) =>
+        i.input === undefined ? "Description cannot be empty" : "Invalid input",
+    })
+    .min(8)
+    .max(1024),
+  slug: z
+    .string({
+      error: (i) =>
+        i.input === undefined ? "Slug cannot be empty" : "Invalid input",
+    })
+    .min(6)
+    .max(128),
+  date: z.iso.date(),
+  cover_image: z
+    .string({
+      error: (i) =>
+        i.input === undefined ? "Cover image cannot be empty" : "Invalid input",
+    })
+    .min(1),
+  content: z
+    .string({
+      error: (i) =>
+        i.input === undefined ? "Content cannot be empty" : "Invalid input",
+    })
+    .min(1),
+  status: z.enum(["draft", "published", "archived"], {
+    error: (i) =>
+      i.input === undefined
+        ? "Select a status option from the dropdown"
+        : "Invalid input",
+  }),
+});
+
+export function newEventServerSchema(options?: {
+  isSlugUnique: () => Promise<boolean>;
+}) {
+  return z.object({
+    title: z
+      .string({
+        error: (i) =>
+          i.input === undefined ? "Message cannot be empty" : "Invalid input",
+      })
+      .min(5)
+      .max(150),
+    description: z
+      .string({
+        error: (i) =>
+          i.input === undefined
+            ? "Description cannot be empty"
+            : "Invalid input",
+      })
+      .min(8)
+      .max(1024),
+    slug: z
+      .string({
+        error: (i) =>
+          i.input === undefined ? "Slug cannot be empty" : "Invalid input",
+      })
+      .min(6)
+      .max(128)
+      .regex(/^[a-z]+$/, "Subdirectory must be lowercase letters")
+      .transform((val) => val.toLocaleLowerCase())
+      .pipe(
+        z.string().superRefine((email, ctx) => {
+          if (typeof options?.isSlugUnique !== "function") {
+            ctx.addIssue({
+              code: "custom",
+              message: conformZodMessage.VALIDATION_UNDEFINED,
+              fatal: true,
+            });
+            return;
+          }
+
+          return options.isSlugUnique().then((isUnique) => {
+            if (!isUnique) {
+              ctx.addIssue({
+                code: "custom",
+                message: "Event already exists",
+                fatal: true,
+              });
+            }
+          });
+        })
+      ),
+    date: z.iso.date(),
+    cover_image: z
+      .string({
+        error: (i) =>
+          i.input === undefined
+            ? "Cover image cannot be empty"
+            : "Invalid input",
+      })
+      .min(1),
+    content: z
+      .string({
+        error: (i) =>
+          i.input === undefined ? "Content cannot be empty" : "Invalid input",
+      })
+      .min(1),
+    status: z.enum(["draft", "published", "archived"], {
+      error: (i) =>
+        i.input === undefined
+          ? "Select a status option from the dropdown"
+          : "Invalid input",
+    }),
+  });
+}

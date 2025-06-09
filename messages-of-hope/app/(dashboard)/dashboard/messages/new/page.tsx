@@ -50,6 +50,7 @@ export default function NewMessageRoute() {
     id: "new-message",
     lastResult: prevResult?.zod_error || null,
     onValidate({ formData }) {
+      console.log(formData.get("submitted"));
       return parseWithZod(formData, { schema: newMessageSchema });
     },
     shouldValidate: "onBlur",
@@ -311,7 +312,8 @@ function DatePicker({
             }
             selected={date}
             onSelect={(selectedDate) => {
-              if (selectedDate) setDate(selectedDate.toDateString());
+              if (selectedDate)
+                setDate(formatISO(selectedDate, { representation: "date" }));
             }}
           />
           <Button

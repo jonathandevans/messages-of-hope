@@ -18,6 +18,8 @@ export async function newMessageAction(prevState: any, formData: FormData) {
   });
   if (submission.status !== "success") return { zod_error: submission.reply() };
 
+  console.log(submission.value);
+
   const { error } = await supabase.from("messages").insert({
     ...submission.value,
     updated_by: data.user.id,
@@ -40,23 +42,20 @@ export async function editMessageAction(prevState: any, formData: FormData) {
   const submission = parseWithZod(formData, {
     schema: editMessageSchema,
   });
-  if (submission.status !== "success") return { zod_error: submission.reply() };
+  if (submission.status !== "success")
+    return { error: `Error when parsing the data` };
 
-  const { error } = await supabase
+  const { data: _data, error } = await supabase
     .from("messages")
     .update({
-      message: submission.value.message,
-      submitted: submission.value.submitted,
-      source: submission.value.source,
-      category: submission.value.category,
-      public: submission.value.public,
-      used: submission.value.public,
-      instagram_handle: submission.value.instagram_handle,
-      updated_by: submission.value.user_id,
+      ...submission.value,
+      updated_by: data.user.id,
       updated_at: new Date(),
     })
-    .eq("id", submission.value.id);
+    .eq("id", submission.value.id)
+    .select()
+    .single();
   if (error) return { error: `${error.code}: ${error.message}` };
 
-  return { success: true };
+  return { success: _data };
 }
