@@ -36,7 +36,6 @@ import { newEventAction } from "../actions";
 import { useForm } from "@conform-to/react";
 import { newEventSchema } from "@/lib/zod-schemas";
 import { parseWithZod } from "@conform-to/zod/v4";
-import { ImageUploader } from "@/components/dashboard/image-uploader";
 
 export default function NewMessageRoute() {
   const router = useRouter();
@@ -44,6 +43,7 @@ export default function NewMessageRoute() {
   const titleRef = useRef<HTMLInputElement | null>(null);
   const slugRef = useRef<HTMLInputElement | null>(null);
   const [date, setDate] = useState<string | undefined>();
+  const [coverImage, setCoverImage] = useState<string | undefined>();
 
   const [prevResult, newEvent, pending] = useActionState(
     newEventAction,
@@ -190,7 +190,12 @@ export default function NewMessageRoute() {
 
               <div className="grid gap-2">
                 <Label>Cover Image</Label>
-                <ImageUploader />
+                <input
+                  type="hidden"
+                  name={fields.cover_image.name}
+                  key={fields.cover_image.key}
+                  defaultValue={coverImage}
+                />
               </div>
 
               <div className="grid gap-2">
@@ -200,7 +205,16 @@ export default function NewMessageRoute() {
 
               <div className="grid gap-2">
                 <Label>Status</Label>
-                <Input />
+                <Select name="source" defaultValue="draft">
+                  <SelectTrigger className="w-full">
+                    <SelectValue placeholder="Status" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="draft">Draft</SelectItem>
+                    <SelectItem value="published">Published</SelectItem>
+                    <SelectItem value="archived">Archived</SelectItem>
+                  </SelectContent>
+                </Select>
               </div>
             </div>
           </CardContent>
@@ -274,4 +288,12 @@ function DatePicker({
       </PopoverContent>
     </Popover>
   );
+}
+
+function ImageSelect({
+  setImageId,
+}: {
+  setImageId: (_: string | undefined) => void;
+}) {
+  return <div></div>;
 }

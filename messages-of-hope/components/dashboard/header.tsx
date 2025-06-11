@@ -21,7 +21,7 @@ export function Header() {
       <nav className="font-quicksand font-semibold flex gap-8 items-center">
         <Link href="/dashboard" className="flex gap-2 items-center">
           <Image
-            src="https://rqrmdylmzqlsucevuikq.supabase.co/storage/v1/object/public/published/assets/mohLogo.png"
+            src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/moh_logo.png"
             alt=""
             width={5635}
             height={2152}
@@ -34,6 +34,7 @@ export function Header() {
         </Link>
         <Link href="/dashboard/messages">Messages</Link>
         <Link href="/dashboard/events">Events</Link>
+        <Link href="/dashboard/assets">Assets</Link>
       </nav>
 
       <div>

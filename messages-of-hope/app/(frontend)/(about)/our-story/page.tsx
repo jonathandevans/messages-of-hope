@@ -14,7 +14,7 @@ const yearPosts = [
   {
     title: "2020 - The start of Messages of Hope",
     image: {
-      src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/moh_2020.jpg",
+      src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/moh_2020.jpg",
       alt: "Messages of Hope 2020 video",
       width: 864,
       height: 864,
@@ -27,7 +27,7 @@ const yearPosts = [
   {
     title: "2023 - Our first event",
     image: {
-      src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/canvas_painting.jpg",
+      src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/canvas_painting.jpg",
       alt: "Canvas painting at the Messages of Hope 2023 event at Barry Island",
       width: 5376,
       height: 3584,
@@ -41,7 +41,7 @@ const yearPosts = [
   {
     title: "2024 - Getting the ball rolling",
     image: {
-      src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/connections_2024.jpg",
+      src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/connections_2024.jpg",
       alt: "Connections 2024 event at Convent Gardens London",
       width: 4800,
       height: 2649,
@@ -54,7 +54,7 @@ const yearPosts = [
   {
     title: "2025 - When life doesn't give you lemons, go and find some",
     image: {
-      src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/moh_2020.jpg",
+      src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/moh_2020.jpg",
       alt: "Messages of Hope 2020 video",
       width: 864,
       height: 864,
@@ -72,7 +72,7 @@ export default function OurStoryRoute() {
       <AboutBanner
         title="Our Story"
         image={{
-          src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/connections_beth.jpg",
+          src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/connections_beth.jpg",
           alt: "Bethan Evans at the scene of Connections 2024 video",
           width: 6000,
           height: 2400,
@@ -93,7 +93,7 @@ export default function OurStoryRoute() {
             )}
             style={{ top: index > 0 ? `-${1.5 * index}rem` : "0" }}
           >
-            <h2 className="text-2xl font-quicksand font-semibold align-middle bg-background ml-4 relative -top-4.5">
+            <h2 className="text-2xl font-quicksand font-semibold tracking-tight align-middle bg-background ml-4 relative -top-4.5">
               <span className="inline-block w-6 h-6 rounded-full border-4 border-moh-dark-blue align-middle mr-3 relative -top-0.5" />
               {item.title}
             </h2>

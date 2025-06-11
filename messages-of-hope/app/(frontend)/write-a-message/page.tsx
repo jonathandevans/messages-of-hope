@@ -17,7 +17,7 @@ export default function WriteAMessageRoute() {
         <div className="mx-auto max-w-7xl w-[90%] py-12 flex flex-col justify-center items-start gap-4">
           <div className="flex flex-col items-center gap-4 md:grid grid-cols-2 md:gap-8">
             <Image
-              src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/i_wrote_a_message.jpg"
+              src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/i_wrote_a_message.jpg"
               alt="A crate filled with handwritten messages"
               width={3375}
               height={3375}

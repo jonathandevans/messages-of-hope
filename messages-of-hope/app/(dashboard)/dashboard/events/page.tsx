@@ -11,10 +11,12 @@ export default function EventsDashboardRoute() {
           asChild
         >
           <Link href="/dashboard/events/new">
-            <CirclePlus /> Create Event
+            <CirclePlus /> Add Event
           </Link>
         </Button>
       </section>
+
+      <h2 className="font-quicksand font-semibold text-2xl tracking-tighter text-center">Work in Progress...</h2>
     </main>
   );
 }

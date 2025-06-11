@@ -21,7 +21,7 @@ export default function GetInvolvedRoute() {
         <div className="mx-auto max-w-7xl w-[90%] py-12 flex flex-col justify-center items-start gap-4">
           <div className="flex flex-col items-center gap-4 md:grid grid-cols-2 md:gap-8">
             <Image
-              src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/connections_filming_bts.jpg"
+              src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/connections_filming_bts.jpg"
               alt="Behind the scenes of the Connections 2024 video project"
               width={6000}
               height={4000}
@@ -164,7 +164,7 @@ export default function GetInvolvedRoute() {
               className="flex flex-col items-center gap-2 hover:opacity-80 hover:underline transition-all"
             >
               <Image
-                src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/connections_message_board.jpg"
+                src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/connections_message_board.jpg"
                 alt="A member of the public writing a message of hope"
                 width={4000}
                 height={6000}
@@ -180,7 +180,7 @@ export default function GetInvolvedRoute() {
               className="flex flex-col items-center gap-2 hover:opacity-80 hover:underline transition-all"
             >
               <Image
-                src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/connections_writing_a_message.jpg"
+                src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/connections_writing_a_message.jpg"
                 alt="A member of the public writing a message of hope"
                 width={6000}
                 height={4000}

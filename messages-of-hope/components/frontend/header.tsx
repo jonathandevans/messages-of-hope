@@ -35,7 +35,11 @@ export function Header() {
           />
         </Link>
         {navLinks.map((item) => (
-          <Link key={item.href} href={item.href} className="hidden md:block">
+          <Link
+            key={item.href}
+            href={item.href}
+            className="hidden tracking-tight md:block"
+          >
             {item.name}
           </Link>
         ))}
@@ -45,9 +49,9 @@ export function Header() {
         <Link
           href="https://www.instagram.com/messagesof.hope/"
           target="_blank"
-          className="hidden lg:flex items-center gap-x-2 bg-moh-blue transition-all py-1 px-3 rounded-sm hover:bg-moh-blue/70"
+          className="hidden lg:flex items-center gap-x-1.5 tracking-tight bg-moh-blue transition-all py-1 px-3 rounded-sm hover:bg-moh-blue/70"
         >
-          <Instagram className="size-5" />
+          <Instagram className="size-4.5" />
           Instagram
         </Link>
 
@@ -61,7 +65,9 @@ export function Header() {
             <SheetHeader>
               <SheetTitle />
             </SheetHeader>
-            <nav className={`flex flex-col items-center gap-y-8 font-quicksand font-semibold`}>
+            <nav
+              className={`flex flex-col items-center gap-y-8 font-quicksand font-semibold`}
+            >
               <SheetClose asChild>
                 <Link href="/">
                   <Image

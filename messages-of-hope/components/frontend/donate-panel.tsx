@@ -11,8 +11,8 @@ const DonatePanel = ({ colour="blue" } : DonatePanelProps) => {
   return (
     <section className={`${styles.donate} ${styles[colour]}`}>
       <div className={styles.inner}>
-        <h2 className="tracking-tight">Donate now to help bring a struggling patient some dignity</h2>
-        <Link href="/get-involved">Donate Now</Link>
+        <h2 className="tracking-tighter">Donate now to help bring a struggling patient some dignity</h2>
+        <Link href="/get-involved" className="tracking-tighter">Donate Now</Link>
       </div>
 
       <svg

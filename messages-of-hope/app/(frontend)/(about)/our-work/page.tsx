@@ -23,7 +23,7 @@ const doingAboutIt = [
     ],
     href: "/line-of-hope",
     image: {
-      src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/moh_2023.jpg",
+      src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/moh_2023.jpg",
       alt: "Child writing on a canvas at the Messages of Hope 2023 event",
       width: 3143,
       height: 3143,
@@ -38,7 +38,7 @@ const doingAboutIt = [
     ],
     href: "/bags-of-hope",
     image: {
-      src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/boh_2024.jpg",
+      src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/boh_2024.jpg",
       alt: "Bethan Evans behind a collection of bags for Bags of Hope",
       width: 1536,
       height: 1433,
@@ -53,7 +53,7 @@ const doingAboutIt = [
     ],
     href: "/messages-of-hope",
     image: {
-      src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/writing_a_message.jpg",
+      src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/writing_a_message.jpg",
       alt: "Collecting messages in public",
       width: 6000,
       height: 4000,
@@ -68,7 +68,7 @@ const doingAboutIt = [
     ],
     href: "/#events",
     image: {
-      src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/canvas_painting.jpg",
+      src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/canvas_painting.jpg",
       alt: "Canvas painting at the Messages of Hope 2023 event at Barry Island",
       width: 5376,
       height: 3584,
@@ -82,7 +82,7 @@ export default function OurWorkRoute() {
       <AboutBanner
         title="Our Work"
         image={{
-          src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/connections_showcase.jpg",
+          src: "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/connections_showcase.jpg",
           alt: "Showcase of Connections 2024 video",
           width: 576,
           height: 352,
@@ -94,7 +94,7 @@ export default function OurWorkRoute() {
       />
 
       <section className="w-[90%] max-w-7xl mx-auto flex flex-col gap-4">
-        <h2 className="font-quicksand font-semibold text-3xl">
+        <h2 className="font-quicksand font-bold tracking-tighter text-3xl">
           Our goals are to:
         </h2>
         <div className="flex flex-col justify-center items-center gap-4 md:flex-row md:justify-around md:items-start">
@@ -124,7 +124,7 @@ export default function OurWorkRoute() {
 
           <div className="w-[100%] flex justify-center items-center aspect-square relative max-w-xs md:mr-[5%]">
             <Image
-              src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/street_party.jpg"
+              src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/street_party.jpg"
               alt="Speaker Box Party at Covent Gardens during Connections 2024 event"
               width={6000}
               height={4000}
@@ -158,7 +158,7 @@ export default function OurWorkRoute() {
       </section>
 
       <section className="bg-moh-blue py-12 overflow-hidden relative grid gap-6">
-        <h2 className="w-[90%] mx-auto font-quicksand font-semibold text-center text-3xl relative z-3">
+        <h2 className="w-[90%] mx-auto font-quicksand font-bold tracking-tighter text-center text-3xl relative z-3">
           Not-So-Fun Facts
         </h2>
         <div className="w-[90%] mx-auto max-w-7xl relative z-2 flex flex-col justify-center items-center gap-4 md:grid grid-cols-3">
@@ -188,7 +188,7 @@ export default function OurWorkRoute() {
       </section>
 
       <section className="w-[90%] mx-auto max-w-7xl flex flex-col justify-center items-center gap-6">
-        <h2 className="text-center font-quicksand font-semibold text-3xl">
+        <h2 className="text-center font-quicksand font-bold tracking-tighter text-3xl">
           What Are We Doing About It?
         </h2>
         <div className="flex flex-col justify-center items-center gap-6 grow xl:grid xl:grid-cols-2 xl:grid-rows-2 xl:items-stretch">
@@ -209,7 +209,7 @@ export default function OurWorkRoute() {
               />
               <div className="p-6 flex flex-col justify-between self-start items-start gap-2 sm:px-6 sm:py-8 sm:h-full">
                 <div className="flex flex-col gap-3">
-                  <h3 className="text-2xl font-quicksand font-semibold">
+                  <h3 className="text-2xl font-quicksand font-semibold tracking-tight">
                     {item.title}
                   </h3>
                   {item.text.map((para, index) => (

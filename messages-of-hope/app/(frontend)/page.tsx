@@ -11,7 +11,7 @@ const changeLivesLinks = [
     description:
       "Help us to help more people. Messages of Hope relies on donations to continue our work in the community",
     backgroundImage:
-      "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/react_boh.jpg",
+      "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/react_boh.jpg",
     backgroundSizing: "bg-[length:150%]",
   },
   {
@@ -20,7 +20,7 @@ const changeLivesLinks = [
     description:
       "We use our socials to spread our messages, news and our upcoming events. Follow and engage to show support",
     backgroundImage:
-      "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/connections_bts.jpg",
+      "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/connections_bts.jpg",
     backgroundSizing: "bg-cover",
   },
   {
@@ -29,7 +29,7 @@ const changeLivesLinks = [
     description:
       "Learn more about what we do and how we use our donations to help the community",
     backgroundImage:
-      "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/street_party.jpg",
+      "https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/street_party.jpg",
     backgroundSizing: "bg-cover",
   },
 ];
@@ -43,7 +43,7 @@ export default function HomeRoute() {
           <span className="absolute top-[5%] left-[15%] w-[70%] h-80 bg-moh-dark-blue -rotate-[5.5deg] z-2" />
 
           <Image
-            src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/connections_2024.jpg"
+            src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/connections_2024.jpg"
             alt="Connections 2024 filming at Convent Gardens London"
             width={4800}
             height={2649}
@@ -76,7 +76,7 @@ export default function HomeRoute() {
       </section>
 
       <section className="flex flex-col gap-6 bg-moh-blue py-12 relative overflow-hidden">
-        <h2 className="font-quicksand text-3xl tracking-tight font-semibold w-[90%] mx-auto text-center">
+        <h2 className="font-quicksand text-3xl tracking-tighter font-bold w-[90%] mx-auto text-center">
           How can you help us change lives?
         </h2>
 
@@ -95,7 +95,7 @@ export default function HomeRoute() {
                 backgroundImage: `url('${item.backgroundImage}')`,
               }}
             >
-              <h3 className="font-quicksand font-semibold text-2xl">
+              <h3 className="font-quicksand tracking-tight font-semibold text-2xl">
                 {item.title}
               </h3>
               <p className="text-zinc-100">{item.description}</p>
@@ -105,13 +105,13 @@ export default function HomeRoute() {
       </section>
 
       <section className="w-[90%] max-w-7xl mx-auto flex flex-col gap-6">
-        <h2 className="font-quicksand text-3xl tracking-tight font-semibold text-center">
+        <h2 className="font-quicksand text-3xl tracking-tighter font-bold text-center">
           Our Story So Far...
         </h2>
 
         <div className="flex flex-col gap-4 md:grid grid-cols-3">
           <Image
-            src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/published/assets/moh_map.png"
+            src="https://dhvgncgaxkgbphijqpbj.supabase.co/storage/v1/object/public/static/moh_map.png"
             width={535}
             height={616}
             alt="Roadmap of Messages of Hope history"

@@ -159,3 +159,27 @@ export function newEventServerSchema(options?: {
     }),
   });
 }
+
+export const newAssetSchema = z.object({
+  image_path: z.string({
+    error: (i) =>
+      i.input === undefined ? "File cannot be empty" : "Invalid input",
+  }),
+  file_type: z.string({
+    error: (i) =>
+      i.input === undefined ? "File type cannot be empty" : "Invalid input",
+  }),
+  name: z
+    .string({
+      error: (i) =>
+        i.input === undefined ? "Name cannot be empty" : "Invalid input",
+    })
+    .max(150),
+  alt_text: z
+    .string({
+      error: (i) =>
+        i.input === undefined ? "Alt text cannot be empty" : "Invalid input",
+    })
+    .min(5)
+    .max(250),
+});

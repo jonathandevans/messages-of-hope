@@ -74,7 +74,7 @@ export function ContactForm({
       </div>
 
       <div className="w-[90%] mx-auto max-w-7xl flex flex-col gap-4">
-        <h2 className="font-quicksand text-zinc-100 tracking-tight text-3xl font-semibold text-center">
+        <h2 className="font-quicksand text-zinc-100 tracking-tighter text-3xl font-bold text-center">
           {title}
         </h2>
         <p className="text-zinc-100">{description}</p>
@@ -119,7 +119,7 @@ export function ContactForm({
           />
           <button
             disabled={pending}
-            className="font-quicksand font-semibold bg-moh-blue py-2 rounded-md hover:opacity-80 transition-all lg:col-span-2 xl:col-span-3"
+            className="font-quicksand font-semibold tracking-tight bg-moh-blue py-2 rounded-md hover:opacity-80 transition-all lg:col-span-2 xl:col-span-3"
           >
             {pending ? (
               <>
