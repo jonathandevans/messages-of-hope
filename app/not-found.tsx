@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import Header from "@components/header";
 import Footer from "@components/footer";
 import Button from "@components/button";
-import { generateMetadata } from "@/lib/utils";
+import { generateMetadata } from "@lib/utils";
 
 export const metadata: Metadata = generateMetadata({
     title: "Page Not Found",

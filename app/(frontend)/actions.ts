@@ -1,9 +1,9 @@
 "use server";
 
-import { createAdminClient } from "@/lib/supabase/server";
-import { contactFormSchema } from "@/lib/zod-schemas";
 import { parseWithZod } from "@conform-to/zod/v4";
 import { Resend } from "resend";
+import { createAdminClient } from "@lib/supabase/server";
+import { contactFormSchema } from "@lib/zod-schemas";
 
 const resend = new Resend(process.env.RESEND_KEY);
 
@@ -56,5 +56,26 @@ export async function getMessagesAction() {
         return { messages: data.map((item) => item.message) };
     } catch (error) {
         return { error: "Failed" };
+    }
+}
+
+export async function submitMessageAction(prevState: any, formData: FormData) {
+    try {
+        if (!formData.get("message")) {
+            return { error: "Message is required" };
+        }
+
+        const supabase = await createAdminClient();
+        const { error } = await supabase.from("message").insert({
+            message: formData.get("message"),
+            instagram_handle: formData.get("instagram-handle") || null,
+        });
+
+        if (error) throw new Error(error.message);
+
+        return { success: true };
+    } catch (error) {
+        console.log(error)
+        return { error: "Failed to submit message" };
     }
 }

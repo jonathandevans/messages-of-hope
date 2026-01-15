@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 import Image from "next/image";
-import Button from "@components/button";
 import { generateMetadata } from "@lib/utils";
+import Button from "@components/button";
+import ContactForm from "@components/contact-form";
+import MessageBanner from "@components/message-banner";
 import styles from "./page.module.css";
-import ContactForm from "@/components/contact-form";
-import { MessagesPanel } from "@/components/message-panel";
 
 export const metadata: Metadata = generateMetadata({ path: "/" });
 
@@ -216,7 +216,7 @@ export default function Home() {
 
                 <ContactForm />
 
-                <MessagesPanel />
+                <MessageBanner />
             </main>
         </>
     );

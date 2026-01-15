@@ -8,6 +8,7 @@ interface ButtonProps {
     colour?: "blue" | "yellow" | "outline";
     size?: "sm" | "base";
     className?: string;
+    target?: "_blank" | "_parent" | "_self" | "_top";
 }
 
 export default function Button({
@@ -16,6 +17,7 @@ export default function Button({
     colour = "blue",
     size = "base",
     className = "",
+    target = "_self",
 }: ButtonProps) {
     const baseClass =
         "flex gap-2 items-center font-heading font-semibold tracking-tight w-fit transition-all rounded-md";
@@ -40,7 +42,7 @@ export default function Button({
         className;
 
     return (
-        <Link href={href} className={classCompound}>
+        <Link href={href} className={classCompound} target={target}>
             {children} <ArrowRight aria-hidden="true" className="size-4" />
         </Link>
     );
