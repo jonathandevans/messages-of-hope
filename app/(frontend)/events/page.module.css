@@ -1,0 +1,87 @@
+.year {
+    width: 90%;
+    max-width: 76rem;
+    margin: 0 auto;
+}
+
+.year h2 {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.year h2 span.left {
+    width: 2rem;
+    height: 8px;
+    background: var(--color-moh-blue);
+    border-radius: 4px;
+}
+
+.year h2 span.right {
+    width: 100%;
+    height: 8px;
+    background: var(--color-moh-blue);
+    border-radius: 4px;
+}
+
+.year .content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem;
+}
+
+.year .item {
+    width: 100%;
+    max-width: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem;
+    text-decoration: none;
+}
+
+.year .item img {
+    width: 100%;
+    aspect-ratio: 1.25/0.75;
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.year .item h3 {
+    width: 100%;
+    margin: 0;
+    font-size: 1.3rem;
+    font-weight: 700;
+    transition: all 0.3s;
+}
+
+.year .item:hover h3,
+.year .item:active h3,
+.year .item:focus h3 {
+    color: var(--color-moh-blue);
+}
+
+.year .item p {
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 48rem) {
+    .year h2 span.left {
+        width: 10rem;
+    }
+}
+
+@media (min-width: 64rem) {
+    .year {
+        width: 95%;
+    }
+}
