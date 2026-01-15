@@ -2,18 +2,18 @@
 
 import { useState, useRef, useEffect, HTMLAttributes } from "react";
 import { getMessagesAction } from "@/app/(frontend)/actions";
-import styles from "@components/custom-css/message-panel.module.css";
+import styles from "@components/custom-css/message-banner.module.css";
 
-const staticMessages = [
+const MESSAGES = [
     "Life is a journey and everyone's different. No matter how many times you fall please get back up. You don't know what the future will bring or what's around the corner for you. Just take one step at a time no matter how small that is, even if it's a wrong turn or backwards just keep going. Lots of love from a survivor.",
     "I am so proud of you for getting through everything that had lead you to this moment.",
     "Even on your darkest days, there is always hope. You are your unique self, there is no one in the world like you, or ever will be. One day, someone will need you, let them have that chance.",
 ];
 
-export function MessagesPanel({
+export default function MessageBanner({
     className: _className,
 }: HTMLAttributes<HTMLDivElement>) {
-    const [messages, setMessages] = useState(staticMessages);
+    const [messages, setMessages] = useState(MESSAGES);
     const currentMessage = useRef(0);
 
     useEffect(() => {
