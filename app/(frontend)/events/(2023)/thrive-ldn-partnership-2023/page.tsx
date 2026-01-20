@@ -8,6 +8,7 @@ export const metadata: Metadata = generateMetadata({
     title: "Thrive LDN Partnership",
     description:
         "Monday 15th May 2023 marks the beginning of an exciting collaboration between Thrive LDN and Messages of Hope. Thrive LDN is a citywide public mental health partnership to ensure all Londoners have an equal opportunity for good mental health and wellbeing. Launched during Mental Health Awareness Week 2023 and aligning with Thrive LDN's Getting Through This Together campaign, the collaboration will see anonymous messages submitted by Londoners shared daily.",
+    path: "/events/thrive-ldn-partnership-2023",
 });
 
 const ThriveLDNPartnership2023 = () => {

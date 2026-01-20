@@ -1,6 +1,6 @@
 {
-  "name": "base-site",
-  "version": "1.0.0",
+  "name": "messages-of-hope",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",

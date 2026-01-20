@@ -8,6 +8,7 @@ export const metadata: Metadata = generateMetadata({
     title: "Write a Message",
     description:
         "Write a message of hope for someone struggling with their mental health. Your message could be the one that makes a difference in someone's life. Messages of Hope collects messages of hope and spreads them far and wide. Keep an eye on our social media pages to see if your message is shared.",
+    path: "/write-a-message",
 });
 
 export default function WriteAMessageRoute() {

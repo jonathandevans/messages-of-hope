@@ -9,6 +9,7 @@ export const metadata: Metadata = generateMetadata({
     title: "World Mental Health Day 2022",
     description:
         "On the 10th October 2022, Messages of Hope was invited to be a part of Thrive LDNs World Mental Health Day event called Never Alone LDN in City Hall, London. Our aim for this event was to create a mural that displayed anonymous messages of hope that could be showcased at City Hall, and that's exactly what we did. We were able to collect over 200 messages for this event and approximately 50 messages from attendees of the event, on the day.",
+        path: "/events/world-mental-health-day-2022",
 });
 
 const WorldMentalHealthDay2022 = () => {

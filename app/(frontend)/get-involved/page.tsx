@@ -12,6 +12,7 @@ export const metadata: Metadata = generateMetadata({
     title: "Get Involved",
     description:
         "Messages of Hope is run by a small team of directors, all passionate about the work we do, but we cannot do it alone. Here we are asking for your support. A donation from you will help us continue to reach those who are struggling to cope. We are always looking for people to support our work beyond the donation, so please reach out to us if you can help.",
+    path: "/get-involved",
 });
 
 export default function GetInvolvedRoute() {
@@ -82,7 +83,9 @@ export default function GetInvolvedRoute() {
                     href="https://buy.stripe.com/fZe5kzdp88s3efS001"
                     colour="yellow"
                     className="self-end"
-                >Donate Now</Button>
+                >
+                    Donate Now
+                </Button>
             </section>
 
             <section className="flex justify-center items-stretch flex-wrap grow gap-4 mx-auto max-w-6xl w-[90%] xl:justify-between">
@@ -224,7 +227,9 @@ export default function GetInvolvedRoute() {
                     href="https://buy.stripe.com/fZe5kzdp88s3efS001"
                     colour="yellow"
                     className="self-end"
-                >Donate Now</Button>
+                >
+                    Donate Now
+                </Button>
 
                 <h2 className="font-quicksand font-bold text-3xl tracking-tight mt-4">
                     Other ways to help
@@ -260,7 +265,9 @@ export default function GetInvolvedRoute() {
                             className="w-fit self-end"
                             size="sm"
                             colour="outline"
-                        >Amazon Wishlist</Button>
+                        >
+                            Amazon Wishlist
+                        </Button>
                     </Dropdown>
 
                     <Dropdown title="Colouring Book">
@@ -292,7 +299,9 @@ export default function GetInvolvedRoute() {
                             className="w-fit self-end"
                             size="sm"
                             colour="outline"
-                        >Colouring Book</Button>
+                        >
+                            Colouring Book
+                        </Button>
                     </Dropdown>
                 </div>
             </section>
