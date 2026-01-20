@@ -9,6 +9,7 @@ export const metadata: Metadata = generateMetadata({
     title: "Feeling Blue?",
     description:
         "Feeling Blue? was a three day event in which Messages of Hope partnered with City of London University and the Urdang academy, and also attended the Mental Wealth Festival at City Lit. Over these three days we were able to support all three of our current campaigns, creating a Line of Hope at Urdang, donating 43 Bags of Hope from items donated by students, and collecting Messages of Hope from all three venues.",
+        path: "/events/feeling-blue-2024",
 });
 
 const FeelingBlue = () => {
@@ -19,8 +20,8 @@ const FeelingBlue = () => {
                 description="10th - 12th October 2024"
                 backgroundStyling={{
                     backgroundImage:
-                        "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/react-boh.jpg')",
-                    backgroundPosition: "left 50% top 85%",
+                        "linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/city-line.jpg')",
+                    backgroundPosition: "left 50% top 50%",
                 }}
             />
 

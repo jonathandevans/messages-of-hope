@@ -9,6 +9,7 @@ export const metadata: Metadata = generateMetadata({
     title: "Connections 2024",
     description:
         "Connections 2024 is a poignant short film created by Messages of Hope and Speakers Collective for Great Mental Health Day 2024. Connections delves into the transformative power of connection amidst mental health struggles. Through capturing the heartfelt messages penned by Londoners, the film illuminates the profound sense of empathy and solidarity within our communities. Each message serves as a beacon of hope, affirming that even in the darkest moments, there are individuals who genuinely care.",
+        path: "/events/connections-2024",
 });
 
 const Connections2024 = () => {

@@ -9,6 +9,7 @@ export const metadata: Metadata = generateMetadata({
     absolute: "Messages of Hope Campaign",
     description:
         "Messages of Hope collects messages of hope and spreads them far and wide. Collecting these messages is part of our initial Messages of Hope campaign which started this organisation. You can often find us out in the community collecting messages from strangers. Not only do these messages help others but we give people the opportunity to perform a wellbeing check-in.",
+    path: "/messages-of-hope",
 });
 
 const galleryImages = [

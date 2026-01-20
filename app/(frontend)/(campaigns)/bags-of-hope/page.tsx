@@ -19,6 +19,7 @@ export const metadata: Metadata = generateMetadata({
     title: "Bags of Hope",
     description:
         "Bags of Hope is a project set up to provide patients arriving on psychiatric wards with a bag of both essential and self-care items. These bags contain items such as body wash, wipes, socks, underwear, colouring books, phone chargers, and activity books, all of which offer comfort and dignity to patients during a challenging time. The bags are delivered to local psychiatric wards across South Wales and England.",
+    path: "/bags-of-hope",
 });
 
 const businesses = [

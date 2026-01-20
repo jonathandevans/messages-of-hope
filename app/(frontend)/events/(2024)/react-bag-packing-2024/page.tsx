@@ -11,6 +11,7 @@ export const metadata: Metadata = generateMetadata({
     title: "React Bag Packing",
     description:
         "On the 20th December, Messages of Hope collaborated with React Support Services in a Bags of Hope bag packing event. React had their team and members collect many items leading up to the event, which we then combined with additional stock in order to produce over 30 Bags of Hope. Our work with React gave us some new suggestions for items that should be placed into future bags, and both the staff and people their were very supportive up to and on the day of the event.",
+    path: "/events/react-bag-packing-2024",
 });
 
 const ReactBagPacking = () => {

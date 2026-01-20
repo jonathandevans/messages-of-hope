@@ -10,6 +10,7 @@ export const metadata: Metadata = generateMetadata({
     title: "Line of Hope",
     description:
         "Line of Hope displays are a collaborative art project, which provide a space in which people can reflect on their current mindfulness and read messages of hope provided from those around them displayed on a line. These messages are about providing people in a time of need and the space to get them. We partner with other organisations to setup a stall to gather messages from the community, these are written on cards.",
+        path: "/line-of-hope",
 });
 
 export default function LineOfHope() {

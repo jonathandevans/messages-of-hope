@@ -9,6 +9,7 @@ export const metadata: Metadata = generateMetadata({
     title: "Mental Wealth Festival 2023",
     description:
         "Messages of Hope hosted a very successful project at City Lit on the 12th October 2023 as part of their Mental Wealth Festival. The afternoon was spent encouraging individuals to write messages of hope for people struggling with their mental health in order to fill a canvas that will be displayed in City Lit.",
+        path: "/events/mental-wealth-festival-2023",
 });
 
 const MentalWealthFestival2023 = () => {

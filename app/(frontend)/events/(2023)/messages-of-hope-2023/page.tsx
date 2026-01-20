@@ -9,6 +9,7 @@ export const metadata: Metadata = generateMetadata({
     title: "Messages of Hope 2023",
     description:
         "On the 29th of July 2023, Messages of Hope hosted a transformative collaborative art project at Barry Island. People of all ages, from children to adults, left their marks on pre-prepared canvases, filling them with messages of hope and encouragement.",
+        path: "/events/messages-of-hope-2023",
 });
 
 const MessagesOfHope2023 = () => {

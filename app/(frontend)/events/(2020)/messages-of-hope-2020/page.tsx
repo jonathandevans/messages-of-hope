@@ -8,6 +8,7 @@ export const metadata: Metadata = generateMetadata({
     title: "Messages of Hope 2020",
     description:
         "2020 was the year in which Messages of Hope was created. In 2020 Bethan collected 200 messages in a week. She then displayed all of these messages on a mural that she created in her kitchen, recorded a video of herself creating the mural and tried to share as many of the messages as possible. Bethan was determined to show everyone that was struggling how many strangers cared about them. She needed people to know that so many people cared about them.",
+    path: "/events/messages-of-hope-2020",
 });
 
 const MessagesOfHope2020 = () => {
