@@ -1,14 +1,9 @@
 ---
-import DonatePanel from "@components/donate-panel.astro";
-import EventsLayout from "@components/layouts/events-layout.astro";
-import Button from "@components/ui/button.astro";
-import {
-    Hospital,
-    Instagram,
-    Shirt,
-    ShoppingBag,
-} from "@lucide/astro";
 import { Image } from "astro:assets";
+import DonatePanel from "@components/donate-panel.astro";
+import EventsLayout from "@layouts/events-layout.astro";
+import Button from "@components/button.astro";
+import { Hospital, Instagram, Shirt, ShoppingBag } from "@lucide/astro";
 
 const businesses = [
     { href: "https://www.instagram.com/theurdang/", name: "@theurdang" },
@@ -39,7 +34,7 @@ const businesses = [
     class="background"
 >
     <section
-        class="w-[90%] max-w-(--custom-width) mx-auto flex flex-col justify-center items-center gap-8 md:grid grid-cols-[3fr_2fr] md:gap-12"
+        class="w-[90%] max-w-(--panel-width) mx-auto flex flex-col justify-center items-center gap-8 md:grid grid-cols-[3fr_2fr] md:gap-12"
     >
         <div class="flex flex-col gap-2">
             <h2 class="text-3xl font-semibold tracking-tight">
@@ -75,12 +70,14 @@ const businesses = [
         <Image
             src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/lit-boh.jpg"
             alt="Bags of Hope bag packing event at City Lit"
-            inferSize={true}
-            class="w-full h-auto max-w-sm aspect-square object-cover mx-auto rounded-lg md:max-w-md"
+            title="Bag packing at City Lit"
+            width={3024}
+            height={4032}
+            class="w-full h-auto max-w-sm rotate-90 aspect-square object-cover mx-auto rounded-lg md:max-w-md"
         />
     </section>
 
-    <section class="w-[90%] max-w-(--custom-width) mx-auto flex flex-col gap-2">
+    <section class="w-[90%] max-w-(--panel-width) mx-auto flex flex-col gap-2">
         <h2 class="text-3xl font-semibold tracking-tight">
             Have you received a Bag of Hope?
         </h2>
@@ -152,7 +149,7 @@ const businesses = [
         </div>
     </section>
 
-    <section class="w-[90%] max-w-(--custom-width) mx-auto flex flex-col gap-6">
+    <section class="w-[90%] max-w-(--panel-width) mx-auto flex flex-col gap-6">
         <h2 class="text-3xl font-quicksand font-semibold tracking-tight">
             What goes into a Bag of Hope?
         </h2>
@@ -252,12 +249,14 @@ const businesses = [
     </section>
 
     <section
-        class="w-[90%] max-w-(--custom-width) mx-auto flex flex-col justify-center items-center gap-8 md:grid grid-cols-[2fr_3fr] md:gap-12"
+        class="w-[90%] max-w-(--panel-width) mx-auto flex flex-col justify-center items-center gap-8 md:grid grid-cols-[2fr_3fr] md:gap-12"
     >
         <Image
             src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/boh-2024.jpg"
             alt="Bethan Evans standing behind a collection of Bags of Hope ready to be delivered"
-            inferSize={true}
+            title="Bags of Hope ready to be delivered"
+            width={1536}
+            height={1433}
             class="w-full h-auto max-w-sm aspect-square object-cover mx-auto rounded-lg md:max-w-md"
         />
 
@@ -286,7 +285,7 @@ const businesses = [
     </section>
 
     <section
-        class="w-[90%] max-w-(--custom-width) mx-auto flex flex-col-reverse items-center justify-center gap-8 md:flex-row lg:gap-16"
+        class="w-[90%] max-w-(--panel-width) mx-auto flex flex-col-reverse items-center justify-center gap-8 md:flex-row lg:gap-16"
     >
         <div class="flex flex-col gap-4">
             <h2 class="text-3xl font-semibold tracking-tight">
@@ -350,7 +349,9 @@ const businesses = [
         <Image
             src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/boh-collage.png"
             alt="A colection of photos showing the bags of hope being delivered to wards"
-            inferSize={true}
+            title="Bags of Hope delivery"
+            width={1380}
+            height={1721}
             class="w-full h-auto max-w-sm md:hidden lg:max-w-md lg:block lg:min-w-md xl:min-w-lg"
         />
     </section>
@@ -358,7 +359,7 @@ const businesses = [
     <DonatePanel />
 
     <section
-        class="w-[90%] max-w-7xl mx-auto flex flex-col gap-2 text-muted-foreground text-xs"
+        class="w-[90%] max-w-(--panel-width) mx-auto flex flex-col gap-2 text-muted-foreground text-xs"
     >
         <p>
             <sup>1</sup> Essential items include: 2 in 1 or shampoo & conditioner,

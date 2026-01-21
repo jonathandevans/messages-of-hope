@@ -1,6 +1,6 @@
 ---
-import TitleCardLayout from "@components/layouts/title-card-layout.astro";
 import { Image } from "astro:assets";
+import TitleCardLayout from "@layouts/title-card-layout.astro";
 ---
 
 <TitleCardLayout
@@ -17,11 +17,11 @@ import { Image } from "astro:assets";
         <div class="content">
             <a class="item" href="/events/react-bag-packing-2024">
                 <Image
-                    src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/react-boh.jpg"
-                    alt="Bethan and Emmanuella standing behind a collection of Bags of Hope ready to be delivered"
-                    width={1536}
-                    height={2048}
+                    src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/react-boh-building.jpg"
+                    alt="Bethan building a Bag of Hope"
+                    inferSize={true}
                     loading="eager"
+                    class="aspect-[1.25/0.75] object-cover"
                 />
                 <p>20th December 2024</p>
                 <h3>React Bag Packing</h3>
@@ -29,9 +29,11 @@ import { Image } from "astro:assets";
 
             <a class="item" href="/events/feeling-blue-2024">
                 <Image
-                    src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/city-line.jpg"
-                    alt="Line of Hope at Urdang"
+                    src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/urdang-blue.png"
+                    alt="Urdang students at Feeling Blue?"
                     inferSize={true}
+                    loading="eager"
+                    class="aspect-[1.25/0.75] object-cover"
                 />
                 <p>10th - 12th October 2024</p>
                 <h3>Feeling Blue?</h3>
@@ -42,6 +44,8 @@ import { Image } from "astro:assets";
                     src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/connections-2024.jpg"
                     alt="Connections 2024 filming at Convent Gardens London"
                     inferSize={true}
+                    loading="eager"
+                    class="aspect-[1.25/0.75] object-cover"
                 />
                 <p>26th January 2024</p>
                 <h3>Connections 2024</h3>
@@ -59,8 +63,10 @@ import { Image } from "astro:assets";
             <a class="item" href="/events/mental-wealth-festival-2023">
                 <Image
                     src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/beth-messages.jpg"
-                    alt=""
+                    alt="Bethan at the Mental Wealth Festival"
                     inferSize={true}
+                    loading="eager"
+                    class="aspect-[1.25/0.75] object-cover"
                 />
                 <p>12th October 2023</p>
                 <h3>Mental Wealth Festival 2023</h3>
@@ -71,6 +77,8 @@ import { Image } from "astro:assets";
                     src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/painted-pebbles.jpg"
                     alt="Painted pebbles from Messages of Hope 2023 pop-up art event"
                     inferSize={true}
+                    loading="eager"
+                    class="aspect-[1.25/0.75] object-cover"
                 />
                 <p>29th July 2023</p>
                 <h3>Messages of Hope 2023</h3>
@@ -79,8 +87,10 @@ import { Image } from "astro:assets";
             <a class="item" href="/events/thrive-ldn-partnership-2023">
                 <Image
                     src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/thrive-message.png"
-                    alt=""
+                    alt="Thrive LDN and Messages of Hope shared post"
                     inferSize={true}
+                    loading="eager"
+                    class="aspect-[1.25/0.75] object-cover"
                 />
                 <p>15th May 2023</p>
                 <h3>Thrive LDN Partnership</h3>
@@ -98,8 +108,9 @@ import { Image } from "astro:assets";
             <a class="item" href="/events/world-mental-health-day-2022">
                 <Image
                     src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/world-mental-health-day.jpg"
-                    alt=""
+                    alt="Students at the World Mental Health Day fair"
                     inferSize={true}
+                    class="aspect-[1.25/0.75] object-cover"
                 />
                 <p>10th October 2022</p>
                 <h3>World Mental Health Day 2022</h3>
@@ -117,8 +128,9 @@ import { Image } from "astro:assets";
             <a class="item" href="/events/messages-of-hope-2020">
                 <Image
                     src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/moh-2020.jpg"
-                    alt="Connections 2024 filming at Convent Gardens London"
+                    alt="Messages of Hope 2020 video"
                     inferSize={true}
+                    class="aspect-[1.25/0.75] object-cover"
                 />
                 <p>21st May 2020</p>
                 <h3>Messages of Hope 2020</h3>

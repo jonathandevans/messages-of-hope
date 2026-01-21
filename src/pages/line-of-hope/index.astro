@@ -1,6 +1,6 @@
 ---
-import EventsLayout from "@components/layouts/events-layout.astro";
-import Button from "@components/ui/button.astro";
+import EventsLayout from "@layouts/events-layout.astro";
+import Button from "@components/button.astro";
 import { Image } from "astro:assets";
 ---
 
@@ -11,12 +11,10 @@ import { Image } from "astro:assets";
     class="background"
 >
     <section
-        class="w-[90%] max-w-(--custom-width) mx-auto flex flex-col justify-center items-center gap-8 md:grid grid-cols-[3fr_2fr] md:gap-12"
+        class="w-[90%] max-w-(--panel-width) mx-auto flex flex-col justify-center items-center gap-8 md:grid grid-cols-[3fr_2fr] md:gap-12"
     >
         <div class="flex flex-col gap-4">
-            <h2
-                class="text-3xl font-quicksand font-semibold tracking-tight"
-            >
+            <h2 class="text-3xl font-quicksand font-semibold tracking-tight">
                 What is a Line of Hope?
             </h2>
             <p>
@@ -40,15 +38,17 @@ import { Image } from "astro:assets";
                 href="/events/feeling-blue-2024"
                 colour="outline"
                 size="sm"
-                class="self-end"
-            >Check out our Latest Line</Button>
+                class="self-end">Check out our Latest Line</Button
+            >
         </div>
 
         <Image
             src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/urdang-line.jpg"
             alt="The Line of Hope at City Lit"
-            inferSize={true}
-            class="w-full h-auto max-w-sm aspect-square object-cover mx-auto rounded-lg md:max-w-md"
+            title="Line of Hope"
+            width={3024}
+            height={4032}
+            class="w-full h-auto max-w-sm aspect-square object-cover mx-auto rotate-90 rounded-lg md:max-w-md"
         />
     </section>
 </EventsLayout>

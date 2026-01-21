@@ -20,9 +20,6 @@ export default defineConfig({
 
         "/projects": "/campaigns",
         "/projects/bags-of-hope": "/bags-of-hope",
-        "/bags-of-hope": "/campaigns/bags-of-hope",
-        "/line-of-hope": "/campaigns/line-of-hope",
-        "/messages-of-hope": "/campaigns/messages-of-hope",
 
         "/projects/connections-2024": "/events/connections-2024",
         "/projects/messages-of-hope-2023": "/events/messages-of-hope-2023",

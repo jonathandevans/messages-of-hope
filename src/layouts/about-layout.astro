@@ -22,7 +22,7 @@ const links = [
     <main class="flex flex-col gap-y-16 mb-12 relative">
         <section class="bg-moh-blue">
             <div
-                class="mx-auto max-w-(--custom-width) w-[90%] pt-6 pb-12 flex flex-col justify-center items-start gap-2"
+                class="mx-auto max-w-(--panel-width) w-[90%] pt-6 pb-12 flex flex-col justify-center items-start gap-2"
             >
                 <div class="flex gap-2">
                     {
@@ -43,7 +43,9 @@ const links = [
                     <Image
                         src={image.src}
                         alt={image.alt}
-                        inferSize={true}
+                        title={image.title}
+                        width={image.width}
+                        height={image.height}
                         class="object-cover h-72 max-w-lg w-full col-start-2 md:h-88 md:mx-auto"
                     />
 

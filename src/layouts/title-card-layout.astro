@@ -6,8 +6,8 @@ const { title, noIndex, description, text, heading, absolute } = Astro.props;
 
 <BaseLayout title={title} absolute={absolute} noIndex={noIndex} description={description}>
     <main class="flex flex-col gap-y-16 mb-12 relative">
-        <section class="py-12 bg-moh-blue">
-            <div class="max-w-(--custom-width) mx-auto w-[90%] grid gap-5">
+        <section class="pb-12 pt-8 bg-moh-blue">
+            <div class="max-w-(--panel-width) mx-auto w-[90%] grid gap-5">
                 <h1 class="font-coiny text-5xl tracking-tighter">
                     {heading ? heading : title}
                 </h1>

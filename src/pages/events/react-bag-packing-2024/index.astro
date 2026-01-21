@@ -1,0 +1,63 @@
+---
+import Button from "@components/button.astro";
+import EventsLayout from "@layouts/events-layout.astro";
+import { Image } from "astro:assets";
+---
+
+<EventsLayout
+    title="React Bag Packing"
+    description="On the 20th December, Messages of Hope collaborated with React Support Services in a Bags of Hope bag packing event. React had their team and members collect many items leading up to the event, which we then combined with additional stock in order to produce over 30 Bags of Hope. Our work with React gave us some new suggestions for items that should be placed into future bags, and both the staff and people their were very supportive up to and on the day of the event."
+    text="20th December 2024"
+    class="background"
+>
+    <section
+        class="w-[90%] max-w-(--panel-width) mx-auto flex flex-col justify-center items-center gap-8 md:grid grid-cols-[3fr_2fr] md:gap-12"
+    >
+        <div class="flex flex-col gap-2">
+            <p>
+                On the 20th December, Messages of Hope collaborated with React
+                Support Services in a Bags of Hope bag packing event. React had
+                their team and members collect many items leading up to the
+                event, which we then combined with additional stock in order to
+                produce over 30 Bags of Hope. Our work with React gave us some
+                new suggestions for items that should be placed into future
+                bags, and both the staff and people their were very supportive
+                up to and on the day of the event.
+            </p>
+            <p>
+                The work React does with providing specialist care for adults
+                who are over the age of 18 with a mental health condition, is
+                truly impressive.They provide a range of bespoke residential and
+                supported living services that enable the Individuals we support
+                to lead fulfilled lives and achieve positive outcomes.
+            </p>
+            <p>
+                We want to give our thanks to React, and especially Emily
+                Osborne and Emmanuella Nicolaou for the support they gave us.
+                Please check out the amazing work React Support Services to
+                provide mental health support.
+            </p>
+            <Button colour="outline" class="self-end"
+                >React Support Services</Button
+            >
+        </div>
+
+        <Image
+            src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/react-boh-building.jpg"
+            alt="Bags of Hope bag packing with React Support Services"
+            title="Bag packing at React Support Services"
+            inferSize={true}
+            class="w-full h-auto max-w-sm aspect-square object-cover mx-auto rounded-lg md:max-w-md"
+        />
+    </section>
+</EventsLayout>
+
+<style>
+    .background {
+        background:
+            linear-gradient(#0000004d, #000000a6),
+            url("https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/react-boh.jpg")
+                left 50% top 90% / cover no-repeat border-box,
+            var(--color-moh-dark-blue);
+    }
+</style>

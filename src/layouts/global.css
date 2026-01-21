@@ -9,7 +9,7 @@
     --background: oklch(96.7% 0.001 286.375);
     --foreground: oklch(21% 0.006 285.885);
 
-    --custom-width: 76rem;
+    --panel-width: 76rem;
 }
 
 .dark {

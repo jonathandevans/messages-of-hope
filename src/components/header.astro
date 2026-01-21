@@ -1,0 +1,105 @@
+---
+import { Image } from "astro:assets";
+import { Instagram, Menu, XIcon } from "@lucide/astro";
+
+const navLinks = [
+    { name: "About", href: "/our-work" },
+    { name: "Campaigns", href: "/campaigns" },
+    { name: "Events", href: "/events" },
+    { name: "Write a Message", href: "/write-a-message" },
+    { name: "Get Involved", href: "/get-involved" },
+];
+---
+
+<header
+    class="h-20 w-[90%] max-w-(--panel-width) mx-auto flex items-center justify-between font-heading font-semibold"
+>
+    <nav class="flex items-center gap-x-6">
+        <a href="/">
+            <Image
+                src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/moh-logo.png"
+                alt="Messages of Hope Logo"
+                title="Messages of Hope"
+                inferSize={true}
+                loading="eager"
+                class="h-12 w-auto"
+            />
+        </a>
+        {
+            navLinks.map((item) => (
+                <a
+                    href={item.href}
+                    class="hidden tracking-tight md:block hover:text-foreground/75 transition-all"
+                >
+                    {item.name}
+                </a>
+            ))
+        }
+    </nav>
+
+    <a
+        href="https://www.instagram.com/messagesof.hope/"
+        target="_blank"
+        class="hidden lg:flex items-center gap-x-1.5 tracking-tight bg-moh-blue transition-all py-1 px-3 rounded-sm hover:bg-moh-blue/75"
+    >
+        <Instagram aria-hidden="true" class="size-5" />
+        Instagram</a
+    >
+
+    <button
+        id="mobile-nav__open"
+        class="md:hidden cursor-pointer"
+        aria-label="Open Menu"
+    >
+        <Menu class="size-6" />
+    </button>
+
+    <div
+        id="mobile-nav"
+        class="fixed h-full w-full top-0 left-0 z-100 bg-background py-7 px-5 hidden md:hidden! data-active:block"
+    >
+        <nav class="flex items-center flex-col gap-y-6">
+            <button
+                id="mobile-nav__close"
+                class="self-end cursor-pointer"
+                aria-label="Close Menu"
+            >
+                <XIcon class="size-6" />
+            </button>
+            <a href="/">
+                <Image
+                    src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/moh-logo.png"
+                    alt="Messages of Hope Logo"
+                    title="Messages of Hope"
+                    inferSize={true}
+                    loading="eager"
+                    class="h-12 w-auto"
+                />
+            </a>
+            {
+                navLinks.map((item) => (
+                    <a
+                        href={item.href}
+                        class="tracking-tight hover:text-foreground/75 transition-all"
+                    >
+                        {item.name}
+                    </a>
+                ))
+            }
+        </nav>
+    </div>
+</header>
+
+<script>
+    const mobileNav = document.getElementById("mobile-nav");
+    const open = document.getElementById("mobile-nav__open");
+    const close = document.getElementById("mobile-nav__close");
+
+    open?.addEventListener("click", () => {
+        mobileNav?.toggleAttribute("data-active");
+    });
+
+    close?.addEventListener("click", () => {
+        mobileNav?.toggleAttribute("data-active");
+    });
+</script>
