@@ -1,0 +1,40 @@
+---
+import { ArrowRightIcon } from "@lucide/astro";
+
+const {
+    href,
+    colour = "blue",
+    size = "base",
+    class: _class = "",
+} = Astro.props as {
+    href: string;
+    colour?: "blue" | "yellow" | "outline";
+    size?: "sm" | "base";
+    class?: string;
+};
+
+const baseClass =
+    "flex gap-2 items-center font-heading font-semibold tracking-tight w-fit transition-all rounded-md hover:opacity-85";
+const colourOptions = {
+    blue: "bg-moh-blue",
+    yellow: "bg-moh-yellow",
+    outline: "border-2 border-moh-dark-blue text-moh-dark-blue",
+};
+const sizeOptions = {
+    base: "py-2 px-4",
+    sm: "text-sm py-1.5 px-3",
+};
+
+const classCompound =
+    baseClass +
+    " " +
+    colourOptions[colour] +
+    " " +
+    sizeOptions[size] +
+    " " +
+    _class;
+---
+
+<a href={href} class={classCompound}
+    ><slot /> <ArrowRightIcon class="size-4" /></a
+>

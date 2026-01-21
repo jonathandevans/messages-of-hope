@@ -1,0 +1,64 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "./base-layout.astro";
+
+const { title, noIndex, description, image, text, heading, absolute } =
+    Astro.props;
+const pathname = Astro.url.pathname;
+
+const links = [
+    { href: "/our-work", title: "Our Work" },
+    { href: "/our-story", title: "Our Story" },
+    { href: "/our-team", title: "Our Team" },
+];
+---
+
+<BaseLayout
+    title={title}
+    absolute={absolute}
+    noIndex={noIndex}
+    description={description}
+>
+    <main class="flex flex-col gap-y-16 mb-12 relative">
+        <section class="bg-moh-blue">
+            <div
+                class="mx-auto max-w-(--custom-width) w-[90%] pt-6 pb-12 flex flex-col justify-center items-start gap-2"
+            >
+                <div class="flex gap-2">
+                    {
+                        links.map((item) => (
+                            <a
+                                href={item.href}
+                                class={`font-heading text-xs border-2 border-moh-dark-blue px-1.5 py-0.5 font-semibold rounded-md transition-all ${pathname === item.href ? "bg-moh-dark-blue text-moh-blue" : "hover:bg-moh-dark-blue/20 text-moh-dark-blue"}`}
+                            >
+                                {item.title}
+                            </a>
+                        ))
+                    }
+                </div>
+
+                <div
+                    class="flex flex-col items-center gap-4 md:grid grid-cols-2 md:gap-8"
+                >
+                    <Image
+                        src={image.src}
+                        alt={image.alt}
+                        inferSize={true}
+                        class="object-cover h-72 max-w-lg w-full col-start-2 md:h-88 md:mx-auto"
+                    />
+
+                    <div
+                        class="flex flex-col justify-center items-start gap-5 row-start-1"
+                    >
+                        <h1 class="font-coiny text-5xl tracking-tighter">
+                            {heading ? heading : title}
+                        </h1>
+                        {text.map((item: string) => <p>{item}</p>)}
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <slot />
+    </main>
+</BaseLayout>

@@ -1,0 +1,15 @@
+---
+import BaseLayout from "@components/layouts/base-layout.astro";
+import Button from "@components/ui/button.astro";
+---
+
+<BaseLayout title="Page Not Found">
+    <main
+        class="flex flex-col w-[90%] mx-auto justify-center items-center gap-8"
+        style="min-height: 75svh;"
+    >
+        <h1 class="tracking-tight text-5xl">404 | Page Not Found</h1>
+        <p>Not sure what you're trying to find, but it doesn't exist.</p>
+        <Button href="/" colour="blue">Go Home</Button>
+    </main></BaseLayout
+>

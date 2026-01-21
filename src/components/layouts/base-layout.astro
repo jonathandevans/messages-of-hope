@@ -1,0 +1,50 @@
+---
+import Header from "@components/ui/header.astro";
+import Footer from "@components/ui/footer.astro";
+import "@components/custom-css/global.css";
+
+const {
+    title: _title,
+    absolute,
+    noIndex = false,
+    description = "Your mental health matters to us. Messages of Hope is a Community Interest Company encouraging people to write hopeful messages for those struggling with mental health. We organise a range of projects each year, each designed to connect communities through creativity and collective empathy.",
+} = Astro.props;
+
+const title = absolute ? absolute : _title ? `${_title} | Messages of Hope` : "Messages of Hope";
+
+const canonicalURL = new URL(Astro.url.href);
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+
+        <meta
+            name="robots"
+            content={noIndex ? "noindex, nofollow" : "index, follow"}
+        />
+
+        <link rel="canonical" href={canonicalURL} />
+
+        <link rel="icon" type="image/ico" href="/favicon.ico" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+        <meta name="description" content={description} />
+        <meta
+            name="keywords"
+            content="Mental Health, Mental Illness, BPD, MOH, Messages of Hope, Hope"
+        />
+        <meta name="author" content="Messages of Hope" />
+        <title>{title}</title>
+    </head>
+
+    <body>
+        <Header />
+        <slot />
+        <Footer />
+    </body>
+</html>

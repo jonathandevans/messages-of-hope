@@ -1,0 +1,212 @@
+---
+import TitleCardLayout from "@components/layouts/title-card-layout.astro";
+import { Image } from "astro:assets";
+---
+
+<TitleCardLayout
+    title="Events"
+    description="Messages of Hope puts on numerous events throughout the year to further support our campaigns. These events over the years have included video projects, pop-up art events, and bag packing. From 2025, we're starting MOH socials, where we partner with other groups to organise several creative activities, such as Line of Hope setups and bag decorating for Bags of Hope, in a fun social environment."
+    text="Messages of Hope puts on numerous events throughout the year to further support our campaigns. These events over the years have included video projects, pop-up art events, and bag packing. From 2025, we're starting MOH socials, where we partner with other groups to organise several creative activities, such as Line of Hope setups and bag decorating for Bags of Hope, in a fun social environment."
+>
+    <section class="year">
+        <h2>
+            <span class="left"></span>
+            2024
+            <span class="right"></span>
+        </h2>
+        <div class="content">
+            <a class="item" href="/events/react-bag-packing-2024">
+                <Image
+                    src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/react-boh.jpg"
+                    alt="Bethan and Emmanuella standing behind a collection of Bags of Hope ready to be delivered"
+                    width={1536}
+                    height={2048}
+                    loading="eager"
+                />
+                <p>20th December 2024</p>
+                <h3>React Bag Packing</h3>
+            </a>
+
+            <a class="item" href="/events/feeling-blue-2024">
+                <Image
+                    src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/city-line.jpg"
+                    alt="Line of Hope at Urdang"
+                    inferSize={true}
+                />
+                <p>10th - 12th October 2024</p>
+                <h3>Feeling Blue?</h3>
+            </a>
+
+            <a class="item" href="/events/connections-2024">
+                <Image
+                    src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/connections-2024.jpg"
+                    alt="Connections 2024 filming at Convent Gardens London"
+                    inferSize={true}
+                />
+                <p>26th January 2024</p>
+                <h3>Connections 2024</h3>
+            </a>
+        </div>
+    </section>
+
+    <section class="year">
+        <h2>
+            <span class="left"></span>
+            2023
+            <span class="right"></span>
+        </h2>
+        <div class="content">
+            <a class="item" href="/events/mental-wealth-festival-2023">
+                <Image
+                    src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/beth-messages.jpg"
+                    alt=""
+                    inferSize={true}
+                />
+                <p>12th October 2023</p>
+                <h3>Mental Wealth Festival 2023</h3>
+            </a>
+
+            <a class="item" href="/events/messages-of-hope-2023">
+                <Image
+                    src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/painted-pebbles.jpg"
+                    alt="Painted pebbles from Messages of Hope 2023 pop-up art event"
+                    inferSize={true}
+                />
+                <p>29th July 2023</p>
+                <h3>Messages of Hope 2023</h3>
+            </a>
+
+            <a class="item" href="/events/thrive-ldn-partnership-2023">
+                <Image
+                    src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/thrive-message.png"
+                    alt=""
+                    inferSize={true}
+                />
+                <p>15th May 2023</p>
+                <h3>Thrive LDN Partnership</h3>
+            </a>
+        </div>
+    </section>
+
+    <section class="year">
+        <h2>
+            <span class="left"></span>
+            2022
+            <span class="right"></span>
+        </h2>
+        <div class="content">
+            <a class="item" href="/events/world-mental-health-day-2022">
+                <Image
+                    src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/world-mental-health-day.jpg"
+                    alt=""
+                    inferSize={true}
+                />
+                <p>10th October 2022</p>
+                <h3>World Mental Health Day 2022</h3>
+            </a>
+        </div>
+    </section>
+
+    <section class="year">
+        <h2>
+            <span class="left"></span>
+            2020
+            <span class="right"></span>
+        </h2>
+        <div class="content">
+            <a class="item" href="/events/messages-of-hope-2020">
+                <Image
+                    src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/moh-2020.jpg"
+                    alt="Connections 2024 filming at Convent Gardens London"
+                    inferSize={true}
+                />
+                <p>21st May 2020</p>
+                <h3>Messages of Hope 2020</h3>
+            </a>
+        </div>
+    </section>
+</TitleCardLayout>
+
+<style>
+    .year {
+        width: 90%;
+        max-width: 76rem;
+        margin: 0 auto;
+    }
+
+    .year h2 {
+        display: flex;
+        justify-content: flex-start;
+        gap: 1rem;
+        align-items: center;
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .year h2 span.left {
+        width: 2rem;
+        height: 8px;
+        background: var(--color-moh-blue);
+        border-radius: 4px;
+    }
+
+    .year h2 span.right {
+        width: 100%;
+        height: 8px;
+        background: var(--color-moh-blue);
+        border-radius: 4px;
+    }
+
+    .year .content {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .year .item {
+        width: 100%;
+        max-width: 20rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 0.25rem;
+        text-decoration: none;
+    }
+
+    .year .item img {
+        width: 100%;
+        aspect-ratio: 1.25/0.75;
+        height: auto;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    .year .item h3 {
+        width: 100%;
+        margin: 0;
+        font-size: 1.3rem;
+        font-weight: 700;
+        transition: all 0.3s;
+    }
+
+    .year .item:hover h3,
+    .year .item:active h3,
+    .year .item:focus h3 {
+        color: var(--color-moh-dark-blue);
+    }
+
+    .year .item p {
+        width: 100%;
+        font-size: 0.9rem;
+    }
+
+    @media (min-width: 48rem) {
+        .year h2 span.left {
+            width: 10rem;
+        }
+    }
+</style>

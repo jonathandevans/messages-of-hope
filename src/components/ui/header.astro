@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import { Instagram } from "@lucide/astro";
+
+const navLinks = [
+    { name: "About", href: "/our-work" },
+    { name: "Campaigns", href: "/campaigns" },
+    { name: "Events", href: "/events" },
+    { name: "Write a Message", href: "/write-a-message" },
+    { name: "Get Involved", href: "/get-involved" },
+];
+---
+
+<header
+    class="h-20 w-[90%] max-w-(--custom-width) mx-auto flex items-center justify-between font-heading font-semibold"
+>
+    <nav class="flex items-center gap-x-6">
+        <a href="/">
+            <Image
+                src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/moh-logo.png"
+                alt="Messages of Hope Logo"
+                title="Messages of Hope"
+                inferSize={true}
+                loading="eager"
+                class="h-12 w-auto"
+            />
+        </a>
+        {
+            navLinks.map((item) => (
+                <a href={item.href} class="hidden tracking-tight md:block hover:text-foreground/85 transition-all">
+                    {item.name}
+                </a>
+            ))
+        }
+    </nav>
+
+    <a
+        href="https://www.instagram.com/messagesof.hope/"
+        target="_blank"
+        class="hidden lg:flex items-center gap-x-1.5 tracking-tight bg-moh-blue transition-all py-1 px-3 rounded-sm hover:bg-moh-blue/85"
+    >
+        <Instagram aria-hidden="true" class="size-5" />
+        Instagram</a
+    >
+</header>

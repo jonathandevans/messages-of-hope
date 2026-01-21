@@ -1,0 +1,165 @@
+---
+import TitleCardLayout from "@components/layouts/title-card-layout.astro";
+---
+
+<TitleCardLayout
+    title="Campaigns"
+    description="The campaigns Messages of Hope organise are a form of long term projects that has been created to support our goals as a CIC. These campaigns are used as a part of events, for example at MOH Socials we will do Bags of Hope bag packing, or create a new Line of Hope. The pop-up art events that we do all go to support the original Messages of Hope campaign."
+    text="The campaigns Messages of Hope organise are a form of long term projects that has been created to support our goals as a CIC. These campaigns are used as a part of events, for example at MOH Socials we will do Bags of Hope bag packing, or create a new Line of Hope. The pop-up art events that we do all go to support the original Messages of Hope campaign. All of these campaigns focus on using creativity to bring people together, which is at the very heart of what Messages of Hope does."
+>
+    <section class="content">
+        <a href="/campaigns/bags-of-hope" class="bags">
+            <h2>Bags of Hope</h2>
+            <p>Because no patient should feel alone</p>
+        </a>
+        <a href="/campaigns/line-of-hope" class="lines">
+            <h2>Line of Hope</h2>
+            <p>When you need a lifeline</p>
+        </a>
+        <a href="/campaigns/messages-of-hope" class="messages">
+            <h2>Messages of Hope</h2>
+            <p>Reaching out to support each other</p>
+        </a>
+    </section>
+</TitleCardLayout>
+
+<style>
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+        gap: 1rem;
+        max-width: 76rem;
+    }
+
+    .content a {
+        width: 100%;
+        display: block;
+        aspect-ratio: 1/1;
+        height: auto;
+        text-decoration: none;
+        border-radius: 15px;
+        border: 6px solid var(--color-moh-dark-blue);
+        padding: 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        max-width: 20rem;
+    }
+
+    .content a h2 {
+        margin: 0;
+        color: var(--color-zinc-100);
+        font-size: 1.5rem;
+        transition: all 0.3s;
+        font-weight: bold;
+    }
+
+    .content a p {
+        width: 100%;
+        font-style: italic;
+        color: var(--color-zinc-100);
+        font-size: 0.9rem;
+        transition: all 0.3s;
+    }
+
+    .content a:hover h2,
+    .content a:focus h2,
+    .content a:active h2,
+    .content a:hover p,
+    .content a:focus p,
+    .content a:active p {
+        color: var(--color-blue-300);
+    }
+
+    .content a.bags {
+        background:
+            linear-gradient(#0000004d, #000000dd),
+            url("https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/react-boh-building.jpg")
+                left 50% top 90% / cover no-repeat border-box,
+            var(--color-moh-dark-blue);
+    }
+
+    .content a.lines {
+        background:
+            linear-gradient(#0000004d, #000000dd),
+            url("https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/city-line.jpg")
+                left 50% top 50% / cover no-repeat border-box,
+            var(--color-moh-dark-blue);
+    }
+
+    .content a.messages {
+        background:
+            linear-gradient(#0000004d, #000000dd),
+            url("https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/barry-ymca.jpg")
+                left 50% top 50% / cover no-repeat border-box,
+            var(--color-moh-dark-blue);
+    }
+
+    @media (min-width: 40rem) {
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 3fr 2fr;
+            justify-content: stretch;
+            align-items: stretch;
+        }
+
+        .content a {
+            aspect-ratio: auto;
+            max-width: none;
+        }
+
+        .content a.messages {
+            height: 20rem;
+            grid-column: 1/3;
+        }
+
+        .content a h2 {
+            font-size: 2rem;
+        }
+
+        .content a p {
+            font-size: 1rem;
+        }
+    }
+
+    @media (min-width: 64rem) {
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 3fr 2fr;
+            justify-content: stretch;
+            align-items: stretch;
+        }
+
+        .content a {
+            aspect-ratio: auto;
+        }
+
+        .content a.messages {
+            grid-column: 1/3;
+            height: 15rem;
+        }
+
+        .content a h2 {
+            font-size: 2.5rem;
+        }
+
+        .content a p {
+            font-size: 1.25rem;
+        }
+
+        .content a.messages {
+            background:
+                linear-gradient(#0000004d, #000000dd),
+                url("https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/barry-ymca.jpg")
+                    left 0% top 50% / 110% no-repeat border-box,
+                var(--color-moh-dark-blue);
+        }
+    }
+</style>

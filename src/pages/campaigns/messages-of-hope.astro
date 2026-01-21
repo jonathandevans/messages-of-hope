@@ -1,0 +1,99 @@
+---
+import EventsLayout from "@components/layouts/events-layout.astro";
+import Button from "@components/ui/button.astro";
+import { Image } from "astro:assets";
+
+const galleryImages = [
+    "https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/canvas-painting.jpg",
+    "https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/painted-pebbles.jpg",
+    "https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/connections-dog.jpg",
+    "https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/costume-message.jpg",
+    "https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/family-message.jpg",
+    "https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/moh-2023.jpg",
+    "https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/beth-2023.jpg",
+    "https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/connections-message-foreign.jpg",
+    "https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/beth-message.jpg",
+];
+---
+
+<EventsLayout
+    absolute="Messages of Hope Campaign"
+    title="Messages of Hope"
+    description="Messages of Hope collects messages of hope and spreads them far and wide. Collecting these messages is part of our initial Messages of Hope campaign which started this organisation. You can often find us out in the community collecting messages from strangers. Not only do these messages help others but we give people the opportunity to perform a wellbeing check-in."
+    text="Reaching out to support each other"
+    class="background"
+>
+    <section
+        class="w-[90%] max-w-(--custom-width) mx-auto flex flex-col justify-center items-center gap-8 md:grid grid-cols-[3fr_2fr] md:gap-12"
+    >
+        <div class="flex flex-col gap-2">
+            <h2 class="text-3xl font-quicksand font-semibold tracking-tight">
+                What is the MOH Campaign?
+            </h2>
+            <p>
+                Messages of Hope collects messages of hope and spreads them far
+                and wide. Keep an eye on our social media pages to see if your
+                message is shared. You can submit a message of hope via our
+                website whenever you like. We will then post the submitted
+                messages of hope on our social media, or your message might be
+                turned into a sticker and placed in various spots around the
+                local community.
+            </p>
+            <p>
+                Collecting these messages is part of our initial Messages of
+                Hope campaign which started this organisation. You can often
+                find us out in the community collecting messages from strangers.
+                Not only do these messages help others but we give people the
+                opportunity to perform a wellbeing check-in.
+            </p>
+            <p>
+                As an organisation we have done many pop-up art sessions where
+                we&apos;ve had people, write messages, colour their feelings,
+                and draw on canvases. This again allows people to perform a
+                well-being check-in, provides a nice creative outlet in the day,
+                and gives the opportunity to talk and meet new people. This is
+                all a part of the of the original Messages of Hope campaign,
+                using creativity to spread hope.
+            </p>
+            <Button
+                href="/write-a-message"
+                colour="outline"
+                size="sm"
+                class="self-end">Write a Message</Button
+            >
+        </div>
+
+        <Image
+            src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/message-1.jpg"
+            alt="'You're loved' written on a whiteboard at the Connections 2024 event"
+            inferSize={true}
+            class="w-full h-auto max-w-sm aspect-square object-cover mx-auto rounded-lg md:max-w-md md:self-end"
+        />
+    </section>
+
+    <section class="py-12 bg-moh-blue">
+        <div
+            class="w-[90%] max-w-(--custom-width) mx-auto flex flex-wrap items-center justify-around gap-8 xs:grid xs:grid-cols-2 md:grid-cols-3"
+        >
+            {
+                galleryImages.map((image, index) => (
+                    <img
+                        src={image}
+                        alt={`Messages of Hope Gallery Image ${index + 1}`}
+                        class="w-full aspect-square object-cover rounded-lg"
+                    />
+                ))
+            }
+        </div>
+    </section>
+</EventsLayout>
+
+<style>
+    .background {
+        background:
+            linear-gradient(#0000004d, #000000a6),
+            url("https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/connections-message-foreign.jpg")
+                left 50% top 60% / cover no-repeat border-box,
+            var(--color-moh-dark-blue);
+    }
+</style>

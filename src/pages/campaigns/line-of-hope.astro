@@ -1,0 +1,64 @@
+---
+import EventsLayout from "@components/layouts/events-layout.astro";
+import Button from "@components/ui/button.astro";
+import { Image } from "astro:assets";
+---
+
+<EventsLayout
+    title="Line of Hope"
+    description="Line of Hope displays are a collaborative art project, which provide a space in which people can reflect on their current mindfulness and read messages of hope provided from those around them displayed on a line. These messages are about providing people in a time of need and the space to get them. We partner with other organisations to setup a stall to gather messages from the community, these are written on cards."
+    text="When you need a lifeline"
+    class="background"
+>
+    <section
+        class="w-[90%] max-w-(--custom-width) mx-auto flex flex-col justify-center items-center gap-8 md:grid grid-cols-[3fr_2fr] md:gap-12"
+    >
+        <div class="flex flex-col gap-4">
+            <h2
+                class="text-3xl font-quicksand font-semibold tracking-tight"
+            >
+                What is a Line of Hope?
+            </h2>
+            <p>
+                Line of Hope displays are a collaborative art project, which
+                provide a space in which people can reflect on their current
+                mindfulness and read messages of hope provided from those around
+                them displayed on a line. These messages are about providing
+                people in a time of need and the space to get them. We partner
+                with other organisations to setup a stall to gather messages
+                from the community, these are written on cards. These cards are
+                displayed hanging from a line and we recommend the local
+                community to keep hanging up new messages each time they visit
+                the line.
+            </p>
+            <p>
+                The construction of one of these displays is often part of a
+                larger event, in which we have other creative activities, and
+                often perform bag packing.
+            </p>
+            <Button
+                href="/events/feeling-blue-2024"
+                colour="outline"
+                size="sm"
+                class="self-end"
+            >Check out our Latest Line</Button>
+        </div>
+
+        <Image
+            src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/urdang-line.jpg"
+            alt="The Line of Hope at City Lit"
+            inferSize={true}
+            class="w-full h-auto max-w-sm aspect-square object-cover mx-auto rounded-lg md:max-w-md"
+        />
+    </section>
+</EventsLayout>
+
+<style>
+    .background {
+        background:
+            linear-gradient(#0000004d, #000000a6),
+            url("https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/city-line.jpg")
+                left 50% top 50% / cover no-repeat border-box,
+            var(--color-moh-dark-blue);
+    }
+</style>
