@@ -1,0 +1,55 @@
+---
+import Button from "@components/button.astro";
+import PostLayout from "@layouts/post-layout.astro";
+import { Image } from "astro:assets";
+
+const details = {
+    title: "Feeling Blue?",
+    description:
+        "Feeling Blue? was a three day event in which Messages of Hope partnered with City of London University and the Urdang academy, and also attended the Mental Wealth Festival at City Lit. Over these three days we were able to support all three of our current campaigns, creating a Line of Hope at Urdang, donating 43 Bags of Hope from items donated by students, and collecting Messages of Hope from all three venues.",
+    subtitle: "10th - 12th October 2024",
+    image: {
+        alt: "",
+        url: "https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/city-line.jpg",
+    },
+};
+---
+
+<PostLayout {...details}>
+    <section
+        class="max-w-(--panel-width) w-[90%] flex flex-row items-center gap-8"
+    >
+        <div class="flex flex-col gap-2">
+            <h2 class="text-3xl tracking-tighter font-bold">
+                What is Feeling Blue?
+            </h2>
+            <p>
+                Feeling Blue? was a three day event in which Messages of Hope
+                partnered with City of London University and the Urdang academy,
+                and also attended the Mental Wealth Festival at City Lit. Over
+                these three days we were able to support all three of our
+                current campaigns, creating a Line of Hope at Urdang, donating
+                43 Bags of Hope from items donated by students, and collecting
+                Messages of Hope from all three venues.
+            </p>
+            <p>
+                Working with university students at this event was so important,
+                as these are young people who are at a point in life
+                experiencing so much stress and change. Those of us at Messages
+                of Hope have struggled with the pressures and isolation that
+                university can bring.
+            </p>
+            <p>
+                We want to give a special thank you to all those who wrote
+                messages and donated items towards the Bags of Hope campaign.
+            </p>
+        </div>
+
+        <Image
+            class="hidden lg:block aspect-square object-cover max-w-md rounded-lg"
+            src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/react-boh-building.jpg"
+            alt=""
+            inferSize={true}
+        />
+    </section>
+</PostLayout>

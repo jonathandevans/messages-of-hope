@@ -86,16 +86,16 @@ const yearPosts = [
                         {item.title}
                     </h2>
 
-                    <div class="flex flex-col gap-4 justify-center items-center relative py-2 md:flex-row md:gap-8">
+                    <div class="flex flex-col gap-4 justify-center items-center relative py-2 lg:flex-row md:gap-8">
                         <Image
                             src={item.image.src}
                             alt={item.image.alt}
                             title={item.title}
                             width={item.image.width}
                             height={item.image.height}
-                            class="w-[80%] aspect-square max-w-xs object-cover rounded-xl"
+                            class="min-w-48 w-[80%] aspect-square max-w-xs object-cover rounded-xl"
                         />
-                        <div class="flex flex-col items-start justify-center gap-2 max-w-xl">
+                        <div class="flex flex-col items-start justify-center gap-2 lg:max-w-xl">
                             {item.text.map((para) => (
                                 <p>{para}</p>
                             ))}

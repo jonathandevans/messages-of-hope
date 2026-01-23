@@ -5,11 +5,13 @@ const {
     href,
     colour = "blue",
     size = "base",
+    target = "_self",
     class: _class = "",
 } = Astro.props as {
     href: string;
     colour?: "blue" | "yellow" | "outline";
     size?: "sm" | "base";
+    target?: "_self" | "_blank" | "_parent" | "_top";
     class?: string;
 };
 
@@ -18,7 +20,8 @@ const baseClass =
 const colourOptions = {
     blue: "bg-moh-blue hover:bg-moh-blue/75",
     yellow: "bg-moh-yellow hover:bg-moh-yellow/75",
-    outline: "border-2 border-moh-dark-blue text-moh-dark-blue hover:opacity-75",
+    outline:
+        "border-2 border-moh-dark-blue text-moh-dark-blue hover:opacity-75",
 };
 const sizeOptions = {
     base: "py-2 px-4",
@@ -35,6 +38,6 @@ const classCompound =
     _class;
 ---
 
-<a href={href} class={classCompound}
+<a href={href} class={classCompound} target={target}
     ><slot /> <ArrowRightIcon class="size-4" /></a
 >

@@ -71,9 +71,9 @@ const teamMembers = [
                         title={member.name}
                         width={member.image.width}
                         height={member.image.height}
-                        class={`w-full aspect-square object-cover rounded-lg border-8 max-w-xs ${index % 2 === 0 ? "border-moh-yellow" : "border-moh-blue"}`}
+                        class={`w-full aspect-square object-cover rounded-lg border-8 max-w-xs ${index % 2 === 0 ? "border-moh-yellow" : "border-moh-blue"} md:flex-1`}
                     />
-                    <div class="grid gap-1">
+                    <div class="grid gap-1 md:flex-1">
                         <h2 class="text-2xl font-semibold tracking-tight font-heading">
                             {member.name}{" "}
                             <span class="text-sm font-normal italic text-muted-foreground">

@@ -1,18 +1,22 @@
 ---
 import Button from "@components/button.astro";
-import EventsLayout from "@layouts/events-layout.astro";
+import PostLayout from "@layouts/post-layout.astro";
 import { Image } from "astro:assets";
+
+const details = {
+    title: "React Bag Packing",
+    description:
+        "On the 20th December, Messages of Hope collaborated with React Support Services in a Bags of Hope bag packing event. React had their team and members collect many items leading up to the event, which we then combined with additional stock in order to produce over 30 Bags of Hope. Our work with React gave us some new suggestions for items that should be placed into future bags, and both the staff and people their were very supportive up to and on the day of the event.",
+    subtitle: "20th December 2024",
+    image: {
+        alt: "Bethan and Emmanuella standing behind a collection of Bags of Hope ready to be delivered",
+        url: "https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/react-boh.jpg",
+    },
+};
 ---
 
-<EventsLayout
-    title="React Bag Packing"
-    description="On the 20th December, Messages of Hope collaborated with React Support Services in a Bags of Hope bag packing event. React had their team and members collect many items leading up to the event, which we then combined with additional stock in order to produce over 30 Bags of Hope. Our work with React gave us some new suggestions for items that should be placed into future bags, and both the staff and people their were very supportive up to and on the day of the event."
-    text="20th December 2024"
-    class="background"
->
-    <section
-        class="w-[90%] max-w-(--panel-width) mx-auto flex flex-col justify-center items-center gap-8 md:grid grid-cols-[3fr_2fr] md:gap-12"
-    >
+<PostLayout {...details}>
+    <section class="max-w-(--panel-width) w-[90%] flex flex-row items-center gap-8">
         <div class="flex flex-col gap-2">
             <p>
                 On the 20th December, Messages of Hope collaborated with React
@@ -37,27 +41,21 @@ import { Image } from "astro:assets";
                 Please check out the amazing work React Support Services to
                 provide mental health support.
             </p>
-            <Button colour="outline" class="self-end"
+            <Button
+                colour="outline"
+                size="sm"
+                class="self-end"
+                href="https://www.reactsupportservices.co.uk/"
+                target="_blank"
                 >React Support Services</Button
             >
         </div>
 
         <Image
+            class="hidden lg:block aspect-square object-cover max-w-md rounded-lg"
             src="https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/react-boh-building.jpg"
-            alt="Bags of Hope bag packing with React Support Services"
-            title="Bag packing at React Support Services"
+            alt="Bethan building a Bag of Hope with React Support Services"
             inferSize={true}
-            class="w-full h-auto max-w-sm aspect-square object-cover mx-auto rounded-lg md:max-w-md"
         />
     </section>
-</EventsLayout>
-
-<style>
-    .background {
-        background:
-            linear-gradient(#0000004d, #000000a6),
-            url("https://mfppfptcdbddlkgzuape.supabase.co/storage/v1/object/public/general/images/react-boh.jpg")
-                left 50% top 90% / cover no-repeat border-box,
-            var(--color-moh-dark-blue);
-    }
-</style>
+</PostLayout>

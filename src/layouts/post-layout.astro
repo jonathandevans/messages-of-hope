@@ -1,0 +1,28 @@
+---
+import { Image } from "astro:assets";
+import BaseLayout from "./base-layout.astro";
+
+const { title, description, subtitle, image } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+    <main class="flex flex-col items-center gap-y-10 mb-12 relative">
+        <section class="relative w-[90%] max-w-(--panel-width) flex flex-col">
+            <img
+                src={image.url}
+                alt={image.alt}
+                class="w-full aspect-square object-cover h-auto rounded-lg xs:aspect-3/2 md:aspect-2/1 lg:aspect-3/1"
+            />
+
+            <span class="h-[8px] w-full bg-moh-blue block my-6 rounded-full"
+            ></span>
+
+            <p class="text-zinc-700 text-center">{subtitle}</p>
+            <h1 class="text-5xl tracking-tighter text-center">
+                {title}
+            </h1>
+        </section>
+
+        <slot />
+    </main>
+</BaseLayout>
